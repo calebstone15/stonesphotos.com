@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="Websitelogo.ico">
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Add EmailJS library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
     <style>
         body, h1, h2, p, .about-photo, footer {
             font-family: 'Old Standard TT', serif !important;
@@ -308,9 +312,13 @@
     
     <script src="script.js"></script>
     <script>
-        // Initialize EmailJS
+        // Initialize EmailJS with debug mode enabled
         (function() {
-            emailjs.init("ztXuyJdVP98-5xAnW"); // Replace with your actual EmailJS User ID
+            emailjs.init({
+                publicKey: "ztXuyJdVP98-5xAnW",
+                debug: true // Enable debug mode to see detailed logs in the console
+            });
+            console.log("EmailJS initialized");
         })();
         
         // Mobile menu toggle
@@ -333,6 +341,7 @@
         if (bookingForm) {
             bookingForm.addEventListener('submit', function(e) {
                 e.preventDefault();
+                console.log("Form submitted, running validation");
                 
                 let isValid = true;
                 
@@ -406,6 +415,7 @@
                 
                 // If all validations pass
                 if (isValid) {
+                    console.log("Validation passed, preparing to send email");
                     // Show loading state
                     const submitBtn = document.querySelector('.submit-btn');
                     const originalBtnText = submitBtn.textContent;
@@ -424,6 +434,8 @@
                         notes: document.getElementById('notes').value || "No additional notes"
                     };
                     
+                    console.log("Sending email with parameters:", templateParams);
+                    
                     // Send the email using EmailJS
                     emailjs.send('service_0hcl68q', 'template_31tqjn8', templateParams)
                         .then(function(response) {
@@ -432,7 +444,7 @@
                             bookingForm.reset();
                         }, function(error) {
                             console.log('FAILED...', error);
-                            alert('There was an error sending your booking request. Please try again or contact me directly.');
+                            alert('There was an error sending your booking request. Please try again or contact me directly. Error: ' + error.text);
                         })
                         .finally(function() {
                             // Reset button state
