@@ -308,6 +308,11 @@
     
     <script src="script.js"></script>
     <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("ztXuyJdVP98-5xAnW"); // Replace with your actual EmailJS User ID
+        })();
+        
         // Mobile menu toggle
         document.querySelector('.header-menu-btn').onclick = function() {
             document.querySelector('.header-nav').classList.toggle('show');
@@ -401,9 +406,39 @@
                 
                 // If all validations pass
                 if (isValid) {
-                    // In a real scenario, you'd submit the form to your server
-                    alert('Thank you for your booking request! I will contact you within 24-48 hours to confirm your booking.');
-                    bookingForm.reset();
+                    // Show loading state
+                    const submitBtn = document.querySelector('.submit-btn');
+                    const originalBtnText = submitBtn.textContent;
+                    submitBtn.textContent = "Sending...";
+                    submitBtn.disabled = true;
+                    
+                    // Prepare template parameters
+                    const templateParams = {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        phone: document.getElementById('phone').value,
+                        shoot_type: document.getElementById('shoot-type').value,
+                        preferred_date: document.getElementById('preferred-date').value,
+                        alternative_date: document.getElementById('alternative-date').value || "Not provided",
+                        location: document.getElementById('location').value,
+                        notes: document.getElementById('notes').value || "No additional notes"
+                    };
+                    
+                    // Send the email using EmailJS
+                    emailjs.send('service_0hcl68q', 'template_31tqjn8', templateParams)
+                        .then(function(response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                            alert('Thank you for your booking request! I will contact you within 24-48 hours to confirm your booking.');
+                            bookingForm.reset();
+                        }, function(error) {
+                            console.log('FAILED...', error);
+                            alert('There was an error sending your booking request. Please try again or contact me directly.');
+                        })
+                        .finally(function() {
+                            // Reset button state
+                            submitBtn.textContent = originalBtnText;
+                            submitBtn.disabled = false;
+                        });
                 }
             });
             
