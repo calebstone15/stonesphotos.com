@@ -1,5 +1,13 @@
 console.log("Stones Photos site loaded!");
 
+// Initialize EmailJS
+(function() {
+    emailjs.init({
+        publicKey: "x0pDGPnrMj7xD0fSb",
+    });
+    console.log("EmailJS initialized in script.js");
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');

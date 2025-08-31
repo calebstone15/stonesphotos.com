@@ -9,7 +9,10 @@
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
         (function() {
-            emailjs.init("x0pDGPnrMj7xD0fSb");
+            emailjs.init({
+                publicKey: "x0pDGPnrMj7xD0fSb"
+            });
+            console.log("EmailJS initialized in contact.html");
         })();
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
@@ -185,37 +188,42 @@
         <div class="contact-wrapper">
             <div class="contact-form">
                 <h2>Send a Message</h2>
-            <form id="contact-form">
-                <div style="margin-bottom: 20px;">
-                    <label for="name">Your Name</label><br>
-                    <input type="text" id="name" name="name" placeholder="Please enter your name" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <label for="email">Email Address</label><br>
-                    <input type="email" id="email" name="email" placeholder="Please enter a valid email address" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <label for="phone">Phone Number (Optional)</label><br>
-                    <input type="tel" id="phone" name="phone" placeholder="Please enter a valid phone number" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <label for="interest">What are you interested in?</label><br>
-                    <select id="interest" name="interest" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-                        <option value="" disabled selected>Select an option</option>
-                        <option value="couples">Couples</option>
-                        <option value="Engagement">Engagment</option>
-                        <option value="Senior/Graduation">Senior/Graduation</option>
-                        <option value="Portraits">Portraits</option>
-                        <option value="Wedding">Wedding</option>
-                        <option value="Other">Other (please specify below)</option>
-                    </select>
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <label for="message">Your Message</label><br>
-                    <textarea id="message" name="message" placeholder="Feel free to ask me any questions before booking your photoshoot" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; min-height: 100px; font-family: 'Old Standard TT', serif; font-size: 1rem;"></textarea>
-                </div>
-                <button type="submit" style="padding: 12px 24px; background: #2193b0; color: #fff; border: none; border-radius: 8px; cursor: pointer; transition: background 0.2s;">Send Message</button>
-                <p id="form-message" style="display: none; margin-top: 10px;"></p>
+                <form id="contact-form">
+                    <div style="margin-bottom: 20px;">
+                        <label for="name">Your Name</label><br>
+                        <input type="text" id="name" name="name" placeholder="Please enter your name" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                        <div id="nameError" class="form-error">Please enter your name</div>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label for="email">Email Address</label><br>
+                        <input type="email" id="email" name="email" placeholder="Please enter a valid email address" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                        <div id="emailError" class="form-error">Please enter a valid email address</div>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label for="phone">Phone Number (Optional)</label><br>
+                        <input type="tel" id="phone" name="phone" placeholder="Please enter a valid phone number" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                        <div id="phoneError" class="form-error">Please enter a valid phone number</div>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label for="interest">What are you interested in?</label><br>
+                        <select id="interest" name="interest" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                            <option value="" disabled selected>Select an option</option>
+                            <option value="couples">Couples</option>
+                            <option value="Engagement">Engagment</option>
+                            <option value="Senior/Graduation">Senior/Graduation</option>
+                            <option value="Portraits">Portraits</option>
+                            <option value="Wedding">Wedding</option>
+                            <option value="Other">Other (please specify below)</option>
+                        </select>
+                        <div id="interestError" class="form-error">Please select an option</div>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label for="message">Your Message</label><br>
+                        <textarea id="message" name="message" placeholder="Feel free to ask me any questions before booking your photoshoot" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; min-height: 100px; font-family: 'Old Standard TT', serif; font-size: 1rem;"></textarea>
+                        <div id="messageError" class="form-error">Please enter your message</div>
+                    </div>
+                    <button type="submit" style="padding: 12px 24px; background: #2193b0; color: #fff; border: none; border-radius: 8px; cursor: pointer; transition: background 0.2s;">Send Message</button>
+                    <p id="form-message" style="display: none; margin-top: 10px;"></p>
                 </form>
             </div>
             
@@ -267,96 +275,121 @@
         });
         
         // Form validation
-        const contactForm = document.getElementById('contactForm');
+        const contactForm = document.getElementById('contact-form');
         
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            let isValid = true;
-            
-            // Name validation
-            const name = document.getElementById('name');
-            if (name.value.trim() === '') {
-                document.getElementById('nameError').style.display = 'block';
-                name.style.borderColor = '#e74c3c';
-                isValid = false;
-            } else {
-                document.getElementById('nameError').style.display = 'none';
-                name.style.borderColor = '#ddd';
-            }
-            
-            // Email validation
-            const email = document.getElementById('email');
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email.value)) {
-                document.getElementById('emailError').style.display = 'block';
-                email.style.borderColor = '#e74c3c';
-                isValid = false;
-            } else {
-                document.getElementById('emailError').style.display = 'none';
-                email.style.borderColor = '#ddd';
-            }
-            
-            // Phone validation (optional)
-            const phone = document.getElementById('phone');
-            if (phone.value.trim() !== '') {
-                const phoneRegex = /^[\d\s\-\(\)]+$/;
-                if (!phoneRegex.test(phone.value)) {
-                    document.getElementById('phoneError').style.display = 'block';
-                    phone.style.borderColor = '#e74c3c';
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let isValid = true;
+                
+                // Name validation
+                const name = document.getElementById('name');
+                if (name.value.trim() === '') {
+                    document.getElementById('nameError').style.display = 'block';
+                    name.style.borderColor = '#e74c3c';
                     isValid = false;
                 } else {
-                    document.getElementById('phoneError').style.display = 'none';
-                    phone.style.borderColor = '#ddd';
+                    document.getElementById('nameError').style.display = 'none';
+                    name.style.borderColor = '#ddd';
                 }
-            }
-            
-            // Interest validation
-            const interest = document.getElementById('interest');
-            if (interest.value === '') {
-                document.getElementById('interestError').style.display = 'block';
-                interest.style.borderColor = '#e74c3c';
-                isValid = false;
-            } else {
-                document.getElementById('interestError').style.display = 'none';
-                interest.style.borderColor = '#ddd';
-            }
-            
-            // Message validation
-            const message = document.getElementById('message');
-            if (message.value.trim() === '') {
-                document.getElementById('messageError').style.display = 'block';
-                message.style.borderColor = '#e74c3c';
-                isValid = false;
-            } else {
-                document.getElementById('messageError').style.display = 'none';
-                message.style.borderColor = '#ddd';
-            }
-            
-            // If all validations pass
-            if (isValid) {
-                // In a real scenario, you'd submit the form to your server
-                // Here we'll just show an alert for demonstration
-                alert('Thank you for your message! I will get back to you soon.');
-                contactForm.reset();
                 
-                // In production, you would use:
-                // contactForm.submit();
-            }
-        });
-        
-        // Clear validation errors when user starts typing
-        const inputs = contactForm.querySelectorAll('input, textarea, select');
-        inputs.forEach(input => {
-            input.addEventListener('input', function() {
-                const errorId = this.id + 'Error';
-                const errorElement = document.getElementById(errorId);
-                if (errorElement) {
-                    errorElement.style.display = 'none';
-                    this.style.borderColor = '#ddd';
+                // Email validation
+                const email = document.getElementById('email');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email.value)) {
+                    document.getElementById('emailError').style.display = 'block';
+                    email.style.borderColor = '#e74c3c';
+                    isValid = false;
+                } else {
+                    document.getElementById('emailError').style.display = 'none';
+                    email.style.borderColor = '#ddd';
+                }
+                
+                // Phone validation (optional)
+                const phone = document.getElementById('phone');
+                if (phone.value.trim() !== '') {
+                    const phoneRegex = /^[\d\s\-\(\)]+$/;
+                    if (!phoneRegex.test(phone.value)) {
+                        document.getElementById('phoneError').style.display = 'block';
+                        phone.style.borderColor = '#e74c3c';
+                        isValid = false;
+                    } else {
+                        document.getElementById('phoneError').style.display = 'none';
+                        phone.style.borderColor = '#ddd';
+                    }
+                }
+                
+                // Interest validation
+                const interest = document.getElementById('interest');
+                if (interest.value === '') {
+                    document.getElementById('interestError').style.display = 'block';
+                    interest.style.borderColor = '#e74c3c';
+                    isValid = false;
+                } else {
+                    document.getElementById('interestError').style.display = 'none';
+                    interest.style.borderColor = '#ddd';
+                }
+                
+                // Message validation
+                const message = document.getElementById('message');
+                if (message.value.trim() === '') {
+                    document.getElementById('messageError').style.display = 'block';
+                    message.style.borderColor = '#e74c3c';
+                    isValid = false;
+                } else {
+                    document.getElementById('messageError').style.display = 'none';
+                    message.style.borderColor = '#ddd';
+                }
+                
+                // If all validations pass
+                if (isValid) {
+                    // Disable button to prevent multiple submissions
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                    
+                    const formData = {
+                        name: document.getElementById('name').value.trim(),
+                        email: document.getElementById('email').value.trim(),
+                        phone: document.getElementById('phone').value.trim(),
+                        interest: document.getElementById('interest').value,
+                        message: document.getElementById('message').value.trim()
+                    };
+                    
+                    // Send the form data using EmailJS
+                    emailjs.send("service_0hcl68q", "template_3codtcb", formData)
+                        .then(function(response) {
+                            document.getElementById('form-message').style.display = 'block';
+                            document.getElementById('form-message').style.color = '#2193b0';
+                            document.getElementById('form-message').textContent = 'Message sent successfully! I'll get back to you soon.';
+                            contactForm.reset();
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Send Message';
+                        }, function(error) {
+                            document.getElementById('form-message').style.display = 'block';
+                            document.getElementById('form-message').style.color = '#d32f2f';
+                            document.getElementById('form-message').textContent = 'Failed to send message. Please try again or contact me directly.';
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Send Message';
+                            console.error('EmailJS error:', error);
+                        });
                 }
             });
-        });
+            
+            // Clear validation errors when user starts typing
+            const inputs = contactForm.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    const errorId = this.id + 'Error';
+                    const errorElement = document.getElementById(errorId);
+                    if (errorElement) {
+                        errorElement.style.display = 'none';
+                        this.style.borderColor = '#ddd';
+                    }
+                });
+            });
+        }
     </script>
 </body>
 </html>
