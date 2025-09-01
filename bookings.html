@@ -310,7 +310,6 @@
     <footer>
         <p>&copy; 2025 Stones Photos</p>
     </footer>
-    
     <script>
         // Mobile menu toggle
         document.querySelector('.header-menu-btn').onclick = function() {
@@ -428,14 +427,14 @@
                     console.log("Sending email with parameters:", templateParams);
                     
                     // Send the email using EmailJS
-                    emailjs.send('service_0hcl68q', 'template_31tqjn8', templateParams)
+                    emailjs.send('service_0hcl68q', 'template_31tqjn8', templateParams, 'x0pDGPnrMj7xD0fSb')
                         .then(function(response) {
                             console.log('SUCCESS!', response.status, response.text);
                             alert('Thank you for your booking request! I will contact you within 24-48 hours to confirm your booking.');
                             bookingForm.reset();
                         }, function(error) {
                             console.log('FAILED...', error);
-                            alert('There was an error sending your booking request. Please try again or contact me directly. Error: ' + error.text);
+                            alert('There was an error sending your booking request. Please try again or contact me directly. Error: ' + (error?.text || 'Unknown error'));
                         })
                         .finally(function() {
                             // Reset button state
@@ -460,6 +459,7 @@
         }
     </script>
 </body>
+</html>
 </html>
                         errorElement.style.display = 'none';
                         this.style.borderColor = '#ddd';

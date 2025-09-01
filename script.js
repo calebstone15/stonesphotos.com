@@ -1,50 +1,61 @@
 console.log("Stones Photos site loaded!");
 
-// Initialize EmailJS
-(function() {
-    emailjs.init({
-        publicKey: "x0pDGPnrMj7xD0fSb",
-    });
-    console.log("EmailJS initialized in script.js");
+// Robust, idempotent EmailJS init
+(function initEmailJS() {
+	if (!window.__EMAILJS_INITIALIZED__) {
+		if (window.emailjs && typeof window.emailjs.init === 'function') {
+			try {
+				// Use string signature for widest compatibility
+				emailjs.init("x0pDGPnrMj7xD0fSb");
+				window.__EMAILJS_INITIALIZED__ = true;
+				console.log("EmailJS initialized in script.js");
+			} catch (e) {
+				console.error("EmailJS init failed:", e);
+			}
+		} else {
+			console.error("EmailJS SDK not loaded before init.");
+		}
+	}
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contact-form');
-    const formMessage = document.getElementById('form-message');
+	const form = document.getElementById('contact-form');
+	const formMessage = document.getElementById('form-message');
 
-    if (form) {
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
+	if (form) {
+		form.addEventListener('submit', function(event) {
+			event.preventDefault();
 
-            // Disable button to prevent multiple submissions
-            const submitBtn = form.querySelector('button[type="submit"]');
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
+			// Disable button to prevent multiple submissions
+			const submitBtn = form.querySelector('button[type="submit"]');
+			submitBtn.disabled = true;
+			submitBtn.textContent = 'Sending...';
 
-            const formData = {
-                name: document.getElementById('name').value.trim(),
-                email: document.getElementById('email').value.trim(),
-                phone: document.getElementById('phone').value.trim(),
-                interest: document.getElementById('interest').value,
-                message: document.getElementById('message').value.trim()
-            };
+			const formData = {
+				name: document.getElementById('name').value.trim(),
+				email: document.getElementById('email').value.trim(),
+				phone: document.getElementById('phone').value.trim(),
+				interest: document.getElementById('interest').value,
+				message: document.getElementById('message').value.trim()
+			};
 
-            emailjs.send("service_0hcl68q", "template_3codtcb", formData)
-                .then(function(response) {
-                    formMessage.style.display = 'block';
-                    formMessage.style.color = '#2193b0';
-                    formMessage.textContent = 'Message sent successfully! I’ll get back to you soon.';
-                    form.reset();
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Send Message';
-                }, function(error) {
-                    formMessage.style.display = 'block';
-                    formMessage.style.color = '#d32f2f';
-                    formMessage.textContent = 'Failed to send message. Please try again or contact me directly.';
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Send Message';
-                    console.error('EmailJS error:', error);
-                });
-        });
-    }
+			// Pass public key as 4th arg as a fallback in case init wasn't effective
+			emailjs.send("service_0hcl68q", "template_3codtcb", formData, "x0pDGPnrMj7xD0fSb")
+				.then(function(response) {
+					formMessage.style.display = 'block';
+					formMessage.style.color = '#2193b0';
+					formMessage.textContent = 'Message sent successfully! I’ll get back to you soon.';
+					form.reset();
+					submitBtn.disabled = false;
+					submitBtn.textContent = 'Send Message';
+				}, function(error) {
+					formMessage.style.display = 'block';
+					formMessage.style.color = '#d32f2f';
+					formMessage.textContent = 'Failed to send message. Please try again or contact me directly.';
+					submitBtn.disabled = false;
+					submitBtn.textContent = 'Send Message';
+					console.error('EmailJS error:', error);
+				});
+		});
+	}
 });
