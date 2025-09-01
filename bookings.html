@@ -8,8 +8,9 @@
     <link rel="icon" type="image/x-icon" href="Websitelogo.ico">
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- Add EmailJS library -->
+    <!-- EmailJS SDK first -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Initialize + contact form handler lives in script.js -->
     <script type="text/javascript" src="script.js"></script>
     <style>
         body, h1, h2, p, .about-photo, footer {
@@ -310,17 +311,7 @@
         <p>&copy; 2025 Stones Photos</p>
     </footer>
     
-    <script src="script.js"></script>
     <script>
-        // Initialize EmailJS with debug mode enabled
-        (function() {
-            emailjs.init({
-                publicKey: "x0pDGPnrMj7xD0fSb",
-                debug: true // Enable debug mode to see detailed logs in the console
-            });
-            console.log("EmailJS initialized");
-        })();
-        
         // Mobile menu toggle
         document.querySelector('.header-menu-btn').onclick = function() {
             document.querySelector('.header-nav').classList.toggle('show');
@@ -461,6 +452,15 @@
                     const errorId = this.id + 'Error';
                     const errorElement = document.getElementById(errorId);
                     if (errorElement) {
+                        errorElement.style.display = 'none';
+                        this.style.borderColor = '#ddd';
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
                         errorElement.style.display = 'none';
                         this.style.borderColor = '#ddd';
                     }
