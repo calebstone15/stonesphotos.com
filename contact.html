@@ -6,15 +6,7 @@
     <title>Contact - Caleb Stone Photography</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="Websitelogo.ico">
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init({
-                publicKey: "x0pDGPnrMj7xD0fSb"
-            });
-            console.log("EmailJS initialized in contact.html");
-        })();
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body, h1, h2, p, .about-photo, footer {
@@ -274,13 +266,24 @@
             };
         });
         
-        // Form validation
+        // Form validation - this can remain here but the EmailJS send part is now in script.js
         const contactForm = document.getElementById('contact-form');
         
         if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
+            // Add validation to the form before it gets submitted to EmailJS
+            contactForm.addEventListener('input', function(e) {
+                const input = e.target;
+                const errorId = input.id + 'Error';
+                const errorElement = document.getElementById(errorId);
                 
+                if (errorElement) {
+                    errorElement.style.display = 'none';
+                    input.style.borderColor = '#ddd';
+                }
+            });
+            
+            // Pre-submission validation
+            contactForm.addEventListener('submit', function(e) {
                 let isValid = true;
                 
                 // Name validation
@@ -289,9 +292,6 @@
                     document.getElementById('nameError').style.display = 'block';
                     name.style.borderColor = '#e74c3c';
                     isValid = false;
-                } else {
-                    document.getElementById('nameError').style.display = 'none';
-                    name.style.borderColor = '#ddd';
                 }
                 
                 // Email validation
@@ -301,9 +301,6 @@
                     document.getElementById('emailError').style.display = 'block';
                     email.style.borderColor = '#e74c3c';
                     isValid = false;
-                } else {
-                    document.getElementById('emailError').style.display = 'none';
-                    email.style.borderColor = '#ddd';
                 }
                 
                 // Phone validation (optional)
@@ -314,9 +311,6 @@
                         document.getElementById('phoneError').style.display = 'block';
                         phone.style.borderColor = '#e74c3c';
                         isValid = false;
-                    } else {
-                        document.getElementById('phoneError').style.display = 'none';
-                        phone.style.borderColor = '#ddd';
                     }
                 }
                 
@@ -326,9 +320,6 @@
                     document.getElementById('interestError').style.display = 'block';
                     interest.style.borderColor = '#e74c3c';
                     isValid = false;
-                } else {
-                    document.getElementById('interestError').style.display = 'none';
-                    interest.style.borderColor = '#ddd';
                 }
                 
                 // Message validation
@@ -337,57 +328,12 @@
                     document.getElementById('messageError').style.display = 'block';
                     message.style.borderColor = '#e74c3c';
                     isValid = false;
-                } else {
-                    document.getElementById('messageError').style.display = 'none';
-                    message.style.borderColor = '#ddd';
                 }
                 
-                // If all validations pass
-                if (isValid) {
-                    // Disable button to prevent multiple submissions
-                    const submitBtn = contactForm.querySelector('button[type="submit"]');
-                    submitBtn.disabled = true;
-                    submitBtn.textContent = 'Sending...';
-                    
-                    const formData = {
-                        name: document.getElementById('name').value.trim(),
-                        email: document.getElementById('email').value.trim(),
-                        phone: document.getElementById('phone').value.trim(),
-                        interest: document.getElementById('interest').value,
-                        message: document.getElementById('message').value.trim()
-                    };
-                    
-                    // Send the form data using EmailJS
-                    emailjs.send("service_0hcl68q", "template_3codtcb", formData)
-                        .then(function(response) {
-                            document.getElementById('form-message').style.display = 'block';
-                            document.getElementById('form-message').style.color = '#2193b0';
-                            document.getElementById('form-message').textContent = 'Message sent successfully! I'll get back to you soon.';
-                            contactForm.reset();
-                            submitBtn.disabled = false;
-                            submitBtn.textContent = 'Send Message';
-                        }, function(error) {
-                            document.getElementById('form-message').style.display = 'block';
-                            document.getElementById('form-message').style.color = '#d32f2f';
-                            document.getElementById('form-message').textContent = 'Failed to send message. Please try again or contact me directly.';
-                            submitBtn.disabled = false;
-                            submitBtn.textContent = 'Send Message';
-                            console.error('EmailJS error:', error);
-                        });
+                // If not valid, prevent the default handler from running
+                if (!isValid) {
+                    e.stopImmediatePropagation();
                 }
-            });
-            
-            // Clear validation errors when user starts typing
-            const inputs = contactForm.querySelectorAll('input, textarea, select');
-            inputs.forEach(input => {
-                input.addEventListener('input', function() {
-                    const errorId = this.id + 'Error';
-                    const errorElement = document.getElementById(errorId);
-                    if (errorElement) {
-                        errorElement.style.display = 'none';
-                        this.style.borderColor = '#ddd';
-                    }
-                });
             });
         }
     </script>

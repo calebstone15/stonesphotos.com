@@ -312,15 +312,6 @@
     
     <script src="script.js"></script>
     <script>
-        // Initialize EmailJS with debug mode enabled
-        (function() {
-            emailjs.init({
-                publicKey: "x0pDGPnrMj7xD0fSb",
-                debug: true // Enable debug mode to see detailed logs in the console
-            });
-            console.log("EmailJS initialized");
-        })();
-        
         // Mobile menu toggle
         document.querySelector('.header-menu-btn').onclick = function() {
             document.querySelector('.header-nav').classList.toggle('show');
@@ -339,9 +330,22 @@
         const bookingForm = document.getElementById('booking-form');
         
         if (bookingForm) {
+            // Clear validation errors when user starts typing
+            const inputs = bookingForm.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    const errorId = this.id + 'Error';
+                    const errorElement = document.getElementById(errorId);
+                    if (errorElement) {
+                        errorElement.style.display = 'none';
+                        this.style.borderColor = '#ddd';
+                    }
+                });
+            });
+            
+            // Pre-submission validation (before EmailJS send)
             bookingForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                console.log("Form submitted, running validation");
+                console.log("Booking form submitted, running validation");
                 
                 let isValid = true;
                 
@@ -351,9 +355,6 @@
                     document.getElementById('nameError').style.display = 'block';
                     name.style.borderColor = '#e74c3c';
                     isValid = false;
-                } else {
-                    document.getElementById('nameError').style.display = 'none';
-                    name.style.borderColor = '#ddd';
                 }
                 
                 // Email validation
@@ -363,9 +364,6 @@
                     document.getElementById('emailError').style.display = 'block';
                     email.style.borderColor = '#e74c3c';
                     isValid = false;
-                } else {
-                    document.getElementById('emailError').style.display = 'none';
-                    email.style.borderColor = '#ddd';
                 }
                 
                 // Phone validation
@@ -375,9 +373,6 @@
                     document.getElementById('phoneError').style.display = 'block';
                     phone.style.borderColor = '#e74c3c';
                     isValid = false;
-                } else {
-                    document.getElementById('phoneError').style.display = 'none';
-                    phone.style.borderColor = '#ddd';
                 }
                 
                 // Shoot type validation
@@ -386,9 +381,6 @@
                     document.getElementById('shootTypeError').style.display = 'block';
                     shootType.style.borderColor = '#e74c3c';
                     isValid = false;
-                } else {
-                    document.getElementById('shootTypeError').style.display = 'none';
-                    shootType.style.borderColor = '#ddd';
                 }
                 
                 // Date validation
@@ -397,9 +389,6 @@
                     document.getElementById('preferredDateError').style.display = 'block';
                     preferredDate.style.borderColor = '#e74c3c';
                     isValid = false;
-                } else {
-                    document.getElementById('preferredDateError').style.display = 'none';
-                    preferredDate.style.borderColor = '#ddd';
                 }
                 
                 // Location validation
@@ -408,6 +397,17 @@
                     document.getElementById('locationError').style.display = 'block';
                     location.style.borderColor = '#e74c3c';
                     isValid = false;
+                }
+                
+                // If not valid, prevent the default handler in script.js from running
+                if (!isValid) {
+                    e.stopImmediatePropagation();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
                 } else {
                     document.getElementById('locationError').style.display = 'none';
                     location.style.borderColor = '#ddd';
