@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Portfolio - Caleb Stone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="Websitelogo.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <h1 class="header-title">Caleb Stone</h1>
+        </div>
+        <button class="header-menu-btn" aria-label="Menu">Menu</button>
+        <nav class="header-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="galleries.html">Galleries</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="bookings.html">Bookings</a>
+            <a href="contact.html">Contact</a>
+            <a href="portfolio.html">Career Portfolio</a>
+        </nav>
+    </header>
+
+    <main class="portfolio-section">
+
+        <!-- Academic Achievements Section -->
+        <section class="academic-section">
+            <h2 class="academic-title">Academic & Professional Highlights</h2>
+            <div class="academic-content">
+                <div class="academic-card">
+                    <h3>Education</h3>
+                    <p><strong>Embry-Riddle Aeronautical University, Daytona Beach</strong><br>Bachelor of Science in
+                        Space Operations<br>2022 - 2026<br> Master of Science in Systems Engineering<br>2026 - 2028</p>
+                </div>
+                <div class="academic-card">
+                    <h3>Experience</h3>
+                    <p><strong>Lead Photographer</strong><br>Studio Name<br>Published in X Magazine</p>
+                </div>
+                <div class="academic-card">
+                    <h3>Skills</h3>
+                    <p>Adobe Creative Suite<br>Studio Lighting<br>Digital & Film Photography</p>
+                </div>
+            </div>
+        </section>
+
+        <h1 class="portfolio-title">Projects</h1>
+        <div class="portfolio-grid">
+            <!-- Project 1 -->
+            <a href="Portfolio Projects/project1.html" class="portfolio-item">
+                <img src="/Photos/portfolio/project1.png" alt="Project 1">
+                <div class="portfolio-overlay">
+                    <h3 class="project-title">Project One</h3>
+                </div>
+            </a>
+            <!-- Project 2 -->
+            <a href="Portfolio Projects/project2.html" class="portfolio-item">
+                <img src="/Photos/portfolio/project2.png" alt="Project 2">
+                <div class="portfolio-overlay">
+                    <h3 class="project-title">Project Two</h3>
+                </div>
+            </a>
+            <!-- Project 3 -->
+            <a href="Portfolio Projects/project3.html" class="portfolio-item">
+                <img src="/Photos/portfolio/project3.png" alt="Project 3">
+                <div class="portfolio-overlay">
+                    <h3 class="project-title">Project Three</h3>
+                </div>
+            </a>
+            <!-- Project 4 -->
+            <a href="Portfolio Projects/project4.html" class="portfolio-item">
+                <img src="/Photos/portfolio/project4.png" alt="Project 4">
+                <div class="portfolio-overlay">
+                    <h3 class="project-title">Project Four</h3>
+                </div>
+            </a>
+            <!-- Project 5 -->
+            <a href="Portfolio Projects/project5.html" class="portfolio-item">
+                <img src="/Photos/portfolio/project5.png" alt="Project 5">
+                <div class="portfolio-overlay">
+                    <h3 class="project-title">Project Five</h3>
+                </div>
+            </a>
+            <!-- Project 6 -->
+            <a href="Portfolio Projects/project6.html" class="portfolio-item">
+                <img src="/Photos/portfolio/project6.png" alt="Project 6">
+                <div class="portfolio-overlay">
+                    <h3 class="project-title">Project Six</h3>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Stones Photos</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.header-menu-btn').onclick = function () {
+            document.querySelector('.header-nav').classList.toggle('show');
+        };
+        // Optional: close menu when clicking a link (on mobile)
+        document.querySelectorAll('.header-nav a').forEach(link => {
+            link.onclick = () => {
+                if (window.innerWidth <= 1350) {
+                    document.querySelector('.header-nav').classList.remove('show');
+                }
+            };
+        });
+    </script>
+</body>
+
+</html>

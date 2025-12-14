@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Six - Caleb Stone</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/x-icon" href="../Websitelogo.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <h1 class="header-title">Caleb Stone</h1>
+        </div>
+        <button class="header-menu-btn" aria-label="Menu">Menu</button>
+        <nav class="header-nav">
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="../galleries.html">Galleries</a>
+            <a href="../pricing.html">Pricing</a>
+            <a href="../bookings.html">Bookings</a>
+            <a href="../contact.html">Contact</a>
+            <a href="../portfolio.html">Career Portfolio</a>
+        </nav>
+    </header>
+
+    <main style="text-align: center; padding: 60px 20px;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem; color: #23395d;">Project Six</h1>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 20px auto; color: #4e5a6d;">
+            This is a placeholder for Project Six. Adding content about this specific project here soon.
+        </p>
+        <div style="margin: 40px 0;">
+            <img src="/Photos/portfolio/project6.png" alt="Project Six Detail"
+                style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        </div>
+        <a href="../portfolio.html" class="back-btn">&larr; Back to Portfolio</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Stones Photos</p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        document.querySelector('.header-menu-btn').onclick = function () {
+            document.querySelector('.header-nav').classList.toggle('show');
+        };
+        document.querySelectorAll('.header-nav a').forEach(link => {
+            link.onclick = () => {
+                if (window.innerWidth <= 700) {
+                    document.querySelector('.header-nav').classList.remove('show');
+                }
+            };
+        });
+    </script>
+</body>
+
+</html>

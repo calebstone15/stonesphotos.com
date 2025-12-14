@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,13 @@
     <link rel="icon" type="image/x-icon" href="Websitelogo.ico">
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="header-left">
             <h1 class="header-title">Caleb Stone</h1>
         </div>
-        <button class="header-menu-btn" aria-label="Menu">&#9776;</button>
+        <button class="header-menu-btn" aria-label="Menu">Menu</button>
         <nav class="header-nav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -21,6 +23,7 @@
             <a href="pricing.html">Pricing</a>
             <a href="bookings.html">Bookings</a>
             <a href="contact.html">Contact</a>
+            <a href="portfolio.html">Career Portfolio</a>
         </nav>
     </header>
     <section class="about-me">
@@ -29,27 +32,34 @@
             <img src="/Photos/aboutmephoto.webp" />
         </div>
         <p>
-            Hello, I'm Caleb and have been a photographer for almost a decade. I do many different types of photography from engagements to rocket launches. My goal is to give you a non traditional photo experience where you get the highest quality and lowest price photos. For me, this is a fun side gig that gets me away from my typical engineering mindset where I can relax and enjoy the art of photography. <br />
+            Hello, I'm Caleb and have been a photographer for almost a decade. I do many different types of photography
+            from engagements to rocket launches. My goal is to give you a non traditional photo experience where you get
+            the highest quality and lowest price photos. For me, this is a fun side gig that gets me away from my
+            typical engineering mindset where I can relax and enjoy the art of photography. <br />
 
-            <br /> I am located both in Daytona Beach, FL and Louisville, KY because I am still in college. I am willing to travel anywhere in the US for a shoot, just ask for a quote! However it is financially smarter to ask when I am going to be at the location closer to you in order to decrease the travel cost in your quote. <br />
+            <br /> I am located both in Daytona Beach, FL and Louisville, KY because I am still in college. I am willing
+            to travel anywhere in the US for a shoot, just ask for a quote! However it is financially smarter to ask
+            when I am going to be at the location closer to you in order to decrease the travel cost in your quote.
+            <br />
         </p>
     </section>
     <footer>
         <!-- You can add footer content here -->
     </footer>
     <script>
-    // Mobile menu toggle
-    document.querySelector('.header-menu-btn').onclick = function() {
-      document.querySelector('.header-nav').classList.toggle('show');
-    };
-    // Optional: close menu when clicking a link (on mobile)
-    document.querySelectorAll('.header-nav a').forEach(link => {
-      link.onclick = () => {
-        if(window.innerWidth <= 700) {
-          document.querySelector('.header-nav').classList.remove('show');
-        }
-      };
-    });
+        // Mobile menu toggle
+        document.querySelector('.header-menu-btn').onclick = function () {
+            document.querySelector('.header-nav').classList.toggle('show');
+        };
+        // Optional: close menu when clicking a link (on mobile)
+        document.querySelectorAll('.header-nav a').forEach(link => {
+            link.onclick = () => {
+                if (window.innerWidth <= 700) {
+                    document.querySelector('.header-nav').classList.remove('show');
+                }
+            };
+        });
     </script>
 </body>
+
 </html>

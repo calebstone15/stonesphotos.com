@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,54 +8,60 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="Websitelogo.ico">
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
-    
+
     <!-- EmailJS SDK first -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- Initialize + contact form handler lives in script.js -->
     <script type="text/javascript" src="script.js"></script>
     <style>
-        body, h1, h2, p, .about-photo, footer {
+        body,
+        h1,
+        h2,
+        p,
+        .about-photo,
+        footer {
             font-family: 'Old Standard TT', serif !important;
         }
-        
+
         .bookings-container {
             max-width: 1100px;
             margin: 40px auto;
             padding: 0 20px;
         }
-        
+
         .bookings-title {
             text-align: center;
             margin-bottom: 40px;
             color: #23395d;
         }
-        
+
         .bookings-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
-        
-        .booking-form, .booking-info {
+
+        .booking-form,
+        .booking-info {
             background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 4px 16px rgba(33, 147, 176, 0.10);
         }
-        
+
         .form-group {
             margin-bottom: 20px;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
             color: #23395d;
         }
-        
-        .form-group input, 
-        .form-group textarea, 
+
+        .form-group input,
+        .form-group textarea,
         .form-group select {
             width: 100%;
             padding: 12px;
@@ -65,33 +72,33 @@
             background: #fff;
             transition: border-color 0.3s, box-shadow 0.3s;
         }
-        
-        .form-group input:focus, 
-        .form-group textarea:focus, 
+
+        .form-group input:focus,
+        .form-group textarea:focus,
         .form-group select:focus {
             border-color: #2193b0;
             outline: none;
             box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.2);
         }
-        
+
         .form-group input[type="date"] {
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
         }
-        
+
         .form-group textarea {
             height: 150px;
             resize: vertical;
         }
-        
+
         .form-error {
             color: #e74c3c;
             font-size: 0.85rem;
             margin-top: 5px;
             display: none;
         }
-        
+
         .submit-btn {
             display: block;
             width: 100%;
@@ -107,35 +114,35 @@
             transition: transform 0.2s, box-shadow 0.2s;
             font-family: 'Old Standard TT', serif;
         }
-        
+
         .submit-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(24, 29, 47, 0.3);
         }
-        
+
         .booking-info h2 {
             color: #23395d;
             margin-top: 0;
         }
-        
+
         .booking-info p {
             line-height: 1.7;
             color: #4e5a6d;
         }
-        
+
         .booking-steps {
             list-style: none;
             padding: 0;
             margin-top: 30px;
         }
-        
+
         .booking-steps li {
             display: flex;
             align-items: flex-start;
             margin-bottom: 20px;
             color: #4e5a6d;
         }
-        
+
         .booking-steps .step-number {
             background: #23395d;
             color: white;
@@ -148,23 +155,23 @@
             margin-right: 15px;
             flex-shrink: 0;
         }
-        
+
         .booking-steps .step-content {
             flex: 1;
         }
-        
+
         .booking-steps h3 {
             margin: 0 0 8px 0;
             color: #23395d;
         }
-        
+
         .form-group input::placeholder,
         .form-group textarea::placeholder,
         .form-group select::placeholder {
             font-family: 'Old Standard TT', serif;
             color: #999;
         }
-        
+
         @media (max-width: 768px) {
             .bookings-wrapper {
                 grid-template-columns: 1fr;
@@ -172,13 +179,14 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header from other pages -->
     <header>
         <div class="header-left">
             <h1 class="header-title">Caleb Stone</h1>
         </div>
-        <button class="header-menu-btn" aria-label="Menu">&#9776;</button>
+        <button class="header-menu-btn" aria-label="Menu">Menu</button>
         <nav class="header-nav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -186,12 +194,13 @@
             <a href="pricing.html">Pricing</a>
             <a href="bookings.html">Bookings</a>
             <a href="contact.html">Contact</a>
+            <a href="portfolio.html">Career Portfolio</a>
         </nav>
     </header>
 
     <div class="bookings-container">
         <h1 class="bookings-title">Book Your Photoshoot</h1>
-        
+
         <div class="bookings-wrapper">
             <div class="booking-form">
                 <h2>Request a Booking</h2>
@@ -201,19 +210,20 @@
                         <input type="text" id="name" name="name" placeholder="Please enter your full name" required>
                         <div id="nameError" class="form-error">Please enter your name</div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="Your email address for confirmation" required>
+                        <input type="email" id="email" name="email" placeholder="Your email address for confirmation"
+                            required>
                         <div id="emailError" class="form-error">Please enter a valid email address</div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
                         <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
                         <div id="phoneError" class="form-error">Please enter a valid phone number</div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="shoot-type">Type of Photoshoot</label>
                         <select id="shoot-type" name="shoot-type" required>
@@ -227,37 +237,41 @@
                         </select>
                         <div id="shootTypeError" class="form-error">Please select a type of photoshoot</div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="preferred-date">Preferred Date</label>
                         <input type="date" id="preferred-date" name="preferred-date" required>
                         <div id="preferredDateError" class="form-error">Please select a preferred date</div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="alternative-date">Alternative Date (Optional)</label>
                         <input type="date" id="alternative-date" name="alternative-date">
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="location">Location</label>
-                        <input type="text" id="location" name="location" placeholder="Where would you like the photoshoot to take place?" required>
+                        <input type="text" id="location" name="location"
+                            placeholder="Where would you like the photoshoot to take place?" required>
                         <div id="locationError" class="form-error">Please enter a location</div>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="notes">Additional Notes</label>
-                        <textarea id="notes" name="notes" placeholder="Please provide any additional details about your photoshoot" style="font-family: 'Old Standard TT', serif;"></textarea>
+                        <textarea id="notes" name="notes"
+                            placeholder="Please provide any additional details about your photoshoot"
+                            style="font-family: 'Old Standard TT', serif;"></textarea>
                     </div>
-                    
+
                     <button type="submit" class="submit-btn">Submit Booking Request</button>
                 </form>
             </div>
-            
+
             <div class="booking-info">
                 <h2>Booking Process</h2>
-                <p>Thank you for your interest in booking a photoshoot with me. Here's how the booking process works:</p>
-                
+                <p>Thank you for your interest in booking a photoshoot with me. Here's how the booking process works:
+                </p>
+
                 <ul class="booking-steps">
                     <li>
                         <span class="step-number">1</span>
@@ -270,37 +284,44 @@
                         <span class="step-number">2</span>
                         <div class="step-content">
                             <h3>Confirmation</h3>
-                            <p>I'll contact you within 24-48 hours to confirm availability and discuss the details of your shoot.</p>
+                            <p>I'll contact you within 24-48 hours to confirm availability and discuss the details of
+                                your shoot.</p>
                         </div>
                     </li>
                     <li>
                         <span class="step-number">3</span>
                         <div class="step-content">
                             <h3>Deposit</h3>
-                            <p>A 25% deposit plus any applicable travel fees is required to secure your booking date. The remaining balance is due on the day of the shoot.</p>
+                            <p>A 25% deposit plus any applicable travel fees is required to secure your booking date.
+                                The remaining balance is due on the day of the shoot.</p>
                         </div>
                     </li>
                     <li>
                         <span class="step-number">4</span>
                         <div class="step-content">
                             <h3>Photoshoot Day</h3>
-                            <p>I'll meet you at the agreed location. We'll take as many photos as needed to capture your perfect moments.</p>
+                            <p>I'll meet you at the agreed location. We'll take as many photos as needed to capture your
+                                perfect moments.</p>
                         </div>
                     </li>
                     <li>
                         <span class="step-number">5</span>
                         <div class="step-content">
                             <h3>Delivery</h3>
-                            <p>You'll receive all photos typically within 2-3 days and up to a week. If you would like any additional edits let me know after I send you the photos and I will work to edit those as fast as possible.</p>
+                            <p>You'll receive all photos typically within 2-3 days and up to a week. If you would like
+                                any additional edits let me know after I send you the photos and I will work to edit
+                                those as fast as possible.</p>
                         </div>
                     </li>
                 </ul>
-                
+
                 <p style="margin-top: 30px;">
                     <strong>Need to modify or cancel your booking?</strong><br>
-                    Please contact me at least 48 hours in advance at 
-                    <a href="mailto:stonephotography15@gmail.com" style="color: #2193b0; text-decoration: none;">stonephotography15@gmail.com</a> 
-                    or call <a href="tel:+15027779035" style="color: #2193b0; text-decoration: none;">+1 (502) 777-9035</a>.
+                    Please contact me at least 48 hours in advance at
+                    <a href="mailto:stonephotography15@gmail.com"
+                        style="color: #2193b0; text-decoration: none;">stonephotography15@gmail.com</a>
+                    or call <a href="tel:+15027779035" style="color: #2193b0; text-decoration: none;">+1 (502)
+                        777-9035</a>.
                 </p>
             </div>
         </div>
@@ -312,10 +333,10 @@
     </footer>
     <script>
         // Mobile menu toggle
-        document.querySelector('.header-menu-btn').onclick = function() {
+        document.querySelector('.header-menu-btn').onclick = function () {
             document.querySelector('.header-nav').classList.toggle('show');
         };
-        
+
         // Close mobile menu on link click
         document.querySelectorAll('.header-nav a').forEach(link => {
             link.onclick = () => {
@@ -324,17 +345,17 @@
                 }
             };
         });
-        
+
         // Form validation
         const bookingForm = document.getElementById('booking-form');
-        
+
         if (bookingForm) {
-            bookingForm.addEventListener('submit', function(e) {
+            bookingForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 console.log("Form submitted, running validation");
-                
+
                 let isValid = true;
-                
+
                 // Name validation
                 const name = document.getElementById('name');
                 if (name.value.trim() === '') {
@@ -345,7 +366,7 @@
                     document.getElementById('nameError').style.display = 'none';
                     name.style.borderColor = '#ddd';
                 }
-                
+
                 // Email validation
                 const email = document.getElementById('email');
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -357,7 +378,7 @@
                     document.getElementById('emailError').style.display = 'none';
                     email.style.borderColor = '#ddd';
                 }
-                
+
                 // Phone validation
                 const phone = document.getElementById('phone');
                 const phoneRegex = /^[\d\s\-\(\)]+$/;
@@ -369,7 +390,7 @@
                     document.getElementById('phoneError').style.display = 'none';
                     phone.style.borderColor = '#ddd';
                 }
-                
+
                 // Shoot type validation
                 const shootType = document.getElementById('shoot-type');
                 if (shootType.value === '') {
@@ -380,7 +401,7 @@
                     document.getElementById('shootTypeError').style.display = 'none';
                     shootType.style.borderColor = '#ddd';
                 }
-                
+
                 // Date validation
                 const preferredDate = document.getElementById('preferred-date');
                 if (preferredDate.value === '') {
@@ -391,7 +412,7 @@
                     document.getElementById('preferredDateError').style.display = 'none';
                     preferredDate.style.borderColor = '#ddd';
                 }
-                
+
                 // Location validation
                 const location = document.getElementById('location');
                 if (location.value.trim() === '') {
@@ -402,7 +423,7 @@
                     document.getElementById('locationError').style.display = 'none';
                     location.style.borderColor = '#ddd';
                 }
-                
+
                 // If all validations pass
                 if (isValid) {
                     console.log("Validation passed, preparing to send email");
@@ -411,7 +432,7 @@
                     const originalBtnText = submitBtn.textContent;
                     submitBtn.textContent = "Sending...";
                     submitBtn.disabled = true;
-                    
+
                     // Prepare template parameters
                     const templateParams = {
                         name: document.getElementById('name').value,
@@ -423,31 +444,31 @@
                         location: document.getElementById('location').value,
                         notes: document.getElementById('notes').value || "No additional notes"
                     };
-                    
+
                     console.log("Sending email with parameters:", templateParams);
-                    
+
                     // Send the email using EmailJS
                     emailjs.send('service_0hcl68q', 'template_31tqjn8', templateParams, 'x0pDGPnrMj7xD0fSb')
-                        .then(function(response) {
+                        .then(function (response) {
                             console.log('SUCCESS!', response.status, response.text);
                             alert('Thank you for your booking request! I will contact you within 24-48 hours to confirm your booking.');
                             bookingForm.reset();
-                        }, function(error) {
+                        }, function (error) {
                             console.log('FAILED...', error);
                             alert('There was an error sending your booking request. Please try again or contact me directly. Error: ' + (error?.text || 'Unknown error'));
                         })
-                        .finally(function() {
+                        .finally(function () {
                             // Reset button state
                             submitBtn.textContent = originalBtnText;
                             submitBtn.disabled = false;
                         });
                 }
             });
-            
+
             // Clear validation errors when user starts typing
             const inputs = bookingForm.querySelectorAll('input, textarea, select');
             inputs.forEach(input => {
-                input.addEventListener('input', function() {
+                input.addEventListener('input', function () {
                     const errorId = this.id + 'Error';
                     const errorElement = document.getElementById(errorId);
                     if (errorElement) {
@@ -459,4 +480,5 @@
         }
     </script>
 </body>
+
 </html>

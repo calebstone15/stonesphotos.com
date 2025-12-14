@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,48 +11,54 @@
     <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body, h1, h2, p, .about-photo, footer {
+        body,
+        h1,
+        h2,
+        p,
+        .about-photo,
+        footer {
             font-family: 'Old Standard TT', serif !important;
         }
-        
+
         .contact-container {
             max-width: 1100px;
             margin: 40px auto;
             padding: 0 20px;
         }
-        
+
         .contact-title {
             text-align: center;
             margin-bottom: 40px;
             color: #23395d;
         }
-        
+
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
-        
-        .contact-form, .contact-info {
+
+        .contact-form,
+        .contact-info {
             background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 4px 16px rgba(33, 147, 176, 0.10);
         }
-        
+
         .form-group {
             margin-bottom: 20px;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
             color: #23395d;
         }
-        
-        .form-group input, 
-        .form-group textarea, 
+
+        .form-group input,
+        .form-group textarea,
         .form-group select {
             width: 100%;
             padding: 12px;
@@ -62,7 +69,7 @@
             background: #fff;
             transition: border-color 0.3s, box-shadow 0.3s;
         }
-        
+
         .form-group input::placeholder,
         .form-group textarea::placeholder,
         .form-group select::placeholder {
@@ -70,27 +77,27 @@
             font-size: 1rem;
             color: #999;
         }
-        
-        .form-group input:focus, 
-        .form-group textarea:focus, 
+
+        .form-group input:focus,
+        .form-group textarea:focus,
         .form-group select:focus {
             border-color: #2193b0;
             outline: none;
             box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.2);
         }
-        
+
         .form-group textarea {
             height: 150px;
             resize: vertical;
         }
-        
+
         .form-error {
             color: #e74c3c;
             font-size: 0.85rem;
             margin-top: 5px;
             display: none;
         }
-        
+
         .submit-btn {
             display: block;
             width: 100%;
@@ -106,51 +113,51 @@
             transition: transform 0.2s, box-shadow 0.2s;
             font-family: 'Old Standard TT', serif;
         }
-        
+
         .submit-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(24, 29, 47, 0.3);
         }
-        
+
         .contact-info h2 {
             color: #23395d;
             margin-top: 0;
         }
-        
+
         .contact-info p {
             line-height: 1.7;
             color: #4e5a6d;
         }
-        
+
         .contact-details {
             list-style: none;
             padding: 0;
             margin-top: 30px;
         }
-        
+
         .contact-details li {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
             color: #23395d;
         }
-        
+
         .contact-details .icon {
             font-size: 1.5rem;
             margin-right: 15px;
             color: #181d2f;
         }
-        
+
         .contact-details a {
             color: #23395d;
             text-decoration: none;
             transition: color 0.2s;
         }
-        
+
         .contact-details a:hover {
             color: #2193b0;
         }
-        
+
         @media (max-width: 768px) {
             .contact-wrapper {
                 grid-template-columns: 1fr;
@@ -158,13 +165,14 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header from index.html -->
     <header>
         <div class="header-left">
             <h1 class="header-title">Caleb Stone</h1>
         </div>
-        <button class="header-menu-btn" aria-label="Menu">&#9776;</button>
+        <button class="header-menu-btn" aria-label="Menu">Menu</button>
         <nav class="header-nav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -172,34 +180,39 @@
             <a href="pricing.html">Pricing</a>
             <a href="bookings.html">Bookings</a>
             <a href="contact.html">Contact</a>
+            <a href="portfolio.html">Career Portfolio</a>
         </nav>
     </header>
 
     <div class="contact-container">
         <h1 class="contact-title">Get In Touch</h1>
-        
+
         <div class="contact-wrapper">
             <div class="contact-form">
                 <h2>Send a Message</h2>
                 <form id="contact-form">
                     <div style="margin-bottom: 20px;">
                         <label for="name">Your Name</label><br>
-                        <input type="text" id="name" name="name" placeholder="Please enter your name" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                        <input type="text" id="name" name="name" placeholder="Please enter your name" required
+                            style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
                         <div id="nameError" class="form-error">Please enter your name</div>
                     </div>
                     <div style="margin-bottom: 20px;">
                         <label for="email">Email Address</label><br>
-                        <input type="email" id="email" name="email" placeholder="Please enter a valid email address" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                        <input type="email" id="email" name="email" placeholder="Please enter a valid email address"
+                            required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
                         <div id="emailError" class="form-error">Please enter a valid email address</div>
                     </div>
                     <div style="margin-bottom: 20px;">
                         <label for="phone">Phone Number (Optional)</label><br>
-                        <input type="tel" id="phone" name="phone" placeholder="Please enter a valid phone number" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                        <input type="tel" id="phone" name="phone" placeholder="Please enter a valid phone number"
+                            style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
                         <div id="phoneError" class="form-error">Please enter a valid phone number</div>
                     </div>
                     <div style="margin-bottom: 20px;">
                         <label for="interest">What are you interested in?</label><br>
-                        <select id="interest" name="interest" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                        <select id="interest" name="interest" required
+                            style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
                             <option value="" disabled selected>Select an option</option>
                             <option value="couples">Couples</option>
                             <option value="Engagement">Engagment</option>
@@ -212,18 +225,24 @@
                     </div>
                     <div style="margin-bottom: 20px;">
                         <label for="message">Your Message</label><br>
-                        <textarea id="message" name="message" placeholder="Feel free to ask me any questions before booking your photoshoot" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; min-height: 100px; font-family: 'Old Standard TT', serif; font-size: 1rem;"></textarea>
+                        <textarea id="message" name="message"
+                            placeholder="Feel free to ask me any questions before booking your photoshoot" required
+                            style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; min-height: 100px; font-family: 'Old Standard TT', serif; font-size: 1rem;"></textarea>
                         <div id="messageError" class="form-error">Please enter your message</div>
                     </div>
-                    <button type="submit" style="padding: 12px 24px; background: #2193b0; color: #fff; border: none; border-radius: 8px; cursor: pointer; transition: background 0.2s;">Send Message</button>
+                    <button type="submit"
+                        style="padding: 12px 24px; background: #2193b0; color: #fff; border: none; border-radius: 8px; cursor: pointer; transition: background 0.2s;">Send
+                        Message</button>
                     <p id="form-message" style="display: none; margin-top: 10px;"></p>
                 </form>
             </div>
-            
+
             <div class="contact-info">
                 <h2>Contact Information</h2>
-                <p>Thank you for your interest in my photography services. If you prefer to contact me directly, feel free to use any of the methods below. I look forward to hearing from you and discussing how we can work together to create beautiful images.</p>
-                
+                <p>Thank you for your interest in my photography services. If you prefer to contact me directly, feel
+                    free to use any of the methods below. I look forward to hearing from you and discussing how we can
+                    work together to create beautiful images.</p>
+
                 <ul class="contact-details">
                     <li>
                         <span class="icon">📧</span>
@@ -250,13 +269,13 @@
     <footer>
         <p>&copy; 2025 Stones Photos</p>
     </footer>
-    
+
     <script>
         // Mobile menu toggle
-        document.querySelector('.header-menu-btn').onclick = function() {
+        document.querySelector('.header-menu-btn').onclick = function () {
             document.querySelector('.header-nav').classList.toggle('show');
         };
-        
+
         // Close mobile menu on link click
         document.querySelectorAll('.header-nav a').forEach(link => {
             link.onclick = () => {
@@ -267,4 +286,5 @@
         });
     </script>
 </body>
+
 </html>
