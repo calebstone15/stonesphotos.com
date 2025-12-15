@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotfire Data Analysis App - ERPL</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.1.2/dist/chartjs-plugin-annotation.min.js"></script>
+
+    <!-- Papa Parse for CSV -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <!-- Navigation -->
+        <nav class="nav-header">
+            <div class="container nav-content">
+                <a href="../index.html">
+                    <img src="../assets/ERPL Logo Downscaled.png" alt="ERPL Logo" class="nav-logo">
+                </a>
+                <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                    <button class="btn btn-secondary" onclick="showInstructions()">
+                        📖 Instructions
+                    </button>
+                    <a href="../index.html" class="nav-home-btn">
+                        <span>🏠</span>
+                        <span>Home</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="container">
+                <!-- Header -->
+                <header style="text-align: center; margin-bottom: var(--spacing-xl);">
+                    <h1 class="launcher-title">Hotfire Data Analysis App</h1>
+                    <p style="color: var(--text-muted);">Developed by Caleb Stone</p>
+                </header>
+
+                <!-- Data Loading Section -->
+                <section class="card fade-in" style="margin-bottom: var(--spacing-lg);">
+                    <div class="flex-between" style="flex-wrap: wrap; gap: var(--spacing-md);">
+                        <!-- File Upload -->
+                        <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                            <div class="file-input-wrapper">
+                                <input type="file" id="csvFileInput" accept=".csv" class="file-input"
+                                    onchange="loadCSV(this)">
+                                <label class="file-input-label">
+                                    <span>📁</span>
+                                    <span>Load CSV</span>
+                                </label>
+                            </div>
+                            <span id="fileNameDisplay" class="file-name">No file loaded</span>
+                        </div>
+
+                        <!-- Sliders -->
+                        <div style="display: flex; gap: var(--spacing-xl); flex-wrap: wrap;">
+                            <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                                <label class="form-label" style="margin: 0;">Downsample:</label>
+                                <input type="range" id="downsampleSlider" class="form-range" min="1" max="100"
+                                    value="10" style="width: 100px;" oninput="updateSliderDisplay('downsample')">
+                                <span id="downsampleValue" class="range-value">10</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                                <label class="form-label" style="margin: 0;">Extra Data %:</label>
+                                <input type="range" id="extraDataSlider" class="form-range" min="0" max="100" value="0"
+                                    step="1" style="width: 100px;" oninput="updateExtraDataSlider()">
+                                <span id="extraDataValue" class="range-value">0.0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Plots Section -->
+                <section class="card fade-in quick-plots-section">
+                    <h2 class="quick-plots-title">Quick Plots</h2>
+
+                    <div class="quick-plots-grid" style="margin-bottom: var(--spacing-md);">
+                        <button class="btn btn-secondary plot-btn" onclick="plotThrust()">
+                            <span>📈</span> Thrust
+                        </button>
+                        <button class="btn btn-secondary plot-btn" onclick="plotChamberPressure()">
+                            <span>📊</span> Chamber Pressure
+                        </button>
+                        <button class="btn btn-secondary plot-btn" onclick="plotOFRatio()">
+                            <span>⚖️</span> O/F Ratio
+                        </button>
+                        <button class="btn btn-secondary plot-btn" onclick="plotFuelWeight()">
+                            <span>⛽</span> Fuel Tank Weight
+                        </button>
+                        <button class="btn btn-secondary plot-btn" onclick="plotOxidizerWeight()">
+                            <span>❄️</span> Oxidizer Tank Weight
+                        </button>
+                    </div>
+
+                    <div class="quick-plots-grid">
+                        <button class="btn btn-secondary plot-btn" onclick="plotExhaustVelocity()">
+                            <span>🚀</span> Exhaust Velocity from Isp
+                        </button>
+                        <button class="btn btn-secondary plot-btn" onclick="plotISP()">
+                            <span>⏱️</span> Specific Impulse
+                        </button>
+                        <button class="btn btn-secondary plot-btn" onclick="plotCStar()">
+                            <span>⭐</span> C* actual
+                        </button>
+                    </div>
+
+                    <div class="quick-plots-grid" style="margin-top: var(--spacing-md);">
+                        <button class="btn btn-secondary plot-btn" onclick="openVenturiModal('fuel')">
+                            <span>⛽</span> Fuel Mdot from Venturi
+                        </button>
+                        <button class="btn btn-secondary plot-btn" onclick="openVenturiModal('ox')">
+                            <span>❄️</span> Ox Mdot from Venturi
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Custom Time Splicing -->
+                <section class="card fade-in" style="margin-top: var(--spacing-lg);">
+                    <div class="flex-between" style="flex-wrap: wrap; gap: var(--spacing-md);">
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="customSpliceCheckbox" class="checkbox-input"
+                                onchange="toggleCustomSplice()">
+                            <label for="customSpliceCheckbox">Custom Time Splicing</label>
+                        </div>
+
+                        <div id="spliceInputs" style="display: none; gap: var(--spacing-md); align-items: center;">
+                            <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                                <label>Start Time (s):</label>
+                                <input type="number" id="startTimeInput" class="form-input" style="width: 100px;"
+                                    step="any">
+                            </div>
+                            <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                                <label>End Time (s):</label>
+                                <input type="number" id="endTimeInput" class="form-input" style="width: 100px;"
+                                    step="any">
+                            </div>
+                            <button class="btn btn-primary" onclick="applySplice()">Apply Splice</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Action Buttons -->
+                <section class="card fade-in" style="margin-top: var(--spacing-lg); text-align: center;">
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: var(--spacing-md);">
+                        <button class="btn btn-secondary btn-large" onclick="openCustomPlot()">
+                            🎨 Custom Plot
+                        </button>
+                        <button class="btn btn-primary btn-large" onclick="generateAllPlots()">
+                            📊 Generate All Plots
+                        </button>
+                        <button class="btn btn-secondary btn-large" onclick="testData()">
+                            🧪 Test Data
+                        </button>
+                    </div>
+
+                    <p
+                        style="margin-top: var(--spacing-lg); color: var(--text-muted); font-size: 0.9rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                        This program uses thrust data to slice other data. Once thrust hits 50% of the target,
+                        that data is then included. If you are getting errors or the data does not look right,
+                        use the Test Data button to ensure you actually hit 50% of your target thrust.
+                    </p>
+                </section>
+
+                <!-- Metrics Display -->
+                <section id="metricsSection" class="card fade-in" style="margin-top: var(--spacing-lg); display: none;">
+                    <h3 style="margin-bottom: var(--spacing-md);">📊 Computed Metrics</h3>
+                    <div id="metricsContainer" class="metrics-container">
+                        <!-- Metrics will be populated here -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Instructions Modal -->
+    <div id="instructionsModal" class="modal-overlay">
+        <div class="modal" style="max-width: 800px;">
+            <div class="modal-header">
+                <h3 class="modal-title">📖 Instructions</h3>
+                <button class="modal-close" onclick="ModalManager.close('instructionsModal')">×</button>
+            </div>
+            <div class="modal-body instructions-content">
+                <h4 style="text-align: center; margin-bottom: var(--spacing-lg);">
+                    Welcome to the Hotfire Data Analysis App!
+                </h4>
+                <p style="text-align: center; color: var(--text-muted); margin-bottom: var(--spacing-xl);">
+                    Follow the instructions to learn how to use the app.
+                </p>
+                <ol>
+                    <li>Load your CSV file containing the test data.</li>
+                    <li>Select the correct columns for each type of data and click confirm.</li>
+                    <li>Use the sliders to adjust the data downsampling and the amount of data to be added before and
+                        after the hotfire.</li>
+                    <li>Click on any of the quick plot functions and enter extra data (if required).</li>
+                    <li>Use the smoothing slider to smooth the data until appropriate.</li>
+                    <li>Click on the save button to save the data as a PNG file.</li>
+                    <li>If you would like to have a plot with more than one type of data, click on the custom plot
+                        button.</li>
+                    <li>You can then plot as many types of data as you want and save the same way as quick plots.</li>
+                    <li>The generate all plots button will generate all of the quick plots at once. Just make sure to
+                        input all required data.</li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="ModalManager.close('instructionsModal')">Got it!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Column Selection Modal -->
+    <div id="columnSelectionModal" class="modal-overlay">
+        <div class="modal" style="max-width: 600px; max-height: 80vh;">
+            <div class="modal-header">
+                <h3 class="modal-title">Select Columns</h3>
+                <button class="modal-close" onclick="ModalManager.close('columnSelectionModal')">×</button>
+            </div>
+            <div class="modal-body" style="max-height: 60vh; overflow-y: auto;">
+                <div class="form-group">
+                    <label class="form-label">Time Column:</label>
+                    <select id="timeColumnSelect" class="form-select"></select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Chamber Pressure Column:</label>
+                    <select id="chamberColumnSelect" class="form-select"></select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Fuel Weight Column (optional):</label>
+                    <select id="fuelColumnSelect" class="form-select"></select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Oxidizer Weight Column (optional):</label>
+                    <select id="oxidizerColumnSelect" class="form-select"></select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Thrust Columns (select all that apply):</label>
+                    <div id="thrustColumnsContainer"
+                        style="max-height: 200px; overflow-y: auto; background: var(--bg-primary); padding: var(--spacing-md); border-radius: var(--radius-md);">
+                        <!-- Thrust column checkboxes will be populated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="ModalManager.close('columnSelectionModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="confirmColumnSelection()">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plot Modal -->
+    <div id="plotModal" class="modal-overlay">
+        <div class="modal" style="width: 95%; max-width: 1400px; height: 90vh;">
+            <div class="modal-header">
+                <h3 class="modal-title" id="plotModalTitle">Plot</h3>
+                <button class="modal-close" onclick="closePlotModal()">×</button>
+            </div>
+            <div class="modal-body" style="height: calc(100% - 140px); display: flex; flex-direction: column;">
+                <div class="chart-controls">
+                    <div style="display: flex; align-items: center; gap: var(--spacing-sm);">
+                        <label>Smoothing:</label>
+                        <input type="range" id="smoothingSlider" class="form-range" min="1" max="100" value="1"
+                            style="width: 150px;" oninput="updateSmoothing()">
+                        <span id="smoothingValue" class="range-value">1</span>
+                    </div>
+                    <div id="avgDisplay" class="chart-info" style="background: transparent; margin: 0; padding: 0;">
+                        <span style="color: var(--text-muted);">Click two points on the chart to calculate
+                            average</span>
+                    </div>
+                    <button class="btn btn-success" onclick="savePlot()">
+                        💾 Save Plot
+                    </button>
+                </div>
+                <div class="chart-container" style="flex: 1; min-height: 0;">
+                    <canvas id="plotCanvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Plot Modal -->
+    <div id="customPlotModal" class="modal-overlay">
+        <div class="modal" style="max-width: 700px; max-height: 90vh;">
+            <div class="modal-header">
+                <h3 class="modal-title">Custom Plot Builder</h3>
+                <button class="modal-close" onclick="ModalManager.close('customPlotModal')">×</button>
+            </div>
+            <div class="modal-body" style="max-height: 70vh; overflow-y: auto;">
+                <!-- Step 1: Column Selection -->
+                <div class="form-group">
+                    <label class="form-label">Select Columns to Plot:</label>
+                    <div id="customPlotColumnsContainer"
+                        style="max-height: 200px; overflow-y: auto; background: var(--bg-primary); padding: var(--spacing-md); border-radius: var(--radius-md);">
+                        <!-- Column checkboxes will be populated here -->
+                    </div>
+                </div>
+
+                <!-- Step 2: Plot Title -->
+                <div class="form-group">
+                    <label class="form-label">Plot Title:</label>
+                    <input type="text" id="customPlotTitle" class="form-input" value="Custom Plot">
+                </div>
+
+                <!-- Step 3: Constant Lines (Optional) -->
+                <div class="form-group">
+                    <label class="form-label">Add Constant Horizontal Lines (Optional):</label>
+                    <div
+                        style="display: flex; gap: var(--spacing-sm); flex-wrap: wrap; margin-bottom: var(--spacing-sm); align-items: center;">
+                        <input type="number" id="constantLineValue" class="form-input" placeholder="Value"
+                            style="width: 100px;" step="any">
+                        <select id="constantLineUnit" class="form-select" style="width: 100px;">
+                            <option value="">No Unit</option>
+                            <option value="lbf">lbf</option>
+                            <option value="psi">psi</option>
+                            <option value="lbs">lbs</option>
+                            <option value="kg">kg</option>
+                            <option value="N">N</option>
+                            <option value="Pa">Pa</option>
+                            <option value="s">s</option>
+                            <option value="m/s">m/s</option>
+                            <option value="ft/s">ft/s</option>
+                        </select>
+                        <input type="text" id="constantLineLabel" class="form-input" placeholder="Label (optional)"
+                            style="flex: 1; min-width: 100px;">
+                        <button type="button" class="btn btn-secondary" onclick="addConstantLine()">+ Add</button>
+                    </div>
+                    <div id="constantLinesList"
+                        style="background: var(--bg-primary); padding: var(--spacing-sm); border-radius: var(--radius-md); min-height: 30px;">
+                        <!-- Added constant lines will appear here -->
+                    </div>
+                </div>
+
+                <!-- Step 4: Display Options -->
+                <div id="displayOptionsContainer" style="display: none;">
+                    <label class="form-label">Display Options:</label>
+                    <div id="displayOptionsContent"
+                        style="background: var(--bg-primary); padding: var(--spacing-md); border-radius: var(--radius-md);">
+                        <!-- Display options will be populated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="ModalManager.close('customPlotModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="generateCustomPlot()">Generate Plot</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Venturi Mdot Modal -->
+    <div id="venturiModal" class="modal-overlay">
+        <div class="modal" style="max-width: 700px; max-height: 90vh;">
+            <div class="modal-header">
+                <h3 class="modal-title" id="venturiModalTitle">Mass Flow Rate from Venturi</h3>
+                <button class="modal-close" onclick="ModalManager.close('venturiModal')">×</button>
+            </div>
+            <div class="modal-body" style="max-height: 70vh; overflow-y: auto;">
+                <!-- Equation Display -->
+                <div
+                    style="background: var(--bg-primary); padding: var(--spacing-md); border-radius: var(--radius-md); margin-bottom: var(--spacing-lg); text-align: center;">
+                    <p style="font-size: 1.2rem; font-style: italic; margin-bottom: var(--spacing-sm);">
+                        ṁ = Cd × Y × A₂ × √( 2ρ(P₁-P₂) / (1 - (A₂/A₁)²) )
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">
+                        Cd=discharge coefficient, Y=expansion factor (1 for liquids), ρ=fluid density, A=areas
+                    </p>
+                </div>
+
+                <!-- Pressure Selection -->
+                <div class="form-group">
+                    <label class="form-label">Pressure Columns (PSI)</label>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
+                        <div>
+                            <label style="font-size: 0.85rem; color: var(--text-muted);">P₁ (Upstream)</label>
+                            <select id="venturiP1Select" class="form-select"></select>
+                        </div>
+                        <div>
+                            <label style="font-size: 0.85rem; color: var(--text-muted);">P₂ (Throat/Downstream)</label>
+                            <select id="venturiP2Select" class="form-select"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venturi Parameters -->
+                <div class="form-group">
+                    <label class="form-label">Venturi Parameters</label>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
+                        <div>
+                            <label style="font-size: 0.85rem; color: var(--text-muted);">A₁ (Upstream Area, in²)</label>
+                            <input type="number" id="venturiA1" class="form-input" value="0.5" step="any">
+                        </div>
+                        <div>
+                            <label style="font-size: 0.85rem; color: var(--text-muted);">A₂ (Throat Area, in²)</label>
+                            <input type="number" id="venturiA2" class="form-input" value="0.25" step="any">
+                        </div>
+                    </div>
+                    <div
+                        style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md); margin-top: var(--spacing-md);">
+                        <div>
+                            <label style="font-size: 0.85rem; color: var(--text-muted);">Cd (Discharge
+                                Coefficient)</label>
+                            <input type="number" id="venturiCd" class="form-input" value="0.98" step="0.01" min="0"
+                                max="1">
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Typically 0.95-0.99</span>
+                        </div>
+                        <div>
+                            <label style="font-size: 0.85rem; color: var(--text-muted);">Y (Expansion Factor)</label>
+                            <input type="number" id="venturiY" class="form-input" value="1.0" step="0.01">
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">1.0 for incompressible</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fluid Density -->
+                <div class="form-group">
+                    <label class="form-label">Fluid Density ρ (kg/m³)</label>
+                    <div style="display: flex; align-items: center; gap: var(--spacing-md); flex-wrap: wrap;">
+                        <input type="number" id="venturiRho" class="form-input" value="1000" step="any"
+                            style="width: 120px;">
+                        <span style="color: var(--text-muted);">Quick Select:</span>
+                        <button type="button" class="btn btn-secondary btn-sm"
+                            onclick="setVenturiDensity(1000)">Water</button>
+                        <button type="button" class="btn btn-secondary btn-sm"
+                            onclick="setVenturiDensity(1141)">LOX</button>
+                        <button type="button" class="btn btn-secondary btn-sm"
+                            onclick="setVenturiDensity(820)">RP-1</button>
+                        <button type="button" class="btn btn-secondary btn-sm"
+                            onclick="setVenturiDensity(1220)">N₂O</button>
+                        <button type="button" class="btn btn-secondary btn-sm"
+                            onclick="setVenturiDensity(789)">Ethanol</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="ModalManager.close('venturiModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="calculateVenturiMdot()">Calculate & Plot</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/utils.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/hotfire-analyzer.js"></script>
+</body>
+
+</html>
