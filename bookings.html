@@ -11,6 +11,8 @@
 
     <!-- EmailJS SDK first -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Config first -->
+    <script type="text/javascript" src="config.js"></script>
     <!-- Initialize + contact form handler lives in script.js -->
     <script type="text/javascript" src="script.js"></script>
     <style>
@@ -448,7 +450,7 @@
                     console.log("Sending email with parameters:", templateParams);
 
                     // Send the email using EmailJS
-                    emailjs.send('service_0hcl68q', 'template_31tqjn8', templateParams, 'x0pDGPnrMj7xD0fSb')
+                    emailjs.send(EmailConfig.SERVICE_ID, EmailConfig.BOOKING_TEMPLATE_ID, templateParams, EmailConfig.PUBLIC_KEY)
                         .then(function (response) {
                             console.log('SUCCESS!', response.status, response.text);
                             alert('Thank you for your booking request! I will contact you within 24-48 hours to confirm your booking.');
