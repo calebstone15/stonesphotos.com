@@ -181,9 +181,6 @@ footer {
   margin-left: 0;
 }
 
-/* Import Old Standard TT font */
-@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@400;700&display=swap');
-
 /* Responsive Design */
 @media (max-width: 900px) {
   .header-nav {
