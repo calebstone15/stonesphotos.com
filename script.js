@@ -60,5 +60,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	if (form) {
 		form.addEventListener('submit', handleFormSubmit);
+
+		// Inline validation logic
+		const inputs = form.querySelectorAll('input, select, textarea');
+		inputs.forEach(input => {
+			input.addEventListener('blur', () => validateField(input));
+			input.addEventListener('input', () => {
+				// Only clear error on input if it was previously invalid
+				const errorId = input.getAttribute('aria-describedby');
+				if (errorId && document.getElementById(errorId).style.display === 'block') {
+					validateField(input);
+				}
+			});
+		});
+
+		function validateField(input) {
+			const errorId = input.getAttribute('aria-describedby');
+			if (!errorId) return;
+
+			const errorEl = document.getElementById(errorId);
+			let isValid = input.checkValidity();
+
+			// Custom validation for required fields that might be empty
+			if (input.hasAttribute('required') && !input.value.trim()) {
+				isValid = false;
+			}
+
+			if (!isValid) {
+				errorEl.style.display = 'block';
+				input.setAttribute('aria-invalid', 'true');
+				input.style.borderColor = '#e74c3c';
+			} else {
+				errorEl.style.display = 'none';
+				input.setAttribute('aria-invalid', 'false');
+				input.style.borderColor = ''; // Restore original color
+			}
+			return isValid;
+		}
 	}
 });

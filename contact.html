@@ -193,25 +193,25 @@
                 <form id="contact-form">
                     <div style="margin-bottom: 20px;">
                         <label for="name">Your Name</label><br>
-                        <input type="text" id="name" name="name" placeholder="Please enter your name" required
+                        <input type="text" id="name" name="name" placeholder="Please enter your name" required aria-describedby="nameError"
                             style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-                        <div id="nameError" class="form-error">Please enter your name</div>
+                        <div id="nameError" class="form-error" role="alert">Please enter your name</div>
                     </div>
                     <div style="margin-bottom: 20px;">
                         <label for="email">Email Address</label><br>
                         <input type="email" id="email" name="email" placeholder="Please enter a valid email address"
-                            required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-                        <div id="emailError" class="form-error">Please enter a valid email address</div>
+                            required aria-describedby="emailError" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                        <div id="emailError" class="form-error" role="alert">Please enter a valid email address</div>
                     </div>
                     <div style="margin-bottom: 20px;">
                         <label for="phone">Phone Number (Optional)</label><br>
-                        <input type="tel" id="phone" name="phone" placeholder="Please enter a valid phone number"
+                        <input type="tel" id="phone" name="phone" placeholder="Please enter a valid phone number" aria-describedby="phoneError"
                             style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
-                        <div id="phoneError" class="form-error">Please enter a valid phone number</div>
+                        <div id="phoneError" class="form-error" role="alert">Please enter a valid phone number</div>
                     </div>
                     <div style="margin-bottom: 20px;">
                         <label for="interest">What are you interested in?</label><br>
-                        <select id="interest" name="interest" required
+                        <select id="interest" name="interest" required aria-describedby="interestError"
                             style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
                             <option value="" disabled selected>Select an option</option>
                             <option value="couples">Couples</option>
@@ -221,14 +221,14 @@
                             <option value="Wedding">Wedding</option>
                             <option value="Other">Other (please specify below)</option>
                         </select>
-                        <div id="interestError" class="form-error">Please select an option</div>
+                        <div id="interestError" class="form-error" role="alert">Please select an option</div>
                     </div>
                     <div style="margin-bottom: 20px;">
                         <label for="message">Your Message</label><br>
                         <textarea id="message" name="message"
-                            placeholder="Feel free to ask me any questions before booking your photoshoot" required
+                            placeholder="Feel free to ask me any questions before booking your photoshoot" required aria-describedby="messageError"
                             style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; min-height: 100px; font-family: 'Old Standard TT', serif; font-size: 1rem;"></textarea>
-                        <div id="messageError" class="form-error">Please enter your message</div>
+                        <div id="messageError" class="form-error" role="alert">Please enter your message</div>
                     </div>
                     <button type="submit"
                         style="padding: 12px 24px; background: #2193b0; color: #fff; border: none; border-radius: 8px; cursor: pointer; transition: background 0.2s;">Send
