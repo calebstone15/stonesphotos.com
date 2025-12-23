@@ -63,16 +63,8 @@ def convert_image_to_webp(input_path, output_path, quality=85, method=6):
     }
 
 
-def select_and_convert_to_webp():
-    """Open a file dialog to select an image and convert it to WebP format."""
-
-    # Create a hidden root window for the file dialog
-    root = tk.Tk()
-    root.withdraw()
-    root.lift()
-    root.attributes('-topmost', True)
-
-    # Supported image formats
+def get_input_path():
+    """Open file dialog to select input image."""
     filetypes = [
         ("Image files", "*.png *.jpg *.jpeg *.gif *.bmp *.tiff *.tif *.webp"),
         ("PNG files", "*.png"),
@@ -83,11 +75,36 @@ def select_and_convert_to_webp():
         ("All files", "*.*")
     ]
 
-    # Open file dialog
-    input_path = filedialog.askopenfilename(
+    return filedialog.askopenfilename(
         title="Select an image to convert to WebP",
         filetypes=filetypes
     )
+
+
+def get_save_path(input_path):
+    """Open file dialog to select save location."""
+    input_file = Path(input_path)
+    output_path = input_file.with_suffix('.webp')
+
+    return filedialog.asksaveasfilename(
+        title="Save WebP file as",
+        defaultextension=".webp",
+        filetypes=[("WebP files", "*.webp")],
+        initialfile=output_path.name,
+        initialdir=input_file.parent
+    )
+
+
+def select_and_convert_to_webp():
+    """Open a file dialog to select an image and convert it to WebP format."""
+
+    # Create a hidden root window for the file dialog
+    root = tk.Tk()
+    root.withdraw()
+    root.lift()
+    root.attributes('-topmost', True)
+
+    input_path = get_input_path()
 
     if not input_path:
         print("No file selected. Exiting.")
@@ -96,18 +113,7 @@ def select_and_convert_to_webp():
 
     print(f"Selected: {input_path}")
 
-    # Generate output path (same location, .webp extension)
-    input_file = Path(input_path)
-    output_path = input_file.with_suffix('.webp')
-
-    # Ask user where to save (defaults to same directory with .webp extension)
-    save_path = filedialog.asksaveasfilename(
-        title="Save WebP file as",
-        defaultextension=".webp",
-        filetypes=[("WebP files", "*.webp")],
-        initialfile=output_path.name,
-        initialdir=input_file.parent
-    )
+    save_path = get_save_path(input_path)
 
     if not save_path:
         print("No save location selected. Exiting.")
