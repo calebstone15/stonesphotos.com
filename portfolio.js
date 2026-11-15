@@ -314,70 +314,11 @@
         '<text x="242" y="42" text-anchor="middle" fill="#fecaca" font-family="monospace" font-size="9">d = sqrt(x2+y2+z2)</text>' +
         '<text x="28" y="30" fill="#d4af37" font-family="monospace" font-size="11" font-weight="700">PYTHON 3D ASTEROID PROXIMITY SIMULATOR</text>' +
         '</svg>'
-    },
-    techrise: {
-      code: 'NASA TECHRISE // TOP 40/600',
-      svg: '<svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NASA TechRise New Shepard microgravity peristaltic pump schematic">' +
-        '<circle cx="180" cy="96" r="36" fill="rgba(56,189,248,0.14)" stroke="#38bdf8" stroke-width="2.2"/>' +
-        '<circle cx="180" cy="70" r="7" fill="#d4af37"/><circle cx="202" cy="109" r="7" fill="#d4af37"/><circle cx="158" cy="109" r="7" fill="#d4af37"/>' +
-        '<path d="M40 96 L144 96 M216 96 L320 96" stroke="#22c55e" stroke-width="2.5"/>' +
-        '<text x="34" y="34" fill="#d4af37" font-family="monospace" font-size="11" font-weight="700">SURFACE CATHETER // BLUE ORIGIN NEW SHEPARD</text>' +
-        '<text x="180" y="164" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="monospace" font-size="10">MICROGRAVITY PERISTALTIC FLUID FILTRATION PUMP</text>' +
-        '</svg>'
-    },
-    pltw: {
-      code: 'PLTW CAPSTONE // FPV RF',
-      svg: '<svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PLTW remote FPV fire suppression actuation schematic">' +
-        '<rect x="34" y="72" width="76" height="44" rx="8" fill="rgba(212,175,55,0.14)" stroke="#d4af37" stroke-width="1.8"/>' +
-        '<rect x="234" y="66" width="90" height="56" rx="8" fill="rgba(34,197,94,0.14)" stroke="#22c55e" stroke-width="1.8"/>' +
-        '<path d="M122 94 Q150 66 178 94 T224 94" fill="none" stroke="#38bdf8" stroke-width="2.2"/>' +
-        '<text x="72" y="98" text-anchor="middle" fill="#fde68a" font-family="monospace" font-size="10">FPV TX</text>' +
-        '<text x="279" y="91" text-anchor="middle" fill="#bbf7d0" font-family="monospace" font-size="10">BETAFLIGHT</text>' +
-        '<text x="279" y="106" text-anchor="middle" fill="#bbf7d0" font-family="monospace" font-size="9">PIPE VALVE</text>' +
-        '<text x="34" y="36" fill="#d4af37" font-family="monospace" font-size="11" font-weight="700">REMOTE FIRE SUPPRESSION ACTUATOR</text>' +
-        '<text x="180" y="158" text-anchor="middle" fill="rgba(255,255,255,0.68)" font-family="monospace" font-size="10">FUSION 360 CAD • 300+ FT RF RANGE</text>' +
-        '</svg>'
-    },
-    bonnie: {
-      code: 'ESP32 // 13-DOF SERVO BUS',
-      svg: '<svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="13-DOF ESP32 animatronic PWM envelope schematic">' +
-        '<rect x="130" y="62" width="100" height="60" rx="10" fill="rgba(56,189,248,0.14)" stroke="#38bdf8" stroke-width="2"/>' +
-        '<text x="180" y="89" text-anchor="middle" fill="#bae6fd" font-family="monospace" font-size="11" font-weight="700">ESP32 MCU</text>' +
-        '<text x="180" y="106" text-anchor="middle" fill="#fde68a" font-family="monospace" font-size="9">BLUEPAD32 + C++</text>' +
-        '<polyline points="38,144 60,144 60,126 88,126 88,144 120,144" fill="none" stroke="#22c55e" stroke-width="2"/>' +
-        '<circle cx="290" cy="92" r="24" fill="none" stroke="#d4af37" stroke-width="2.5" stroke-dasharray="6 4"/>' +
-        '<text x="290" y="96" text-anchor="middle" fill="#fde68a" font-family="monospace" font-size="9">32-LED</text>' +
-        '<text x="30" y="34" fill="#d4af37" font-family="monospace" font-size="11" font-weight="700">13-CHANNEL PWM ENVELOPE &amp; CALIBRATION</text>' +
-        '</svg>'
-    },
-    tradingbot: {
-      code: 'PI 5 // ASYNC MCP AGENT',
-      svg: '<svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="4-stage asynchronous MCP pipeline on Raspberry Pi 5">' +
-        '<rect x="20" y="72" width="72" height="42" rx="8" fill="rgba(56,189,248,0.14)" stroke="#38bdf8" stroke-width="1.6"/>' +
-        '<rect x="106" y="72" width="72" height="42" rx="8" fill="rgba(212,175,55,0.14)" stroke="#d4af37" stroke-width="1.6"/>' +
-        '<rect x="192" y="72" width="72" height="42" rx="8" fill="rgba(56,189,248,0.14)" stroke="#38bdf8" stroke-width="1.6"/>' +
-        '<rect x="278" y="72" width="64" height="42" rx="8" fill="rgba(34,197,94,0.14)" stroke="#22c55e" stroke-width="1.6"/>' +
-        '<text x="56" y="97" text-anchor="middle" fill="#bae6fd" font-family="monospace" font-size="9">SCREEN</text>' +
-        '<text x="142" y="97" text-anchor="middle" fill="#fde68a" font-family="monospace" font-size="9">ANALYZE</text>' +
-        '<text x="228" y="97" text-anchor="middle" fill="#bae6fd" font-family="monospace" font-size="9">MCP SDK</text>' +
-        '<text x="310" y="97" text-anchor="middle" fill="#bbf7d0" font-family="monospace" font-size="9">PM2 24/7</text>' +
-        '<text x="20" y="34" fill="#d4af37" font-family="monospace" font-size="11" font-weight="700">PI 5 ASYNCIO // 400-TICKER PIPELINE</text>' +
-        '<text x="180" y="152" text-anchor="middle" fill="rgba(255,255,255,0.68)" font-family="monospace" font-size="10">TIMEOUT GUARD • EXCEPTIONGROUP • HEALTH ALERTS</text>' +
-        '</svg>'
-    },
-    nebula: {
-      code: 'WEBGL // COLYSEUS + AI PR',
-      svg: '<svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nebula Drifters WebGL multiplayer and AI PR governance loop">' +
-        '<polygon points="180,46 218,116 142,116" fill="rgba(56,189,248,0.18)" stroke="#38bdf8" stroke-width="2"/>' +
-        '<circle cx="180" cy="96" r="56" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="5 5"/>' +
-        '<text x="24" y="30" fill="#d4af37" font-family="monospace" font-size="11" font-weight="700">THREE.JS + RXJS + COLYSEUS WEBSOCKET</text>' +
-        '<text x="180" y="168" text-anchor="middle" fill="rgba(255,255,255,0.68)" font-family="monospace" font-size="10">TYPESCRIPT • AUTOMATED PR GOVERNANCE</text>' +
-        '</svg>'
     }
   };
 
   /* ========================================================================
-     5 Required Portfolio Sections (Complete Inclusive Catalog)
+     4 Portfolio Sections (Work Experience, ERPL, Research, Classwork)
      ======================================================================== */
 
   var PROJECTS = [
@@ -1546,323 +1487,6 @@
       ],
       tags: ['Python 3', '3D Kinematics', 'File I/O', 'Proximity Alerting'],
       links: []
-    },
-
-    /* ---------------- SECTION 5: OTHER ---------------- */
-    {
-      id: 'oth-techrise',
-      section: 'other',
-      categories: ['propulsion', 'avionics'],
-      badge: 'NASA TOP 40 / 600',
-      timeframe: '2021 - 2022',
-      org: 'NASA TechRise Student Challenge — Blue Origin New Shepard',
-      title: '"Surface Catheter" Suborbital Microgravity Peristaltic Pump',
-      summary: 'Selected Top 40 of 600 teams nationwide for Blue Origin New Shepard flight; led peristaltic pump R&D, motor BOM selection, and CAD prototyping for microgravity fluid filtration.',
-      media: {
-        type: 'schematic',
-        schematicKey: 'techrise'
-      },
-      gallery: [
-        { type: 'schematic', schematicKey: 'techrise', caption: 'Surface Catheter peristaltic microgravity fluid filtration flight experiment' }
-      ],
-      metrics: [
-        { label: 'Selection', value: 'Top 40 / 600' },
-        { label: 'Flight Vehicle', value: 'New Shepard' },
-        { label: 'Role', value: 'Pump R&D Lead' },
-        { label: 'Mechanism', value: 'Peristaltic Pump' }
-      ],
-      overview: 'Engineered a suborbital microgravity medical fluid recovery experiment selected by NASA for flight integration aboard Blue Origin\'s New Shepard reusable rocket.',
-      bullets: [
-        'Won national selection among <strong>top 40 of 600 teams</strong> in the <strong>NASA TechRise Challenge</strong> for New Shepard microgravity flight.',
-        'Led peristaltic fluid pump R&amp;D, CAD modeled initial structural prototypes, and authored motor selection / bill-of-materials specs.'
-      ],
-      tags: ['Blue Origin New Shepard', 'NASA TechRise', 'Microgravity Fluids', 'Peristaltic Pump', 'CAD & BOM'],
-      links: []
-    },
-    {
-      id: 'oth-pltw',
-      section: 'other',
-      categories: ['avionics', 'systems'],
-      badge: 'PLTW CAPSTONE',
-      timeframe: '2021 - 2022',
-      org: 'Project Lead The Way Senior Engineering Design',
-      title: 'Remote-Control FPV Fire Extinguishing Prototype',
-      summary: 'Reverse-engineered Betaflight FPV drone RF actuation paired with Fusion 360 CAD pipe hardware to trigger fire suppression safely from several hundred feet away.',
-      media: {
-        type: 'schematic',
-        schematicKey: 'pltw'
-      },
-      gallery: [
-        { type: 'schematic', schematicKey: 'pltw', caption: 'Long-range Betaflight FPV RF actuation to pipe-mounted suppression discharge' }
-      ],
-      metrics: [
-        { label: 'Control Link', value: 'Betaflight FPV RF' },
-        { label: 'Standoff Range', value: '300+ ft Remote' },
-        { label: 'CAD Tool', value: 'Fusion 360' },
-        { label: 'Stage', value: 'Working Prototype' }
-      ],
-      overview: 'Completed full hardware engineering design loop from problem definition to physical demonstration, repurposing high-reliability FPV flight radio electronics for hazardous standoff suppression.',
-      bullets: [
-        'Modeled mechanical valve/pipe discharge assemblies in <strong>Autodesk Fusion 360</strong>.',
-        'Soldered and repurposed <strong>Betaflight FPV radio receivers</strong> enabling reliable remote actuation from several hundred feet away.'
-      ],
-      tags: ['Fusion 360', 'Betaflight RF', 'Soldering', 'Remote Actuation', 'Rapid Prototyping'],
-      links: []
-    },
-    {
-      id: 'oth-yolo',
-      section: 'other',
-      categories: ['autonomy', 'propulsion'],
-      badge: 'CUSTOM CV TOOL',
-      timeframe: '2026',
-      org: 'RAISE Lab / ERPL Internal Tooling',
-      title: 'YoloAnnotator.app — Cross-Platform Hotfire Labeling Suite',
-      summary: 'Standalone PyInstaller macOS & Windows bounding-box annotator with single-key class tags and normalized YOLO coordinate output, boosting hotfire dataset labeling 3x.',
-      media: {
-        type: 'image',
-        src: 'portfolio-assets/img/yolo-annotator-icon.webp',
-        alt: 'YoloAnnotator application icon featuring rocket flame bounding box graphics',
-        fit: 'icon'
-      },
-      gallery: [
-        { type: 'image', src: 'portfolio-assets/img/yolo-annotator-icon.webp', caption: 'YoloAnnotator.app standalone macOS & Windows application icon', tone: 'dark' },
-        { type: 'image', src: 'portfolio-assets/img/cvhad-yolo-anomaly-detect.webp', caption: 'Hotfire anomaly labels produced for YOLOv8/YOLO11 CVHAD training', tone: 'dark' }
-      ],
-      metrics: [
-        { label: 'Speedup', value: '3x Throughput' },
-        { label: 'Formats', value: 'YOLOv8 / YOLO11' },
-        { label: 'Targets', value: 'macOS .app / .exe' },
-        { label: 'Output', value: 'xc, yc, w, h' }
-      ],
-      overview: 'Eliminated browser-tool friction when labeling thousands of rocket hotfire video frames for CVHAD by building a dedicated keyboard-driven dark-mode annotator.',
-      bullets: [
-        'Engineered responsive single-key class hotkeys and automatic normalized <strong>YOLO (xc, yc, w, h)</strong> coordinate export.',
-        'Packaged standalone cross-platform binaries via <strong>PyInstaller</strong> (<em>YoloAnnotator.app</em> &amp; <em>.exe</em>), accelerating dataset prep <strong>3x</strong>.'
-      ],
-      tags: ['Python', 'PyInstaller', 'YOLOv8 / YOLO11', 'Dataset Tooling', 'macOS / Windows'],
-      links: [
-        { label: 'GitHub Pytorch Repo', url: 'https://github.com/calebstone15/Pytorch', kind: 'secondary' }
-      ]
-    },
-    {
-      id: 'oth-netpulse',
-      section: 'other',
-      categories: ['avionics', 'systems'],
-      badge: 'MACOS OPS TOOLS',
-      timeframe: '2026',
-      org: 'Field Broadcast Network Engineering',
-      title: 'Network Pulse & Stream Mode (Test-Site Bandwidth Guard)',
-      summary: 'Real-time macOS per-IP/per-process throughput monitor, gateway airtime ping, Apple networkQuality benchmark, and 1-click cloud-sync pauser protecting Starlink rocket streams.',
-      media: {
-        type: 'image',
-        src: 'portfolio-assets/img/network-monitor-icon.webp',
-        alt: 'Network Pulse macOS real-time network monitor icon',
-        fit: 'icon'
-      },
-      gallery: [
-        { type: 'image', src: 'portfolio-assets/img/network-monitor-icon.webp', caption: 'Network Monitor.app native macOS icon', tone: 'dark' }
-      ],
-      metrics: [
-        { label: 'Polling', value: 'Real-Time IP/App' },
-        { label: 'Ping Target', value: 'Gateway & 1.1.1.1' },
-        { label: 'Benchmark', value: 'networkQuality' },
-        { label: 'Protection', value: '6 Cloud Daemons' }
-      ],
-      overview: 'Built directly to solve live-broadcast dropouts at remote rocket pads where background OneDrive/iCloud/Dropbox uploads saturate limited field Starlink uplinks.',
-      bullets: [
-        'Built real-time <strong>per-IP &amp; per-process bandwidth graphs</strong>, reverse-DNS lookup, MAC OUI vendor discovery, and spike alerts (>300 KB/s).',
-        'Paired with <strong>Stream Mode.app</strong> to freeze OneDrive, iCloud, Box, Adobe CC, Dropbox, and Google Drive syncs in one click before test ignition.'
-      ],
-      tags: ['Python Tkinter', 'Socket Telemetry', 'macOS .app', 'Starlink Uplink Guard', 'OUI Vendor DB'],
-      links: []
-    },
-    {
-      id: 'oth-bonnie',
-      section: 'other',
-      categories: ['avionics'],
-      badge: 'EMBEDDED ROBOTICS',
-      timeframe: '2025 - 2026',
-      org: 'Independent Mechatronics Build',
-      title: 'Bonnie: 13-DOF ESP32 Animatronic Robotic Mechanism',
-      summary: 'Modular non-blocking Arduino C++ firmware (Bluepad32, ESP32Servo, 32-LED NeoPixel ring) driving 13 servo channels with microsecond hard-stop envelope protection.',
-      media: {
-        type: 'schematic',
-        schematicKey: 'bonnie'
-      },
-      gallery: [
-        { type: 'schematic', schematicKey: 'bonnie', caption: '13-DOF ESP32 servo PWM envelope protection & synchronized NeoPixel timing' }
-      ],
-      metrics: [
-        { label: 'Actuation', value: '13-DOF PWM' },
-        { label: 'Controller', value: 'ESP32 / C++' },
-        { label: 'Control', value: 'Bluepad32 Wireless' },
-        { label: 'Safety', value: 'us Hard-Stops' }
-      ],
-      overview: 'Full-scale 13-degree-of-freedom animatronic robotic head articulating dual-axis eyes, 4 eyelids, jaw, and 4-axis ears with zero-jitter non-blocking control loops.',
-      bullets: [
-        'Authored modular <strong>Arduino C++</strong> firmware (<em>Bonnie_Main_V1.ino</em> &amp; <em>BonnieCalibrationTool.ino</em>) with per-channel microsecond pulse clamping.',
-        'Integrated <strong>Bluepad32</strong> wireless control and a <strong>32-LED Adafruit NeoPixel</strong> array synchronized to motion kinematics.'
-      ],
-      tags: ['ESP32', 'Embedded C++', '13-DOF PWM', 'Bluepad32', 'NeoPixel', 'Mechatronics'],
-      links: []
-    },
-    {
-      id: 'oth-gps',
-      section: 'other',
-      categories: ['avionics', 'systems'],
-      badge: 'IOS USERSPACE TOOL',
-      timeframe: '2026',
-      org: 'Independent Mobile Systems Tooling',
-      title: 'GPSSpoofer: No-Jailbreak iOS 17+ Userspace USB Location Simulator',
-      summary: 'Zero-config single-process Python HTTP server + pymobiledevice3 userspace tunnel injecting simulated GPS coordinates over iOS DVT services with a dark Leaflet.js UI.',
-      media: {
-        type: 'image',
-        src: 'portfolio-assets/img/gps-spoofer-ui.webp',
-        alt: 'GPSSpoofer dark-mode Leaflet.js web interface targeted at Kennedy Space Center LC-39A',
-        fit: 'cover'
-      },
-      gallery: [
-        { type: 'image', src: 'portfolio-assets/img/gps-spoofer-ui.webp', caption: 'GPSSpoofer dark-mode Leaflet.js map UI centered on KSC LC-39A', tone: 'dark' }
-      ],
-      metrics: [
-        { label: 'Target OS', value: 'iOS 17+ USB' },
-        { label: 'Privilege', value: 'Unprivileged User' },
-        { label: 'Protocol', value: 'DVT Userspace' },
-        { label: 'Frontend', value: 'Leaflet + Nominatim' }
-      ],
-      overview: 'Lightweight developer testing tool enabling instant GPS coordinate simulation on modern iOS devices over USB without elevated privileges, jailbreaks, or separate background daemons.',
-      bullets: [
-        'Interfaced with iOS Developer Disk Image <strong>DVT location services</strong> over a pure-Python <strong>pymobiledevice3</strong> userspace USB tunnel.',
-        'Built dark-mode <strong>Leaflet.js + OpenStreetMap Nominatim</strong> geocoding web UI launched via a single CLI command.'
-      ],
-      tags: ['Python HTTP', 'pymobiledevice3', 'iOS DVT', 'Leaflet.js', 'Userspace USB'],
-      links: []
-    },
-    {
-      id: 'oth-tradingbot',
-      section: 'other',
-      categories: ['autonomy'],
-      badge: '24/7 PI 5 AGENT',
-      timeframe: '2026',
-      org: 'Independent Quantitative Systems Project',
-      title: 'Autonomous 24/7 Raspberry Pi 5 Robinhood MCP TradingBot',
-      summary: 'Python asyncio + Model Context Protocol (MCP) SDK agent running a 4-stage Gemini quantitative pipeline (~400 tickers screened), hardened with ExceptionGroup timeouts and PM2.',
-      media: {
-        type: 'schematic',
-        schematicKey: 'tradingbot'
-      },
-      gallery: [
-        { type: 'schematic', schematicKey: 'tradingbot', caption: '4-stage asynchronous quantitative screening & MCP execution pipeline on Raspberry Pi 5' }
-      ],
-      metrics: [
-        { label: 'Runtime', value: '24/7 Pi 5 + PM2' },
-        { label: 'Universe', value: '~400 Tickers' },
-        { label: 'Protocol', value: 'Robinhood MCP SDK' },
-        { label: 'Resilience', value: 'Asyncio Timeouts' }
-      ],
-      overview: 'Headless autonomous equity evaluation and execution loop designed for deterministic fault tolerance, isolating event-loop deadlocks and dispatching automated health notifications.',
-      bullets: [
-        'Architected 4-stage pipeline: batch screening (~400 tickers), deep thesis generation, portfolio exit triggers, and pre-market macro brief.',
-        'Hardened <strong>asyncio + MCP SDK</strong> event loops with strict timeouts, <strong>ExceptionGroup</strong> fault recovery, and PM2 auto-restart.'
-      ],
-      tags: ['Python asyncio', 'MCP SDK', 'Raspberry Pi 5', 'PM2', 'Gemini AI', 'Fault Recovery'],
-      links: []
-    },
-    {
-      id: 'oth-orbital',
-      section: 'other',
-      categories: ['systems', 'autonomy'],
-      badge: 'WEBGL ASTRODYNAMICS',
-      timeframe: '2025',
-      org: 'Independent Astrodynamics Tool',
-      title: 'Classical Orbital Elements (COE) 3D Interactive Visualizer',
-      summary: 'Real-time Three.js + dat.GUI Keplerian orbit visualizer illustrating interactive perturbations across all 6 orbital elements (a, e, i, Omega, omega, nu).',
-      media: {
-        type: 'image',
-        src: 'portfolio-assets/img/orbital-elements-3d.webp',
-        alt: 'Classical Orbital Elements 3D WebGL visualizer displaying inclined elliptical orbit and nodal planes',
-        fit: 'cover'
-      },
-      gallery: [
-        { type: 'image', src: 'portfolio-assets/img/orbital-elements-3d.webp', caption: 'Three.js 3D Keplerian orbit & nodal line highlighting interface', tone: 'dark' }
-      ],
-      metrics: [
-        { label: 'Engine', value: 'Three.js WebGL' },
-        { label: 'Parameters', value: '6 Keplerian (COE)' },
-        { label: 'Controls', value: 'dat.GUI Live' },
-        { label: 'Stack', value: 'Vanilla JS ES6' }
-      ],
-      overview: 'Interactive browser simulation translating scalar Keplerian orbital parameters directly into 3D equatorial reference planes, ascending node vectors, and periapsis orientations.',
-      bullets: [
-        'Modeled live 3D orbital geometry transforms across <strong>semi-major axis, eccentricity, inclination, RAAN, argument of periapsis, and true anomaly</strong>.',
-        'Built color-coded orbital plane highlighting and interactive camera orbit controls.'
-      ],
-      tags: ['Three.js', 'Astrodynamics', 'Keplerian Elements', 'dat.GUI', 'WebGL'],
-      links: []
-    },
-    {
-      id: 'oth-avi',
-      section: 'other',
-      categories: ['avionics', 'systems'],
-      badge: 'SWIFT 6 NATIVE APP',
-      timeframe: '2026',
-      org: 'ERPL / Media Production Tooling',
-      title: 'AVI-to-QuickTime Native Swift 6 macOS Batch Converter',
-      summary: 'Zero-dependency ARM64 AppKit Swift 6 desktop app batch-transcoding raw test-stand .avi clips via FFmpeg to QuickTime/Safari-ready H.264 + yuv420p + faststart.',
-      media: {
-        type: 'image',
-        src: 'portfolio-assets/img/avi-converter-icon.webp',
-        alt: 'AVI to QuickTime native macOS Swift 6 converter application icon',
-        fit: 'icon'
-      },
-      gallery: [
-        { type: 'image', src: 'portfolio-assets/img/avi-converter-icon.webp', caption: 'AVI Converter.app native Apple Silicon Mach-O bundle icon', tone: 'dark' }
-      ],
-      metrics: [
-        { label: 'Framework', value: 'Swift 6 / AppKit' },
-        { label: 'Arch', value: 'ARM64 Mach-O' },
-        { label: 'Codec', value: 'H.264 yuv420p' },
-        { label: 'Container', value: '+faststart MP4/MOV' }
-      ],
-      overview: 'Solves macOS QuickTime incompatibility with legacy high-speed/DAQ camera AVI files by providing a drag-and-drop native Apple Silicon utility with zero Python runtime dependencies.',
-      bullets: [
-        'Compiled native <strong>Swift 6 / AppKit ARM64</strong> app wrapping FFmpeg <code>libx264</code>, <code>yuv420p</code>, AAC, and <code>+faststart</code> atom placement.',
-        'Supports multi-file drag-and-drop, CRF quality presets (16/20/24), real-time progress telemetry, and non-destructive overwrite guards.'
-      ],
-      tags: ['Swift 6', 'macOS AppKit', 'FFmpeg H.264', 'yuv420p', 'Batch Transcoder'],
-      links: []
-    },
-    {
-      id: 'oth-nebula',
-      section: 'other',
-      categories: ['autonomy'],
-      badge: 'AUTONOMOUS AI REPO',
-      timeframe: '2025 - 2026',
-      org: 'Open-Source Autonomous Code Evolution',
-      title: 'Nebula Drifters: Autonomous AI-Evolving 3D Space Game',
-      summary: 'Multiplayer TypeScript, Three.js, RxJS & Colyseus WebSocket exploration game governed by automated rules allowing scheduled AI coding agents to ship PRs autonomously.',
-      media: {
-        type: 'schematic',
-        schematicKey: 'nebula'
-      },
-      gallery: [
-        { type: 'schematic', schematicKey: 'nebula', caption: 'Three.js + Colyseus multiplayer engine with autonomous AI PR governance' }
-      ],
-      metrics: [
-        { label: 'Renderer', value: 'Three.js + TS' },
-        { label: 'Networking', value: 'Colyseus + RxJS' },
-        { label: 'Governance', value: 'Auto PR Agent' },
-        { label: 'License', value: 'MIT Open Source' }
-      ],
-      overview: 'Experimental decoupled multiplayer client-server sandbox architected explicitly to evaluate multi-week autonomous software maintenance and feature expansion via AI pull requests.',
-      bullets: [
-        'Built decoupled <strong>TypeScript + Three.js + RxJS + Colyseus</strong> WebSocket game loop and entity schema.',
-        'Established strict <code>GOVERNANCE.md</code>, feature queues, and automated PR verification gates for autonomous weekly agent evolution.'
-      ],
-      tags: ['TypeScript', 'Three.js', 'Colyseus WebSockets', 'RxJS', 'Autonomous PRs'],
-      links: [
-        { label: 'GitHub aigame Repo', url: 'https://github.com/calebstone15/aigame', kind: 'secondary' }
-      ]
     }
   ];
 
@@ -1883,8 +1507,7 @@
     work: document.getElementById('grid-work'),
     erpl: document.getElementById('grid-erpl'),
     research: document.getElementById('grid-research'),
-    classwork: document.getElementById('grid-classwork'),
-    other: document.getElementById('grid-other')
+    classwork: document.getElementById('grid-classwork')
   };
 
   var searchInput = document.getElementById('projectSearch');
@@ -1912,7 +1535,6 @@
   var modalMetrics = document.getElementById('modalMetrics');
   var modalOverview = document.getElementById('modalOverview');
   var modalBullets = document.getElementById('modalBullets');
-  var modalTags = document.getElementById('modalTags');
   var modalLinks = document.getElementById('modalLinks');
 
   var lightboxModal = document.getElementById('lightboxModal');
@@ -2034,15 +1656,8 @@
     }
     body.appendChild(ul);
 
-    var tagsWrap = createEl('div', 'tag-list');
-    var tagCap = Math.min(project.tags.length, 5);
-    for (var t = 0; t < tagCap; t++) {
-      tagsWrap.appendChild(createEl('span', 'tech-tag', project.tags[t]));
-    }
-    body.appendChild(tagsWrap);
-
     var actions = createEl('div', 'card-actions');
-    var deepBtn = createEl('button', 'card-btn card-btn--primary', 'Technical Deep Dive ->');
+    var deepBtn = createEl('button', 'card-btn card-btn--primary', 'More Info');
     deepBtn.type = 'button';
     deepBtn.addEventListener('click', function () {
       openDeepDive(project, deepBtn);
@@ -2083,8 +1698,8 @@
 
   function applyFilters() {
     var q = state.query.trim().toLowerCase();
-    var sectionTotals = { work: 0, erpl: 0, research: 0, classwork: 0, other: 0 };
-    var sectionVisible = { work: 0, erpl: 0, research: 0, classwork: 0, other: 0 };
+    var sectionTotals = { work: 0, erpl: 0, research: 0, classwork: 0 };
+    var sectionVisible = { work: 0, erpl: 0, research: 0, classwork: 0 };
     var visibleCount = 0;
 
     for (var i = 0; i < PROJECTS.length; i++) {
@@ -2282,7 +1897,7 @@
   }
 
   /* ========================================================================
-     Technical Deep Dive Modal & Image Zoom Lightbox
+     More Info Modal & Image Zoom Lightbox
      ======================================================================== */
 
   function renderModalHeroSlide(slide) {
@@ -2393,11 +2008,6 @@
       var li = document.createElement('li');
       li.innerHTML = project.bullets[b];
       modalBullets.appendChild(li);
-    }
-
-    modalTags.innerHTML = '';
-    for (var t = 0; t < project.tags.length; t++) {
-      modalTags.appendChild(createEl('span', 'tech-tag', project.tags[t]));
     }
 
     modalLinks.innerHTML = '';
