@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <title>Caleb Stone — ERPL Propulsion, Avionics &amp; Test Ops</title>
-  <meta name="description" content="ERPL engineering portfolio: Project Juno 300 lbf LOX/Ethanol rocket, MOE Cam flight avionics, DracoVision 12-camera RTSP matrix, HDAA/EAA DAQ, and hotfire test theater.">
+  <meta name="description" content="ERPL engineering portfolio: Project Juno 300 lbf LOX/Ethanol rocket, MOE Cam liquid flight vehicle livestreamed camera and avionics, DracoVision 12-camera RTSP matrix, HDAA/EAA DAQ, and hotfire test theater.">
 
   <link rel="icon" type="image/x-icon" href="Websitelogo.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,7 +68,7 @@
             <h1 class="section-title">ERPL Propulsion, Avionics &amp; Test Ops</h1>
             <img src="portfolio-assets/img/erpl-logo-white.webp" alt="Experimental Rocket Propulsion Lab Logo" width="800" height="246">
           </div>
-          <p class="section-desc">Liquid engine CAD &amp; DAQ, cryo-hardened intertank avionics, 12-camera RTSP matrix, HDAA/EAA engineering tools, and static test stand operations.</p>
+          <p class="section-desc">Liquid engine CAD &amp; DAQ, liquid flight vehicle livestreamed camera and avionics, 12-camera RTSP matrix, HDAA/EAA engineering tools, and static test stand operations.</p>
         </div>
         <div class="page-header-actions">
           <a href="eaa/index.html" class="btn-secondary btn-cyan">Open Live EAA Suite &#8599;</a>
@@ -157,11 +157,21 @@
 
       <div class="modal-metrics-grid" id="modalMetrics"></div>
 
-      <div class="modal-section-heading">Engineering Summary</div>
+      <div class="modal-section-heading">Engineering Overview</div>
       <p class="modal-overview" id="modalOverview"></p>
 
-      <div class="modal-section-heading">Verified Contributions</div>
+      <div id="modalSpecsSection">
+        <div class="modal-section-heading">Architecture &amp; Technical Specifications</div>
+        <div class="modal-specs-grid" id="modalSpecsGrid"></div>
+      </div>
+
+      <div class="modal-section-heading">Verified Contributions &amp; Execution</div>
       <ul class="card-bullets" id="modalBullets"></ul>
+
+      <div id="modalVerificationSection">
+        <div class="modal-section-heading modal-section-heading--cyan">Verification, Testing &amp; Results</div>
+        <ul class="card-bullets card-bullets--cyan" id="modalVerificationList"></ul>
+      </div>
 
       <div class="modal-links-row" id="modalLinks"></div>
     </div>
