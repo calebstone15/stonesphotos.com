@@ -13,8 +13,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Caleb Stone — Propulsion Test, Avionics &amp; Systems Engineering Portfolio</title>
-  <meta name="description" content="Aerospace and systems engineering portfolio of Caleb Stone: liquid rocket propulsion test operations, cryo-hardened flight avionics, real-time DAQ, and safety-critical autonomous systems.">
+  <title>Caleb Stone — Engineering Portfolio Overview</title>
+  <meta name="description" content="Engineering portfolio of Caleb Stone: liquid rocket propulsion testing, flight avionics, real-time DAQ, safety-critical autonomy research, and systems engineering.">
 
   <link rel="icon" type="image/x-icon" href="Websitelogo.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,16 +22,15 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="portfolio.css">
 </head>
-<body>
+<body data-page="hub">
   <!-- Sticky Frosted Header -->
   <header class="site-header">
     <div class="header-inner">
       <div class="header-brand">
-        <a href="index.html" class="brand-name">Caleb Stone</a>
-        <span class="brand-pill">Propulsion &amp; Systems</span>
+        <a href="portfolio.html" class="brand-name">Caleb Stone</a>
       </div>
 
-      <button type="button" class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle section navigation" aria-expanded="false">
+      <button type="button" class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle portfolio navigation" aria-expanded="false">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -39,20 +38,18 @@
         </svg>
       </button>
 
-      <nav class="portfolio-nav" id="portfolioNav" aria-label="Portfolio sections">
-        <a href="#work-experience" class="nav-jump">Work Experience</a>
-        <a href="#erpl" class="nav-jump">ERPL</a>
-        <a href="#research" class="nav-jump">Research</a>
-        <a href="#classwork" class="nav-jump">Classwork</a>
+      <nav class="portfolio-nav" id="portfolioNav" aria-label="Portfolio pages">
+        <a href="portfolio.html" class="nav-jump active">Overview</a>
+        <a href="portfolio-work.html" class="nav-jump">Work Experience</a>
+        <a href="portfolio-erpl.html" class="nav-jump">ERPL</a>
+        <a href="portfolio-research.html" class="nav-jump">Research</a>
+        <a href="portfolio-classwork.html" class="nav-jump">Classwork</a>
       </nav>
 
       <div class="header-actions">
         <a href="eaa/index.html" class="hdr-btn hdr-btn--eaa">
           <span class="live-dot live-dot--cyan" aria-hidden="true"></span>
           <span>Live EAA Suite</span>
-        </a>
-        <a href="portfolio-assets/docs/Caleb_Stone_Resume_SpaceX.pdf" target="_blank" rel="noopener noreferrer" class="hdr-btn hdr-btn--resume">
-          <span>Resume PDF</span>
         </a>
         <a href="index.html" class="hdr-btn hdr-btn--back">
           <span>&#8592; Back to Main Site</span>
@@ -62,348 +59,161 @@
   </header>
 
   <main class="portfolio-main">
-    <!-- Hero Section -->
-    <section class="hero-section" aria-label="Candidate Overview">
+    <!-- Minimalist Factual Hero -->
+    <section class="hero-section" aria-label="Candidate Summary">
       <div class="hero-grid">
         <div class="hero-copy-card">
           <div>
             <div class="hero-status-bar">
               <span class="live-dot" aria-hidden="true"></span>
-              <span>U.S. Citizen &bull; DOW SMART Scholar (NSWC Dahlgren) &bull; Clearance Eligible</span>
+              <span>U.S. Citizen &bull; DOW SMART Scholar (NSWC Dahlgren)</span>
             </div>
 
             <h1 class="hero-title" style="margin-top: 16px;">
-              Propulsion Test, <span class="hero-title-accent">Flight Avionics</span> &amp; Safety-Critical Systems
+              Propulsion Test, <span class="hero-title-accent">Avionics</span> &amp; Systems Engineering
             </h1>
 
             <p class="hero-lead" style="margin-top: 14px;">
-              Systems &amp; Space Operations engineer building <strong>liquid rocket test stands</strong>,
-              <strong>cryo-hardened intertank avionics</strong>, <strong>real-time DAQ &amp; RTSP telemetry pipelines</strong>,
-              and <strong>sub-30&nbsp;ms edge-vision abort architectures</strong> designed for rapid-cadence launch &amp; test operations.
+              M.S. Systems Engineering student (2026&ndash;2028) and B.S. Space Operations graduate (3.6 GPA) at Embry-Riddle Aeronautical University working on liquid rocket static test ops, flight avionics, real-time DAQ/video systems, and safety-critical UAS/vision verification.
             </p>
           </div>
 
           <div class="edu-grid">
             <div class="edu-card">
-              <div class="edu-kicker">Graduate Fellowship</div>
+              <div class="edu-kicker">Graduate</div>
               <div class="edu-degree">M.S. Systems Engineering (2026&ndash;2028)</div>
-              <div class="edu-meta">Embry-Riddle Aeronautical University &bull; <strong>DOW SMART Scholar</strong> (U.S. Navy / NSWC Dahlgren) &bull; RAISE Lab GRA</div>
+              <div class="edu-meta">Embry-Riddle Aeronautical University &bull; DOW SMART Scholar (U.S. Navy / NSWC Dahlgren) &bull; RAISE Lab GRA</div>
             </div>
             <div class="edu-card">
-              <div class="edu-kicker">Undergraduate Foundation</div>
-              <div class="edu-degree">B.S. Space Operations &bull; 3.6 / 4.0 GPA</div>
-              <div class="edu-meta">Embry-Riddle Aeronautical University (2022&ndash;2026) &bull; Minors: <strong>Applied Mathematics</strong> &amp; <strong>Systems Engineering</strong></div>
+              <div class="edu-kicker">Undergraduate</div>
+              <div class="edu-degree">B.S. Space Operations &bull; 3.6 GPA</div>
+              <div class="edu-meta">Embry-Riddle Aeronautical University (2022&ndash;2026) &bull; Minors: Applied Mathematics &amp; Systems Engineering &bull; Dean&rsquo;s List (6x)</div>
             </div>
-          </div>
-
-          <div class="honors-strip" aria-label="Academic Honors">
-            <span class="honor-chip honor-chip--gold">DOW SMART Scholar (DoD / U.S. Navy)</span>
-            <span class="honor-chip">Dean's List (6 Consecutive Terms)</span>
-            <span class="honor-chip">ERAU Donor Scholarship</span>
-            <span class="honor-chip">AIAA SciTech 2027 (2 Accepted Papers)</span>
-            <span class="honor-chip">ISSS 2026 &amp; INCOSE 2026 Published</span>
           </div>
 
           <div class="hero-cta-row">
-            <a href="eaa/index.html" class="btn-primary">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-              </svg>
-              <span>Launch Live EAA Hotfire &amp; CdA Suite</span>
-            </a>
-            <a href="portfolio-assets/docs/Caleb_Stone_Resume_SpaceX.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="12" y1="18" x2="12" y2="12"></line>
-                <polyline points="9 15 12 18 15 15"></polyline>
-              </svg>
-              <span>SpaceX Resume (PDF)</span>
-            </a>
-            <a href="#erpl-theater" class="btn-secondary btn-cyan">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polygon points="5 3 19 12 5 21 5 3"></polygon>
-              </svg>
-              <span>Hotfire Video Theater</span>
-            </a>
+            <a href="portfolio-erpl.html" class="btn-primary">Explore ERPL Hardware &amp; Test Video</a>
+            <a href="eaa/index.html" class="btn-secondary btn-cyan">Live EAA Hotfire &amp; CdA Suite</a>
           </div>
 
-          <div class="hero-links-row" aria-label="Verified Profiles and Contact">
-            <a href="https://github.com/calebstone15" target="_blank" rel="noopener noreferrer" class="social-pill">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-1.95c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.95.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.16 1.18a10.95 10.95 0 0 1 5.76 0c2.19-1.49 3.16-1.18 3.16-1.18.62 1.59.23 2.76.11 3.05.73.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.4-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.66.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"></path>
-              </svg>
-              <span>GitHub @calebstone15</span>
-            </a>
-            <a href="https://www.linkedin.com/in/caleb-stone" target="_blank" rel="noopener noreferrer" class="social-pill">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
-              </svg>
-              <span>LinkedIn</span>
-            </a>
-            <a href="https://www.youtube.com/@erplofficial" target="_blank" rel="noopener noreferrer" class="social-pill">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"></path>
-              </svg>
-              <span>ERPL YouTube (@erplofficial)</span>
-            </a>
-            <a href="https://x.com/erauerpl" target="_blank" rel="noopener noreferrer" class="social-pill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-              </svg>
-              <span>ERPL on X (@erauerpl)</span>
-            </a>
-            <a href="mailto:Calebmstone15@gmail.com" class="social-pill">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-              <span>Calebmstone15@gmail.com</span>
-            </a>
+          <div class="hero-links-row">
+            <a href="https://github.com/calebstone15" target="_blank" rel="noopener noreferrer" class="social-pill">GitHub @calebstone15</a>
+            <a href="https://www.linkedin.com/in/caleb-stone" target="_blank" rel="noopener noreferrer" class="social-pill">LinkedIn</a>
+            <a href="https://www.youtube.com/@erplofficial" target="_blank" rel="noopener noreferrer" class="social-pill">ERPL YouTube (@erplofficial)</a>
+            <a href="https://x.com/erauerpl" target="_blank" rel="noopener noreferrer" class="social-pill">ERPL X (@erauerpl)</a>
+            <a href="mailto:Calebmstone15@gmail.com" class="social-pill">Calebmstone15@gmail.com</a>
           </div>
         </div>
 
-        <aside class="hero-portrait-card" aria-label="Candidate Portrait and Readiness Telemetry">
+        <aside class="hero-portrait-card" aria-label="Candidate Portrait">
           <div class="portrait-frame js-lightbox-trigger"
                data-src="portfolio-assets/img/caleb-grad-portrait.webp"
                data-caption="Caleb Stone — Embry-Riddle Aeronautical University (B.S. Space Operations, M.S. Systems Engineering)">
             <img src="portfolio-assets/img/caleb-grad-portrait.webp"
-                 alt="Caleb Stone portrait in Embry-Riddle graduation stole on campus"
+                 alt="Caleb Stone portrait in Embry-Riddle graduation stole"
                  width="1400" height="1010" fetchpriority="high">
             <span class="zoom-hint">Zoom Portrait</span>
           </div>
 
-          <div class="portrait-identity-bar">
+          <div class="portrait-caption-bar">
             <div>
               <div class="portrait-overlay-name">Caleb M. Stone</div>
-              <div class="portrait-overlay-sub">DAYTONA BEACH, FL &bull; DAHLGREN, VA</div>
-            </div>
-            <span class="honor-chip honor-chip--gold" style="padding: 4px 9px; font-size: 0.66rem;">FLIGHT READY</span>
-          </div>
-
-          <div class="portrait-telemetry-grid">
-            <div class="mini-telem-box">
-              <div class="mini-telem-label">Propulsion Lead</div>
-              <div class="mini-telem-val">300 lbf LOX / Ethanol</div>
-            </div>
-            <div class="mini-telem-box">
-              <div class="mini-telem-label">Flight Avionics</div>
-              <div class="mini-telem-val">STM32H743 &bull; 1.2 GHz</div>
-            </div>
-            <div class="mini-telem-box">
-              <div class="mini-telem-label">Auto-Abort AI</div>
-              <div class="mini-telem-val">Sub-30 ms Edge YOLO</div>
-            </div>
-            <div class="mini-telem-box">
-              <div class="mini-telem-label">DAQ Turnaround</div>
-              <div class="mini-telem-val">&lt; 30 s Post-Hotfire</div>
-            </div>
-          </div>
-
-          <div class="portrait-stack-box">
-            <div class="mini-telem-label" style="margin-bottom: 6px;">Target Engineering Domains</div>
-            <div class="honors-strip">
-              <span class="honor-chip">Propulsion Test</span>
-              <span class="honor-chip">Flight Avionics</span>
-              <span class="honor-chip">Real-Time DAQ</span>
-              <span class="honor-chip">Autonomy V&amp;V</span>
+              <div class="portrait-overlay-sub">Daytona Beach, FL &bull; Dahlgren, VA</div>
             </div>
           </div>
         </aside>
       </div>
-
-      <!-- Telemetry KPI Strip -->
-      <div class="kpi-strip" aria-label="Key Engineering Metrics">
-        <div class="stat-card">
-          <div class="stat-label">Juno Liquid Engine</div>
-          <div class="stat-value">300 lbf</div>
-          <div class="stat-sub">RE thrust mount CAD, load-cell DAQ &amp; hardstart abort save</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Intertank Avionics</div>
-          <div class="stat-value">50,000 ft</div>
-          <div class="stat-sub">-183&deg;C cryo-hardened STM32H743 &amp; 1.2 GHz downlink</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">CVHAD Edge Abort</div>
-          <div class="stat-value">28.44 ms</div>
-          <div class="stat-sub">Primary author AIAA SciTech 2027 CNN forward pass (9.9 FPS E2E)</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">ATLAS Flight V&amp;V</div>
-          <div class="stat-value">24,000</div>
-          <div class="stat-sub">Total SITL flights; 9,000 C++ RAG runs isolating 1,375 silent failures</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Field &amp; Pad Ops</div>
-          <div class="stat-value">12-Cam</div>
-          <div class="stat-sub">DracoVision RTSP/HLS matrix &amp; 10,000+ GIS survey assets</div>
-        </div>
-      </div>
     </section>
 
-    <!-- Category Filter & Live Search Bar -->
-    <section class="controls-bar" aria-label="Filter engineering projects">
-      <div class="filter-pills" role="group" aria-label="Filter by discipline">
-        <button type="button" class="filter-pill active" data-filter="all">All Programs</button>
-        <button type="button" class="filter-pill" data-filter="propulsion">Propulsion &amp; Test</button>
-        <button type="button" class="filter-pill" data-filter="avionics">Avionics &amp; Hardware</button>
-        <button type="button" class="filter-pill" data-filter="autonomy">Autonomy &amp; AI</button>
-        <button type="button" class="filter-pill" data-filter="systems">Systems &amp; Reliability</button>
-      </div>
-
-      <div class="search-cluster">
-        <div class="search-box">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-          <input type="search" id="projectSearch" class="search-input" placeholder="Search LOX, STM32, YOLO, CATIA, NetLogo..." aria-label="Search projects">
-          <button type="button" id="searchClear" class="search-clear" aria-label="Clear search">&times;</button>
-        </div>
-        <span class="results-count" id="resultsCount">Loading telemetry...</span>
-      </div>
-    </section>
-
-    <div class="empty-filter-banner" id="emptyFilterBanner">
-      <p>No engineering entries match your active discipline filter and search query.</p>
-      <button type="button" class="btn-secondary" id="resetFiltersBtn">Reset Filters</button>
-    </div>
-
-    <!-- Section 1: Work Experience -->
-    <section class="portfolio-section" id="work-experience" data-section="work">
+    <!-- 4 Dedicated Category Cards -->
+    <section aria-label="Portfolio Sections">
       <div class="section-header">
         <div>
-          <div class="section-kicker">01 // Industry, Defense &amp; Research Experience</div>
-          <h2 class="section-title">Work Experience</h2>
-          <p class="section-desc">Federal naval systems engineering appointment, graduate safety-critical autonomy research, and civil infrastructure field validation.</p>
+          <div class="section-kicker">Portfolio Index</div>
+          <h2 class="section-title">Engineering Focus Areas</h2>
+          <p class="section-desc">Select a category to review individual programs, experimental hardware, publications, and project documentation.</p>
         </div>
-        <span class="section-count-badge" data-section-count="work">4 Roles</span>
-      </div>
-      <div class="cards-grid cards-grid--two" id="grid-work"></div>
-
-      <!-- Professional Endorsement & Field Culture Strip -->
-      <div class="about-endorsement-grid" style="margin-top: 24px;">
-        <div class="glass-panel">
-          <div class="section-kicker" style="margin-bottom: 4px;">Supervisor Endorsement</div>
-          <h3 style="font-family: var(--font-heading); font-size: 1.3rem;">Engineering Rigor &amp; Field Ownership</h3>
-          <blockquote class="quote-block">
-            &ldquo;He displayed an inquisitive nature, which is a must for engineers. I don&rsquo;t recall too many problems that he couldn&rsquo;t figure out how to solve on his own &ndash; as a college student, mind you... I saw him grow in his understanding of engineering principles, his ability to see the bigger picture of how things &lsquo;fit together&rsquo;, and his ability to work with others.&rdquo;
-          </blockquote>
-          <div class="quote-attrib">
-            Joseph V. Pavoni, P.E., LEED AP, Assoc. DBIA
-            <span>Water Systems Manager, Bowling Green Municipal Utilities (Former Water Resources Division Manager, GRW Engineers, Inc.)</span>
-          </div>
-        </div>
-        <div class="glass-panel" style="display: flex; flex-direction: column; gap: 12px;">
-          <div class="culture-photo-wrap js-lightbox-trigger"
-               data-src="portfolio-assets/img/shuttle-nozzles-team.webp"
-               data-caption="RAISE Lab &amp; ERAU peers under full-scale Saturn V &amp; Space Shuttle main propulsion nozzles during ISSS 2026 in Huntsville, AL">
-            <img src="portfolio-assets/img/shuttle-nozzles-team.webp"
-                 alt="Caleb Stone and RAISE Lab team beneath Space Shuttle and Saturn rocket engine nozzles"
-                 loading="lazy" width="1058" height="1400">
-          </div>
-          <div style="font-size: 0.84rem; color: var(--text-secondary);">
-            <strong style="color: var(--text-primary);">Huntsville &amp; Daytona Test Culture:</strong> From static rocket pads at Cecil Spaceport to ISSS / INCOSE conference briefings with the RAISE Lab team.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 2: ERPL -->
-    <section class="portfolio-section" id="erpl" data-section="erpl">
-      <div class="section-header">
-        <div>
-          <div class="section-kicker">02 // Experimental Rocket Propulsion Lab (100+ Engineers)</div>
-          <div class="erpl-section-brand">
-            <h2 class="section-title">ERPL Propulsion, Avionics &amp; Test Ops</h2>
-            <img src="portfolio-assets/img/erpl-logo-white.webp" alt="Experimental Rocket Propulsion Lab Logo" loading="lazy" width="800" height="246">
-          </div>
-          <p class="section-desc">Hardware ownership, cryogenic hotfire console command, real-time optical &amp; DAQ software, and multi-cam test stand broadcasting across Juno, MOE, Triton, Draco, and Odyssey.</p>
-        </div>
-        <span class="section-count-badge" data-section-count="erpl">7 Programs</span>
+        <span class="section-count-badge">34 Programs Across 4 Sections</span>
       </div>
 
-      <!-- ERPL Hotfire & Test Stand Video Theater -->
-      <div class="theater-panel" id="erpl-theater">
-        <div class="theater-top">
-          <div class="theater-title-wrap">
-            <h3>
-              <span class="live-dot" aria-hidden="true"></span>
-              <span>ERPL Hotfire &amp; Test Stand Video Theater</span>
-            </h3>
-            <p>Instant high-speed local test-stand loops alongside verified <a href="https://www.youtube.com/@erplofficial" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">@erplofficial</a> YouTube engineering cuts.</p>
+      <div class="hub-categories-grid">
+        <a href="portfolio-work.html" class="hub-category-card">
+          <div class="hub-category-media">
+            <img src="portfolio-assets/img/raise-lab-isss2026-team.webp"
+                 alt="Caleb Stone and RAISE Lab research team at ISSS 2026"
+                 loading="lazy" width="1400" height="1050">
           </div>
-          <div class="theater-profile-links">
-            <a href="https://www.youtube.com/@erplofficial" target="_blank" rel="noopener noreferrer" class="card-btn card-btn--primary">YouTube @erplofficial</a>
-            <a href="https://x.com/erauerpl" target="_blank" rel="noopener noreferrer" class="card-btn">X @erauerpl</a>
-            <a href="https://erpl.space/" target="_blank" rel="noopener noreferrer" class="card-btn">erpl.space</a>
-          </div>
-        </div>
-
-        <div class="theater-grid">
-          <div class="theater-stage">
-            <div class="theater-viewport" id="theaterViewport">
-              <video id="theaterLocalVideo" controls muted loop playsinline autoplay preload="metadata">
-                <source src="portfolio-assets/video/gopro-chamber-topdown.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="theater-caption-bar">
-              <div>
-                <div class="theater-caption-title" id="theaterCaptionTitle">Horizontal Test Stand — GoPro Chamber Top-Down Burn</div>
-                <div class="theater-caption-meta" id="theaterCaptionMeta">LOCAL MP4 LOOP &bull; 1280x720 H.264 &bull; 6.80s &bull; Supersonic Plume Deflector</div>
-              </div>
-              <a id="theaterExternalLink" href="https://www.youtube.com/@erplofficial" target="_blank" rel="noopener noreferrer" class="card-btn card-btn--cyan">Open @erplofficial &#8599;</a>
+          <div class="hub-category-body">
+            <div class="hub-category-kicker">01 // Industry &amp; Research Roles</div>
+            <h3 class="hub-category-title">Work Experience</h3>
+            <p class="hub-category-desc">DOW SMART Scholar appointment (NSWC Dahlgren), RAISE Lab Graduate Research Assistant, Oldham County Water District ArcGIS Intern, and GRW Engineers Intern.</p>
+            <div class="hub-category-footer">
+              <span>4 Roles</span>
+              <span class="hub-category-arrow">View Work Experience &#8594;</span>
             </div>
           </div>
+        </a>
 
-          <div class="theater-sidebar">
-            <div class="theater-tabs" role="tablist" aria-label="Video source switcher">
-              <button type="button" class="theater-tab active" data-theater-tab="local" role="tab" aria-selected="true">Local MP4 Loops (5)</button>
-              <button type="button" class="theater-tab" data-theater-tab="youtube" role="tab" aria-selected="false">@erplofficial YouTube (12)</button>
-            </div>
-            <div class="theater-playlist" id="theaterPlaylist"></div>
+        <a href="portfolio-erpl.html" class="hub-category-card">
+          <div class="hub-category-media">
+            <img src="portfolio-assets/img/juno-hf2-plume-vent.webp"
+                 alt="Project Juno 300 lbf LOX Ethanol hotfire plume and cryogenic LOX vent"
+                 loading="lazy" width="1400" height="933">
           </div>
-        </div>
-      </div>
+          <div class="hub-category-body">
+            <div class="hub-category-kicker">02 // Experimental Rocket Propulsion Lab</div>
+            <h3 class="hub-category-title">ERPL Propulsion, Avionics &amp; Test Ops</h3>
+            <p class="hub-category-desc">Project Juno 300 lbf LOX/Ethanol RE &amp; mount CAD, MOE Cam STM32H743 flight avionics, DracoVision 12-cam RTSP matrix, HDAA V2.3 / EAA suite, CdA/BOS, and hotfire test video theater.</p>
+            <div class="hub-category-footer">
+              <span>7 Programs + Video Theater</span>
+              <span class="hub-category-arrow">Explore ERPL &#8594;</span>
+            </div>
+          </div>
+        </a>
 
-      <div class="cards-grid" id="grid-erpl"></div>
-    </section>
+        <a href="portfolio-research.html" class="hub-category-card">
+          <div class="hub-category-media">
+            <img src="portfolio-assets/img/cvhad-yolo-anomaly-detect.webp"
+                 alt="CVHAD YOLO real-time rocket hotfire visual anomaly detection"
+                 loading="lazy" width="1319" height="868">
+          </div>
+          <div class="hub-category-body">
+            <div class="hub-category-kicker">03 // Accepted &amp; Published Studies</div>
+            <h3 class="hub-category-title">Research &amp; Publications</h3>
+            <p class="hub-category-desc">CVHAD vision auto-abort (AIAA SciTech 2027), ATLAS SITL/Crazyflie HITL (AIAA SciTech 2027), Quantitative SwFTA, Hybrid LLM-SRGM, Prompt Dynamics, and NSF REU airport sUAS risk pipeline.</p>
+            <div class="hub-category-footer">
+              <span>6 Studies</span>
+              <span class="hub-category-arrow">Read Research &#8594;</span>
+            </div>
+          </div>
+        </a>
 
-    <!-- Section 3: Research -->
-    <section class="portfolio-section" id="research" data-section="research">
-      <div class="section-header">
-        <div>
-          <div class="section-kicker">03 // Safety-Critical AI, Flight Autonomy &amp; Reliability</div>
-          <h2 class="section-title">Research &amp; Peer-Reviewed Publications</h2>
-          <p class="section-desc">Accepted and published aerospace, autonomous UAS, edge computer vision auto-abort, and systems safety manuscripts across AIAA SciTech, ISSS, INCOSE, and NSF REU.</p>
-        </div>
-        <span class="section-count-badge" data-section-count="research">6 Studies</span>
+        <a href="portfolio-classwork.html" class="hub-category-card">
+          <div class="hub-category-media">
+            <img src="portfolio-assets/img/vapfa-mission-architecture.webp"
+                 alt="VAPFA mission CONOPS launched on Falcon Heavy from KSC LC-39A"
+                 loading="lazy" width="1400" height="788">
+          </div>
+          <div class="hub-category-body">
+            <div class="hub-category-kicker">04 // Graduate &amp; Undergraduate Engineering</div>
+            <h3 class="hub-category-title">Classwork &amp; Capstones</h3>
+            <p class="hub-category-desc">SP-490 8-console Launch Control Center simulator, SYSE 500 Formula SAE, SYS 530 RideSafe, runway incursion ABM, VAPFA Falcon Heavy, Invisia Falcon 9 AHP, Parker Solar Probe, and CATIA CAD.</p>
+            <div class="hub-category-footer">
+              <span>17 Projects</span>
+              <span class="hub-category-arrow">Browse Classwork &#8594;</span>
+            </div>
+          </div>
+        </a>
       </div>
-      <div class="cards-grid" id="grid-research"></div>
-    </section>
-
-    <!-- Section 4: Classwork -->
-    <section class="portfolio-section" id="classwork" data-section="classwork">
-      <div class="section-header">
-        <div>
-          <div class="section-kicker">04 // Systems Engineering &amp; Space Operations Coursework</div>
-          <h2 class="section-title">Academic Systems &amp; Aerospace Classwork</h2>
-          <p class="section-desc">Distributed launch control simulation, MBSE architectures, orbital trajectory &amp; spacecraft sizing, Six Sigma manufacturing, and competitive aerodynamic prototypes.</p>
-        </div>
-        <span class="section-count-badge" data-section-count="classwork">17 Projects</span>
-      </div>
-      <div class="cards-grid" id="grid-classwork"></div>
     </section>
   </main>
 
-  <!-- Standard Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-links">
         <a href="index.html">&#8592; Main Site</a>
+        <a href="portfolio.html">Portfolio Overview</a>
         <a href="eaa/index.html">Live EAA Suite</a>
-        <a href="portfolio-assets/docs/Caleb_Stone_Resume_SpaceX.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
         <a href="https://github.com/calebstone15" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/caleb-stone" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://www.youtube.com/@erplofficial" target="_blank" rel="noopener noreferrer">@erplofficial</a>
@@ -413,32 +223,6 @@
       <p class="footer-copy">&copy; 2026 Stones Photos</p>
     </div>
   </footer>
-
-  <!-- More Info Modal -->
-  <div class="modal-backdrop" id="deepDiveModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
-    <div class="deep-dive-modal" id="deepDiveDialog">
-      <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close project details">&times;</button>
-      <div class="modal-kicker" id="modalKicker"></div>
-      <h2 class="modal-title" id="modalTitle"></h2>
-      <div class="modal-subtitle" id="modalSubtitle"></div>
-
-      <div class="modal-gallery" id="modalGallery">
-        <div class="modal-hero-media" id="modalHeroMedia"></div>
-        <div class="modal-hero-caption" id="modalHeroCaption"></div>
-        <div class="modal-thumbs" id="modalThumbs"></div>
-      </div>
-
-      <div class="modal-metrics-grid" id="modalMetrics"></div>
-
-      <div class="modal-section-heading">Engineering Breakdown</div>
-      <p class="modal-overview" id="modalOverview"></p>
-
-      <div class="modal-section-heading">Technical Contributions &amp; Verification</div>
-      <ul class="card-bullets" id="modalBullets"></ul>
-
-      <div class="modal-links-row" id="modalLinks"></div>
-    </div>
-  </div>
 
   <!-- Image Zoom Lightbox -->
   <div class="lightbox-backdrop" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Image Zoom View" aria-hidden="true">

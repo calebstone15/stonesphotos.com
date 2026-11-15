@@ -10,9 +10,9 @@
     {
       id: 'local-gopro-chamber',
       tag: 'JUNO / HORIZONTAL STAND',
-      duration: '6.80s MP4',
+      duration: '12.00s MP4',
       title: 'Horizontal Test Stand — GoPro Chamber Top-Down Burn',
-      meta: 'LOCAL MP4 LOOP • 1280x720 H.264 • Chamber Mounting & Blast Deflector Plume',
+      meta: 'LOCAL MP4 LOOP • 1280x720 H.264 • Cryo Chilldown, Hotfire Burn, Mach Plume & Shutdown',
       src: 'portfolio-assets/video/gopro-chamber-topdown.mp4',
       externalUrl: 'https://www.youtube.com/@erplofficial',
       externalLabel: 'ERPL YouTube'
@@ -20,29 +20,29 @@
     {
       id: 'local-triton-hotfire',
       tag: 'TRITON / CECIL PAD',
-      duration: '5.07s MP4',
+      duration: '5.00s MP4',
       title: 'Cecil Spaceport Hangar Apron — Triton Supersonic Hotfire',
-      meta: 'LOCAL MP4 LOOP • 1088x720 H.264 • Horizontal Restraint & Shock Diamonds',
+      meta: 'LOCAL MP4 LOOP • 1280x676 H.264 • Uncropped Ignition Blast, Steady Mach Burn & Tailoff',
       src: 'portfolio-assets/video/triton-hotfire-loop.mp4',
       externalUrl: 'https://www.youtube.com/watch?v=cwGCarHdi9k',
       externalLabel: 'Watch Triton on YouTube'
     },
     {
-      id: 'local-odyssey-highspeed',
-      tag: 'ODYSSEY / HIGH-SPEED',
-      duration: '5.47s MP4',
-      title: 'Odyssey Monochrome High-Speed Ignition & Shock Diamonds',
-      meta: 'LOCAL MP4 LOOP • 1280x720 H.264 • 1000 fps Optical Diagnostics',
-      src: 'portfolio-assets/video/odyssey-highspeed-ignition.mp4',
-      externalUrl: 'https://www.youtube.com/watch?v=s5NX9r3Re84',
-      externalLabel: 'Watch Odyssey 1000fps'
+      id: 'local-picam-ir',
+      tag: 'PI NOIR IR / DRACOVISION',
+      duration: '14.03s MP4',
+      title: 'Raspberry Pi NoIR IR Camera — Venting & Fireball Anomaly',
+      meta: 'LOCAL MP4 LOOP • 1280x720 H.264 • Pre-Ignition Venting, IR Fireball Anomaly & Cooldown',
+      src: 'portfolio-assets/video/picam-ir-anomaly.mp4',
+      externalUrl: 'https://www.youtube.com/@erplofficial',
+      externalLabel: 'ERPL YouTube'
     },
     {
       id: 'local-hdaa-sync',
       tag: 'HDAA / LOAD-CELL SYNC',
-      duration: '7.50s MP4',
-      title: 'HDAA Synchronized Load-Cell & Chamber Telemetry Hotfire',
-      meta: 'LOCAL MP4 LOOP • 1280x720 H.264 • Thrust & Pressure Correlation',
+      duration: '12.37s MP4',
+      title: 'HDAA Synchronized 3-Channel Thrust Load-Cell Hotfire',
+      meta: 'LOCAL MP4 LOOP • 1280x720 H.264 • Stand Burn & Synchronized 3-Channel Load-Cell Plot',
       src: 'portfolio-assets/video/hdaa-loadcell-hotfire.mp4',
       externalUrl: 'https://github.com/calebstone15/HDAA-V2.3',
       externalLabel: 'HDAA GitHub'
@@ -52,7 +52,7 @@
       tag: 'CECIL PAD / OPS',
       duration: '1.90s MP4',
       title: 'Cecil Pad Launch Control — Fire Call & Plume Ignition',
-      meta: 'LOCAL MP4 LOOP • 1280x720 H.264 • Console Sequence Verification',
+      meta: 'LOCAL MP4 LOOP • 1280x720 H.264 • Pad Fire Call & Ignition Sequence',
       src: 'portfolio-assets/video/cecil-launch-fire-call.mp4',
       externalUrl: 'https://x.com/erauerpl',
       externalLabel: 'ERPL on X'
@@ -515,10 +515,10 @@
         type: 'image',
         src: 'portfolio-assets/img/moe-cam-avionics-schematic.webp',
         alt: 'MOE Cam flight avionics schematic with Kakute H743-Wing, dual RunCam Split 4, VTX, and GPS',
-        fit: 'light'
+        fit: 'contain'
       },
       gallery: [
-        { type: 'image', src: 'portfolio-assets/img/moe-cam-avionics-schematic.webp', caption: 'STM32H743 (Kakute H743-Wing) + Dual RunCam Split 4 V2 + GEPRC 1.2 GHz VTX + GNSS schematic', tone: 'light' },
+        { type: 'image', src: 'portfolio-assets/img/moe-cam-avionics-schematic.webp', caption: 'STM32H743 (Kakute H743-Wing) + Dual RunCam Split 4 V2 + GEPRC 1.2 GHz VTX + GNSS schematic', tone: 'dark' },
         { type: 'image', src: 'portfolio-assets/img/moe-network-topology.webp', caption: 'MOE pad & ground station network architecture diagram', tone: 'light' },
         { type: 'image', src: 'portfolio-assets/img/moe-hf1-boiloff.webp', caption: 'MOE Static Hotfire 1 in cryogenic LOX boil-off mist', tone: 'dark' },
         { type: 'image', src: 'portfolio-assets/img/esd-lora-soldering.webp', caption: 'ESD mat bench soldering of telemetry RF transceivers and power switching hardware', tone: 'dark' }
@@ -553,12 +553,13 @@
       summary: 'Built a 3,373-line Flask/RTSP/FFmpeg multi-camera matrix bridging 12 pad feeds to HLS & fMP4/MSE alongside ruggedized Raspberry Pi 5 dual-stream IMX477 HQ & IR systems.',
       media: {
         type: 'image',
-        src: 'portfolio-assets/img/dracovision-ui.webp',
-        alt: 'DracoVision sanitized multi-camera operator console displaying six rocket test stand feeds',
+        src: 'portfolio-assets/img/dracovision-in-use.webp',
+        alt: 'DracoVision multi-camera telemetry matrix running outdoors during ERPL rocket test-stand operations',
         fit: 'cover'
       },
       gallery: [
-        { type: 'image', src: 'portfolio-assets/img/dracovision-ui.webp', caption: 'DracoVision 12-cam test-stand matrix with adaptive HLS/MSE mode & health telemetry (sanitized demo view)', tone: 'dark' },
+        { type: 'image', src: 'portfolio-assets/img/dracovision-in-use.webp', caption: 'DracoVision multi-camera matrix operating live outdoors during ERPL test-stand operations', tone: 'dark' },
+        { type: 'video', src: 'portfolio-assets/video/picam-ir-anomaly.mp4', caption: 'Raspberry Pi NoIR IR camera capture showing pre-ignition venting, fireball ignition anomaly, and cooldown', tone: 'dark' },
         { type: 'image', src: 'portfolio-assets/img/picamera-control-ui.webp', caption: 'PiCameraProject live Operational Control workbench dashboard', tone: 'dark' },
         { type: 'image', src: 'portfolio-assets/img/caleb-nema-box-wiring.webp', caption: 'Weatherproof NEMA field enclosure wiring for test-stand camera power and PoE networking', tone: 'dark' }
       ],
@@ -1567,8 +1568,18 @@
     return a;
   }
 
+  function normalizeSearchText(str) {
+    return String(str || '')
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/&amp;/g, ' ')
+      .toLowerCase()
+      .replace(/[-_/.,:•|()]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
   function getSearchHaystack(project) {
-    return [
+    var parts = [
       project.title,
       project.org,
       project.badge,
@@ -1577,7 +1588,23 @@
       project.overview,
       project.tags.join(' '),
       project.bullets.join(' ')
-    ].join(' ').replace(/<[^>]*>/g, ' ').toLowerCase();
+    ];
+    if (project.media && project.media.alt) {
+      parts.push(project.media.alt);
+    }
+    if (project.metrics && project.metrics.length) {
+      for (var m = 0; m < project.metrics.length; m++) {
+        parts.push(project.metrics[m].label + ' ' + project.metrics[m].value);
+      }
+    }
+    if (project.links && project.links.length) {
+      for (var k = 0; k < project.links.length; k++) {
+        parts.push(project.links[k].label);
+      }
+    }
+    var normalized = normalizeSearchText(parts.join(' '));
+    var joinedCodes = normalized.replace(/([a-z]+)\s+(\d+)/g, '$1$2');
+    return joinedCodes === normalized ? normalized : (normalized + ' ' + joinedCodes);
   }
 
   function renderSchematicNode(schematicKey) {
@@ -1647,14 +1674,17 @@
     body.appendChild(createEl('h3', 'card-title', project.title));
     body.appendChild(createEl('p', 'card-summary', project.summary));
 
-    var ul = createEl('ul', 'card-bullets');
-    var cardBulletCount = Math.min(project.bullets.length, 3);
-    for (var i = 0; i < cardBulletCount; i++) {
-      var li = document.createElement('li');
-      li.innerHTML = project.bullets[i];
-      ul.appendChild(li);
+    if (project.metrics && project.metrics.length) {
+      var factsGrid = createEl('div', 'card-facts');
+      var maxFacts = Math.min(project.metrics.length, 2);
+      for (var m = 0; m < maxFacts; m++) {
+        var factBox = createEl('div', 'card-fact');
+        factBox.appendChild(createEl('div', 'card-fact-label', project.metrics[m].label));
+        factBox.appendChild(createEl('div', 'card-fact-val', project.metrics[m].value));
+        factsGrid.appendChild(factBox);
+      }
+      body.appendChild(factsGrid);
     }
-    body.appendChild(ul);
 
     var actions = createEl('div', 'card-actions');
     var deepBtn = createEl('button', 'card-btn card-btn--primary', 'More Info');
@@ -1682,120 +1712,97 @@
     var i;
     for (i = 0; i < PROJECTS.length; i++) {
       var project = PROJECTS[i];
-      project._search = getSearchHaystack(project);
       var grid = grids[project.section];
-      if (grid) {
-        var cardNode = buildProjectCard(project);
-        project._cardEl = cardNode;
-        grid.appendChild(cardNode);
+      if (!grid) {
+        continue;
       }
+      project._search = getSearchHaystack(project);
+      var cardNode = buildProjectCard(project);
+      project._cardEl = cardNode;
+      grid.appendChild(cardNode);
     }
   }
 
   /* ========================================================================
-     Discipline Filtering & Live Search
+     Classwork Live Search
      ======================================================================== */
 
   function applyFilters() {
-    var q = state.query.trim().toLowerCase();
-    var sectionTotals = { work: 0, erpl: 0, research: 0, classwork: 0 };
-    var sectionVisible = { work: 0, erpl: 0, research: 0, classwork: 0 };
+    if (!grids.classwork) {
+      return;
+    }
+
+    var q = normalizeSearchText(state.query);
+    var classworkTotal = 0;
     var visibleCount = 0;
 
     for (var i = 0; i < PROJECTS.length; i++) {
       var p = PROJECTS[i];
-      sectionTotals[p.section] += 1;
+      if (p.section !== 'classwork' || !p._cardEl) {
+        continue;
+      }
+      classworkTotal += 1;
 
-      var catMatch = state.filter === 'all' || p.categories.indexOf(state.filter) !== -1;
       var queryMatch = !q || p._search.indexOf(q) !== -1;
-      var matched = catMatch && queryMatch;
-
-      if (p._cardEl) {
-        if (matched) {
-          p._cardEl.classList.remove('is-filtered-out');
-          visibleCount += 1;
-          sectionVisible[p.section] += 1;
-        } else {
-          p._cardEl.classList.add('is-filtered-out');
-        }
-      }
-    }
-
-    var isFiltering = state.filter !== 'all' || q.length > 0;
-    var sectionEls = document.querySelectorAll('.portfolio-section');
-    for (var s = 0; s < sectionEls.length; s++) {
-      var secEl = sectionEls[s];
-      var secKey = secEl.getAttribute('data-section');
-      var vis = sectionVisible[secKey] || 0;
-      var tot = sectionTotals[secKey] || 0;
-      var badge = secEl.querySelector('[data-section-count]');
-      if (badge) {
-        badge.textContent = isFiltering ? (vis + ' of ' + tot + ' shown') : (tot + ' Entries');
-      }
-
-      if (isFiltering && vis === 0) {
-        secEl.classList.add('is-hidden');
+      if (queryMatch) {
+        p._cardEl.classList.remove('is-filtered-out');
+        visibleCount += 1;
       } else {
-        secEl.classList.remove('is-hidden');
+        p._cardEl.classList.add('is-filtered-out');
       }
     }
 
-    resultsCount.textContent = 'Showing ' + visibleCount + ' / ' + PROJECTS.length + ' programs';
-    if (visibleCount === 0) {
-      emptyBanner.classList.add('visible');
-    } else {
-      emptyBanner.classList.remove('visible');
+    if (resultsCount) {
+      resultsCount.textContent = 'Showing ' + visibleCount + ' / ' + classworkTotal + ' projects';
+    }
+    if (emptyBanner) {
+      if (visibleCount === 0) {
+        emptyBanner.classList.add('visible');
+      } else {
+        emptyBanner.classList.remove('visible');
+      }
     }
   }
 
   function initFilters() {
-    var filterPills = document.querySelectorAll('.filter-pill');
-    for (var i = 0; i < filterPills.length; i++) {
-      (function (pill) {
-        pill.addEventListener('click', function () {
-          for (var j = 0; j < filterPills.length; j++) {
-            filterPills[j].classList.remove('active');
-          }
-          pill.classList.add('active');
-          state.filter = pill.getAttribute('data-filter') || 'all';
-          applyFilters();
-        });
-      })(filterPills[i]);
+    if (!grids.classwork || !searchInput) {
+      return;
     }
 
     searchInput.addEventListener('input', function () {
       state.query = searchInput.value;
-      if (state.query.length > 0) {
-        searchClear.classList.add('visible');
-      } else {
-        searchClear.classList.remove('visible');
-      }
-      applyFilters();
-    });
-
-    searchClear.addEventListener('click', function () {
-      searchInput.value = '';
-      state.query = '';
-      searchClear.classList.remove('visible');
-      applyFilters();
-      searchInput.focus();
-    });
-
-    resetFiltersBtn.addEventListener('click', function () {
-      searchInput.value = '';
-      state.query = '';
-      state.filter = 'all';
-      searchClear.classList.remove('visible');
-      var pills = document.querySelectorAll('.filter-pill');
-      for (var i = 0; i < pills.length; i++) {
-        if (pills[i].getAttribute('data-filter') === 'all') {
-          pills[i].classList.add('active');
+      if (searchClear) {
+        if (state.query.length > 0) {
+          searchClear.classList.add('visible');
         } else {
-          pills[i].classList.remove('active');
+          searchClear.classList.remove('visible');
         }
       }
       applyFilters();
     });
+
+    if (searchClear) {
+      searchClear.addEventListener('click', function () {
+        searchInput.value = '';
+        state.query = '';
+        searchClear.classList.remove('visible');
+        applyFilters();
+        searchInput.focus();
+      });
+    }
+
+    if (resetFiltersBtn) {
+      resetFiltersBtn.addEventListener('click', function () {
+        searchInput.value = '';
+        state.query = '';
+        if (searchClear) {
+          searchClear.classList.remove('visible');
+        }
+        applyFilters();
+      });
+    }
+
+    applyFilters();
   }
 
   /* ========================================================================
@@ -1803,6 +1810,9 @@
      ======================================================================== */
 
   function renderTheaterViewport(item) {
+    if (!theaterViewport) {
+      return;
+    }
     theaterViewport.innerHTML = '';
     if (state.theaterTab === 'local') {
       var video = document.createElement('video');
@@ -1839,6 +1849,9 @@
   }
 
   function renderTheaterPlaylist() {
+    if (!theaterPlaylist) {
+      return;
+    }
     var list = state.theaterTab === 'local' ? THEATER_LOCAL_CLIPS : THEATER_YOUTUBE_VIDEOS;
     theaterPlaylist.innerHTML = '';
 
@@ -1871,6 +1884,9 @@
   }
 
   function initTheater() {
+    if (!theaterViewport || !theaterPlaylist) {
+      return;
+    }
     var tabs = document.querySelectorAll('[data-theater-tab]');
     for (var i = 0; i < tabs.length; i++) {
       (function (tab) {
@@ -2033,10 +2049,15 @@
   }
 
   function closeDeepDive() {
+    if (!deepDiveModal) {
+      return;
+    }
     deepDiveModal.classList.remove('open');
     deepDiveModal.setAttribute('aria-hidden', 'true');
-    modalHeroMedia.innerHTML = '';
-    if (!lightboxModal.classList.contains('open')) {
+    if (modalHeroMedia) {
+      modalHeroMedia.innerHTML = '';
+    }
+    if (!lightboxModal || !lightboxModal.classList.contains('open')) {
       document.body.style.overflow = '';
     }
     if (state.lastFocusEl && typeof state.lastFocusEl.focus === 'function') {
@@ -2045,37 +2066,61 @@
   }
 
   function openLightbox(src, caption) {
+    if (!lightboxModal || !lightboxImg) {
+      return;
+    }
+    if (!deepDiveModal || !deepDiveModal.classList.contains('open')) {
+      state.lastFocusEl = document.activeElement;
+    }
     lightboxImg.src = src;
     lightboxImg.alt = caption || 'Expanded engineering visual';
-    lightboxCaption.textContent = caption || '';
+    if (lightboxCaption) {
+      lightboxCaption.textContent = caption || '';
+    }
     lightboxModal.classList.add('open');
     lightboxModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-    lightboxCloseBtn.focus();
+    if (lightboxCloseBtn) {
+      lightboxCloseBtn.focus();
+    }
   }
 
   function closeLightbox() {
+    if (!lightboxModal) {
+      return;
+    }
     lightboxModal.classList.remove('open');
     lightboxModal.setAttribute('aria-hidden', 'true');
-    if (!deepDiveModal.classList.contains('open')) {
+    if (!deepDiveModal || !deepDiveModal.classList.contains('open')) {
       document.body.style.overflow = '';
+      if (state.lastFocusEl && typeof state.lastFocusEl.focus === 'function') {
+        state.lastFocusEl.focus();
+      }
     }
   }
 
   function initModalsAndLightbox() {
-    modalCloseBtn.addEventListener('click', closeDeepDive);
-    deepDiveModal.addEventListener('click', function (e) {
-      if (e.target === deepDiveModal) {
-        closeDeepDive();
-      }
-    });
+    if (modalCloseBtn) {
+      modalCloseBtn.addEventListener('click', closeDeepDive);
+    }
+    if (deepDiveModal) {
+      deepDiveModal.addEventListener('click', function (e) {
+        if (e.target === deepDiveModal) {
+          closeDeepDive();
+        }
+      });
+    }
 
-    lightboxCloseBtn.addEventListener('click', closeLightbox);
-    lightboxModal.addEventListener('click', function (e) {
-      if (e.target === lightboxModal) {
-        closeLightbox();
-      }
-    });
+    if (lightboxCloseBtn) {
+      lightboxCloseBtn.addEventListener('click', closeLightbox);
+    }
+    if (lightboxModal) {
+      lightboxModal.addEventListener('click', function (e) {
+        if (e.target === lightboxModal) {
+          closeLightbox();
+        }
+      });
+    }
 
     var staticTriggers = document.querySelectorAll('.js-lightbox-trigger');
     for (var i = 0; i < staticTriggers.length; i++) {
@@ -2092,9 +2137,9 @@
 
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
-        if (lightboxModal.classList.contains('open')) {
+        if (lightboxModal && lightboxModal.classList.contains('open')) {
           closeLightbox();
-        } else if (deepDiveModal.classList.contains('open')) {
+        } else if (deepDiveModal && deepDiveModal.classList.contains('open')) {
           closeDeepDive();
         }
       }
@@ -2102,7 +2147,7 @@
   }
 
   /* ========================================================================
-     Navigation & ScrollSpy
+     Navigation & Mobile Drawer
      ======================================================================== */
 
   function initNavigation() {
@@ -2114,9 +2159,9 @@
       });
     }
 
-    var jumpLinks = document.querySelectorAll('.nav-jump');
-    for (var i = 0; i < jumpLinks.length; i++) {
-      jumpLinks[i].addEventListener('click', function () {
+    var navLinks = document.querySelectorAll('.nav-jump, .nav-link');
+    for (var i = 0; i < navLinks.length; i++) {
+      navLinks[i].addEventListener('click', function () {
         if (portfolioNav) {
           portfolioNav.classList.remove('open');
         }
@@ -2124,25 +2169,6 @@
           mobileMenuBtn.setAttribute('aria-expanded', 'false');
         }
       });
-    }
-
-    if ('IntersectionObserver' in window) {
-      var sections = document.querySelectorAll('.portfolio-section');
-      var observer = new IntersectionObserver(function (entries) {
-        for (var e = 0; e < entries.length; e++) {
-          if (entries[e].isIntersecting) {
-            var id = entries[e].target.getAttribute('id');
-            for (var j = 0; j < jumpLinks.length; j++) {
-              var href = jumpLinks[j].getAttribute('href');
-              jumpLinks[j].classList.toggle('active', href === '#' + id);
-            }
-          }
-        }
-      }, { rootMargin: '-25% 0px -60% 0px' });
-
-      for (var s = 0; s < sections.length; s++) {
-        observer.observe(sections[s]);
-      }
     }
   }
 
@@ -2153,7 +2179,6 @@
   document.addEventListener('DOMContentLoaded', function () {
     renderAllProjects();
     initFilters();
-    applyFilters();
     initTheater();
     initModalsAndLightbox();
     initNavigation();

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2SYJ5X13M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M2SYJ5X13M');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Caleb Stone — Systems &amp; Aerospace Classwork</title>
+  <meta name="description" content="Graduate and undergraduate aerospace and systems engineering coursework by Caleb Stone: SP-490 LCC simulator, SYSE 500 Formula SAE, SYS 530 RideSafe, orbital mechanics, and CATIA CAD.">
+
+  <link rel="icon" type="image/x-icon" href="Websitelogo.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body data-page="classwork">
+  <!-- Sticky Frosted Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="portfolio.html" class="brand-name">Caleb Stone</a>
+      </div>
+
+      <button type="button" class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle portfolio navigation" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav class="portfolio-nav" id="portfolioNav" aria-label="Portfolio pages">
+        <a href="portfolio.html" class="nav-jump">Overview</a>
+        <a href="portfolio-work.html" class="nav-jump">Work Experience</a>
+        <a href="portfolio-erpl.html" class="nav-jump">ERPL</a>
+        <a href="portfolio-research.html" class="nav-jump">Research</a>
+        <a href="portfolio-classwork.html" class="nav-jump active">Classwork</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="eaa/index.html" class="hdr-btn hdr-btn--eaa">
+          <span class="live-dot live-dot--cyan" aria-hidden="true"></span>
+          <span>Live EAA Suite</span>
+        </a>
+        <a href="index.html" class="hdr-btn hdr-btn--back">
+          <span>&#8592; Back to Main Site</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="portfolio-main">
+    <section class="page-hero">
+      <a href="portfolio.html" class="page-breadcrumb">&#8592; Portfolio Overview</a>
+      <div class="section-header" style="margin-bottom: 0;">
+        <div>
+          <div class="section-kicker">04 // Systems Engineering &amp; Space Operations Coursework</div>
+          <h1 class="section-title">Classwork &amp; Capstones</h1>
+          <p class="section-desc">Distributed launch control simulation, MBSE architectures, interplanetary mission planning, Six Sigma optimization, and CAD assemblies.</p>
+        </div>
+        <span class="section-count-badge">17 Projects</span>
+      </div>
+    </section>
+
+    <!-- Optional Search Bar for Classwork Only -->
+    <section class="classwork-search-bar" aria-label="Search classwork projects">
+      <div class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="search" id="projectSearch" class="search-input" placeholder="Search SP-490, SYSE 500, RideSafe, CATIA, Falcon..." aria-label="Search classwork projects">
+        <button type="button" id="searchClear" class="search-clear" aria-label="Clear search">&times;</button>
+      </div>
+      <span class="results-count" id="resultsCount">Showing 17 / 17 projects</span>
+    </section>
+
+    <div class="empty-filter-banner" id="emptyFilterBanner">
+      <p>No coursework projects match your search query.</p>
+      <button type="button" class="btn-secondary" id="resetFiltersBtn">Reset Search</button>
+    </div>
+
+    <section aria-label="Coursework Projects">
+      <div class="cards-grid" id="grid-classwork"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="index.html">&#8592; Main Site</a>
+        <a href="portfolio.html">Portfolio Overview</a>
+        <a href="eaa/index.html">Live EAA Suite</a>
+        <a href="https://github.com/calebstone15" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/caleb-stone" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.youtube.com/@erplofficial" target="_blank" rel="noopener noreferrer">@erplofficial</a>
+        <a href="https://x.com/erauerpl" target="_blank" rel="noopener noreferrer">@erauerpl</a>
+        <a href="mailto:Calebmstone15@gmail.com">Calebmstone15@gmail.com</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Stones Photos</p>
+    </div>
+  </footer>
+
+  <!-- More Info Modal -->
+  <div class="modal-backdrop" id="deepDiveModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="deep-dive-modal" id="deepDiveDialog">
+      <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close project details">&times;</button>
+      <div class="modal-kicker" id="modalKicker"></div>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <div class="modal-subtitle" id="modalSubtitle"></div>
+
+      <div class="modal-gallery" id="modalGallery">
+        <div class="modal-hero-media" id="modalHeroMedia"></div>
+        <div class="modal-hero-caption" id="modalHeroCaption"></div>
+        <div class="modal-thumbs" id="modalThumbs"></div>
+      </div>
+
+      <div class="modal-metrics-grid" id="modalMetrics"></div>
+
+      <div class="modal-section-heading">Engineering Summary</div>
+      <p class="modal-overview" id="modalOverview"></p>
+
+      <div class="modal-section-heading">Verified Contributions</div>
+      <ul class="card-bullets" id="modalBullets"></ul>
+
+      <div class="modal-links-row" id="modalLinks"></div>
+    </div>
+  </div>
+
+  <!-- Image Zoom Lightbox -->
+  <div class="lightbox-backdrop" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Image Zoom View" aria-hidden="true">
+    <button type="button" class="lightbox-close" id="lightboxCloseBtn" aria-label="Close image zoom">&times;</button>
+    <div class="lightbox-frame">
+      <img id="lightboxImg" src="portfolio-assets/img/caleb-grad-portrait.webp" alt="Expanded engineering visual">
+    </div>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+
+  <script src="portfolio.js"></script>
+  <script src="analytics.js"></script>
+</body>
+</html>
