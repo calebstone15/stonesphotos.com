@@ -6,59 +6,6 @@
      All asset paths verified against portfolio-assets/ and eaa/ manifests.
      ======================================================================== */
 
-  var THEATER_LOCAL_CLIPS = [
-    {
-      id: 'local-gopro-chamber',
-      tag: 'JUNO / HORIZONTAL STAND',
-      duration: '12.00s MP4',
-      title: 'Horizontal Test Stand — GoPro Chamber Top-Down Burn',
-      meta: 'LOCAL MP4 LOOP • 1280x720 H.264 • Cryo Chilldown, Hotfire Burn, Mach Plume & Shutdown',
-      src: 'portfolio-assets/video/gopro-chamber-topdown.mp4',
-      externalUrl: 'https://www.youtube.com/@erplofficial',
-      externalLabel: 'ERPL YouTube'
-    },
-    {
-      id: 'local-triton-hotfire',
-      tag: 'TRITON / CECIL PAD',
-      duration: '5.00s MP4',
-      title: 'Cecil Spaceport Hangar Apron — Triton Supersonic Hotfire',
-      meta: 'LOCAL MP4 LOOP • 1280x676 H.264 • Uncropped Ignition Blast, Steady Mach Burn & Tailoff',
-      src: 'portfolio-assets/video/triton-hotfire-loop.mp4',
-      externalUrl: 'https://www.youtube.com/watch?v=cwGCarHdi9k',
-      externalLabel: 'Watch Triton on YouTube'
-    },
-    {
-      id: 'local-picam-ir',
-      tag: 'PI NOIR IR / DRACOVISION',
-      duration: '14.03s MP4',
-      title: 'Raspberry Pi NoIR IR Camera — Venting & Fireball Anomaly',
-      meta: 'LOCAL MP4 LOOP • 1280x720 H.264 • Pre-Ignition Venting, IR Fireball Anomaly & Cooldown',
-      src: 'portfolio-assets/video/picam-ir-anomaly.mp4',
-      externalUrl: 'https://www.youtube.com/@erplofficial',
-      externalLabel: 'ERPL YouTube'
-    },
-    {
-      id: 'local-hdaa-sync',
-      tag: 'HDAA / LOAD-CELL SYNC',
-      duration: '12.37s MP4',
-      title: 'HDAA Synchronized 3-Channel Thrust Load-Cell Hotfire',
-      meta: 'LOCAL MP4 LOOP • 1280x720 H.264 • Stand Burn & Synchronized 3-Channel Load-Cell Plot',
-      src: 'portfolio-assets/video/hdaa-loadcell-hotfire.mp4',
-      externalUrl: 'https://github.com/calebstone15/HDAA-V2.3',
-      externalLabel: 'HDAA GitHub'
-    },
-    {
-      id: 'local-cecil-fire-call',
-      tag: 'CECIL PAD / OPS',
-      duration: '1.90s MP4',
-      title: 'Cecil Pad Launch Control — Fire Call & Plume Ignition',
-      meta: 'LOCAL MP4 LOOP • 1280x720 H.264 • Pad Fire Call & Ignition Sequence',
-      src: 'portfolio-assets/video/cecil-launch-fire-call.mp4',
-      externalUrl: 'https://x.com/erauerpl',
-      externalLabel: 'ERPL on X'
-    }
-  ];
-
   var THEATER_YOUTUBE_VIDEOS = [
     {
       id: 'yt-juno-hf1',
@@ -95,7 +42,7 @@
       tag: 'JUNO WATERFLOW • 2024-10-02',
       duration: 'YouTube',
       title: 'Juno Water Flow Fall 2024 — Engineering Cut',
-      meta: '@erplofficial • CdA Calibration & Feed Checkout',
+      meta: '@erplofficial • Feed System Flow Calibration & Checkout',
       youtubeId: '4IUNaIuttcE',
       externalUrl: 'https://www.youtube.com/watch?v=4IUNaIuttcE',
       externalLabel: 'Watch on YouTube'
@@ -184,7 +131,7 @@
 
   var SCHEMATICS = {
     gis: {
-      code: 'GIS // HYDRAULIC NETWORK',
+      code: 'GIS • HYDRAULIC NETWORK',
       svg: '<svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Municipal GIS water pressure zone topology diagram">' +
         '<rect x="14" y="14" width="332" height="162" rx="10" fill="none" stroke="rgba(56,189,248,0.28)" stroke-width="1"/>' +
         '<path d="M40 132 L110 92 L182 104 L245 58 L315 74" fill="none" stroke="#38bdf8" stroke-width="2.5"/>' +
@@ -193,12 +140,12 @@
         '<circle cx="182" cy="104" r="6" fill="#38bdf8"/><circle cx="245" cy="58" r="7" fill="#d4af37"/>' +
         '<circle cx="315" cy="74" r="6" fill="#22c55e"/><circle cx="134" cy="148" r="5" fill="#38bdf8"/>' +
         '<circle cx="228" cy="142" r="5" fill="#38bdf8"/>' +
-        '<text x="26" y="36" fill="#d4af37" font-family="monospace" font-size="11" font-weight="700">ARCGIS PRO // TOPOLOGY QA: 10,000+ ASSETS</text>' +
+        '<text x="26" y="36" fill="#d4af37" font-family="monospace" font-size="11" font-weight="700">ARCGIS PRO • TOPOLOGY QA: 10,000+ ASSETS</text>' +
         '<text x="26" y="54" fill="rgba(255,255,255,0.65)" font-family="monospace" font-size="10">VALVES • HYDRANTS • MAINS • PRESSURE ZONES</text>' +
         '</svg>'
     },
     grw: {
-      code: 'PROCESS // FLUID BALANCE',
+      code: 'PROCESS • FLUID BALANCE',
       svg: '<svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Treatment plant hydraulic process piping schematic">' +
         '<rect x="28" y="64" width="66" height="44" rx="6" fill="rgba(56,189,248,0.12)" stroke="#38bdf8" stroke-width="1.8"/>' +
         '<rect x="145" y="64" width="70" height="44" rx="6" fill="rgba(212,175,55,0.14)" stroke="#d4af37" stroke-width="1.8"/>' +
@@ -209,110 +156,8 @@
         '<text x="61" y="90" text-anchor="middle" fill="#bae6fd" font-family="monospace" font-size="10">INFLUENT</text>' +
         '<text x="180" y="90" text-anchor="middle" fill="#fde68a" font-family="monospace" font-size="10">HYDRAULIC</text>' +
         '<text x="299" y="90" text-anchor="middle" fill="#bbf7d0" font-family="monospace" font-size="10">DISCHARGE</text>' +
-        '<text x="28" y="36" fill="#d4af37" font-family="monospace" font-size="11" font-weight="700">AUTOCAD / CIVIL 3D // MASS BALANCE</text>' +
+        '<text x="28" y="36" fill="#d4af37" font-family="monospace" font-size="11" font-weight="700">AUTOCAD / CIVIL 3D • MASS BALANCE</text>' +
         '<text x="28" y="142" fill="rgba(255,255,255,0.65)" font-family="monospace" font-size="10">CARTER CAVES WWTP • BRANDENBURG WTP • DECA</text>' +
-        '</svg>'
-    },
-    ivv: {
-      code: 'SYS 415 // IV&V + FMECA',
-      svg: '<svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Systems integration verification V-model diagram">' +
-        '<polyline points="42,46 112,138 180,148 248,138 318,46" fill="none" stroke="#d4af37" stroke-width="2.5"/>' +
-        '<line x1="76" y1="90" x2="284" y2="90" stroke="rgba(56,189,248,0.6)" stroke-width="1.5" stroke-dasharray="4 4"/>' +
-        '<circle cx="42" cy="46" r="6" fill="#38bdf8"/><circle cx="112" cy="138" r="6" fill="#d4af37"/>' +
-        '<circle cx="248" cy="138" r="6" fill="#d4af37"/><circle cx="318" cy="46" r="6" fill="#22c55e"/>' +
-        '<text x="34" y="32" fill="#bae6fd" font-family="monospace" font-size="10">REQS</text>' +
-        '<text x="288" y="32" fill="#bbf7d0" font-family="monospace" font-size="10">OPS V&amp;V</text>' +
-        '<text x="180" y="83" text-anchor="middle" fill="#38bdf8" font-family="monospace" font-size="10">BOUNDARY &amp; INTERFACE TESTS</text>' +
-        '<text x="180" y="170" text-anchor="middle" fill="rgba(255,255,255,0.68)" font-family="monospace" font-size="10">FMECA CRITICALITY • FAULT TREE ANALYSIS</text>' +
-        '</svg>'
-    },
-    evm: {
-      code: 'BA 424 // CPM & EVM',
-      svg: '<svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Critical path and earned value chart">' +
-        '<rect x="34" y="52" width="110" height="16" rx="4" fill="#d4af37"/>' +
-        '<rect x="148" y="82" width="95" height="16" rx="4" fill="#38bdf8"/>' +
-        '<rect x="247" y="112" width="80" height="16" rx="4" fill="#22c55e"/>' +
-        '<line x1="34" y1="145" x2="328" y2="145" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>' +
-        '<text x="34" y="34" fill="#d4af37" font-family="monospace" font-size="11" font-weight="700">BOEING 777-200 FLEET REFRESH // MS PROJECT</text>' +
-        '<text x="34" y="168" fill="rgba(255,255,255,0.65)" font-family="monospace" font-size="10">WBS • CRITICAL PATH • EARNED VALUE (CPI/SPI)</text>' +
-        '</svg>'
-    },
-    spacecraft: {
-      code: 'SP 300/200 // SUBSYSTEM SIZING',
-      svg: '<svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Spacecraft subsystem sizing and Europa trajectory diagram">' +
-        '<circle cx="180" cy="95" r="24" fill="rgba(56,189,248,0.18)" stroke="#38bdf8" stroke-width="2"/>' +
-        '<ellipse cx="180" cy="95" rx="122" ry="44" fill="none" stroke="#d4af37" stroke-width="1.8" transform="rotate(-12 180 95)"/>' +
-        '<circle cx="288" cy="70" r="7" fill="#d4af37"/>' +
-        '<text x="180" y="99" text-anchor="middle" fill="#bae6fd" font-family="monospace" font-size="9">EUROPA</text>' +
-        '<text x="26" y="32" fill="#d4af37" font-family="monospace" font-size="11" font-weight="700">EPS • ADCS • TT&amp;C LINK • THERMAL • DELTA-V</text>' +
-        '<text x="26" y="170" fill="rgba(255,255,255,0.65)" font-family="monospace" font-size="10">GATEWAY / EUROPA PAYLOAD RADIATION &amp; BUDGETS</text>' +
-        '</svg>'
-    },
-    vulcanFta: {
-      code: 'SP 110 // GEM 63XL FTA',
-      svg: '<svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vulcan GEM 63XL SRB nozzle anomaly fault tree schematic">' +
-        '<rect x="108" y="24" width="144" height="30" rx="6" fill="rgba(239,68,68,0.18)" stroke="#ef4444" stroke-width="1.8"/>' +
-        '<text x="180" y="43" text-anchor="middle" fill="#fecaca" font-family="monospace" font-size="10" font-weight="700">NOZZLE ANOMALY</text>' +
-        '<line x1="180" y1="54" x2="180" y2="76" stroke="#f5f5f5" stroke-width="1.8"/>' +
-        '<path d="M166 76 Q180 68 194 76 L194 96 Q180 89 166 96 Z" fill="rgba(212,175,55,0.2)" stroke="#d4af37" stroke-width="1.6"/>' +
-        '<text x="180" y="88" text-anchor="middle" fill="#fde68a" font-family="monospace" font-size="9">OR</text>' +
-        '<polyline points="92,118 92,102 268,102 268,118" fill="none" stroke="rgba(255,255,255,0.65)" stroke-width="1.6"/>' +
-        '<rect x="30" y="118" width="124" height="34" rx="6" fill="rgba(56,189,248,0.12)" stroke="#38bdf8" stroke-width="1.5"/>' +
-        '<rect x="206" y="118" width="124" height="34" rx="6" fill="rgba(56,189,248,0.12)" stroke="#38bdf8" stroke-width="1.5"/>' +
-        '<text x="92" y="139" text-anchor="middle" fill="#bae6fd" font-family="monospace" font-size="9">LINER DELAMINATION</text>' +
-        '<text x="268" y="139" text-anchor="middle" fill="#bae6fd" font-family="monospace" font-size="9">HOT-GAS SEAL BREACH</text>' +
-        '</svg>'
-    },
-    hurwitz: {
-      code: 'SYS 301/320 // HURWITZ TRADE',
-      svg: '<svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Autonomous robot Hurwitz decision trade matrix schematic">' +
-        '<rect x="34" y="48" width="292" height="106" rx="8" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.4"/>' +
-        '<line x1="34" y1="82" x2="326" y2="82" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>' +
-        '<line x1="150" y1="48" x2="150" y2="154" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>' +
-        '<rect x="166" y="94" width="142" height="14" rx="4" fill="#22c55e"/>' +
-        '<rect x="166" y="122" width="96" height="14" rx="4" fill="#d4af37"/>' +
-        '<text x="34" y="33" fill="#d4af37" font-family="monospace" font-size="11" font-weight="700">INCOSE TRADE STUDY // HURWITZ (a=0.8) &amp; LAPLACE</text>' +
-        '<text x="48" y="70" fill="#bae6fd" font-family="monospace" font-size="10">CONCEPT</text>' +
-        '<text x="166" y="70" fill="#bae6fd" font-family="monospace" font-size="10">WEIGHTED UTILITY SCORE</text>' +
-        '<text x="48" y="105" fill="#f5f5f5" font-family="monospace" font-size="10">OPT-A</text>' +
-        '<text x="48" y="133" fill="#f5f5f5" font-family="monospace" font-size="10">OPT-B</text>' +
-        '</svg>'
-    },
-    catia: {
-      code: 'EGR 120 // CATIA V5 GD&T',
-      svg: '<svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CATIA V5 orthographic projection and GD&T blueprint">' +
-        '<rect x="42" y="54" width="110" height="84" fill="none" stroke="#38bdf8" stroke-width="2"/>' +
-        '<circle cx="97" cy="96" r="22" fill="none" stroke="#d4af37" stroke-width="2"/>' +
-        '<line x1="65" y1="96" x2="129" y2="96" stroke="#d4af37" stroke-width="1" stroke-dasharray="6 3"/>' +
-        '<line x1="97" y1="64" x2="97" y2="128" stroke="#d4af37" stroke-width="1" stroke-dasharray="6 3"/>' +
-        '<rect x="200" y="64" width="112" height="28" fill="rgba(56,189,248,0.1)" stroke="#f5f5f5" stroke-width="1.6"/>' +
-        '<text x="208" y="82" fill="#fde68a" font-family="monospace" font-size="10">&#x2316; 0.05 | A | B | C</text>' +
-        '<text x="42" y="34" fill="#d4af37" font-family="monospace" font-size="11" font-weight="700">CATIA V5 &amp; INVENTOR // ASME Y14.5 GD&amp;T</text>' +
-        '<text x="200" y="128" fill="rgba(255,255,255,0.68)" font-family="monospace" font-size="10">MULTI-PART ASSEMBLIES &amp; BOM</text>' +
-        '</svg>'
-    },
-    stageCost: {
-      code: 'EGR 115 // 2-STAGE SIZING',
-      svg: '<svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two-stage launch vehicle mass ratio and materials cost curve">' +
-        '<polyline points="42,148 42,46" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>' +
-        '<polyline points="42,148 320,148" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>' +
-        '<path d="M56 130 Q135 55 210 92 T308 58" fill="none" stroke="#d4af37" stroke-width="2.6"/>' +
-        '<circle cx="170" cy="83" r="6" fill="#22c55e"/>' +
-        '<text x="42" y="32" fill="#d4af37" font-family="monospace" font-size="11" font-weight="700">2-STAGE LAUNCH VEHICLE COST OPTIMIZER</text>' +
-        '<text x="180" y="170" text-anchor="middle" fill="rgba(255,255,255,0.65)" font-family="monospace" font-size="10">STAGE MASS RATIO vs STRUCTURAL COST ($/KG)</text>' +
-        '</svg>'
-    },
-    asteroid: {
-      code: 'CS 118 // 3D KINEMATICS',
-      svg: '<svg viewBox="0 0 360 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="3D asteroid field Euclidean proximity vector diagram">' +
-        '<circle cx="90" cy="128" r="8" fill="#22c55e"/>' +
-        '<circle cx="242" cy="64" r="14" fill="rgba(239,68,68,0.22)" stroke="#ef4444" stroke-width="1.8"/>' +
-        '<circle cx="290" cy="118" r="9" fill="rgba(212,175,55,0.25)" stroke="#d4af37" stroke-width="1.6"/>' +
-        '<line x1="90" y1="128" x2="242" y2="64" stroke="#38bdf8" stroke-width="2" stroke-dasharray="5 3"/>' +
-        '<line x1="90" y1="128" x2="290" y2="118" stroke="rgba(255,255,255,0.45)" stroke-width="1.4"/>' +
-        '<text x="90" y="152" text-anchor="middle" fill="#bbf7d0" font-family="monospace" font-size="9">CRAFT (0,0,0)</text>' +
-        '<text x="242" y="42" text-anchor="middle" fill="#fecaca" font-family="monospace" font-size="9">d = sqrt(x2+y2+z2)</text>' +
-        '<text x="28" y="30" fill="#d4af37" font-family="monospace" font-size="11" font-weight="700">PYTHON 3D ASTEROID PROXIMITY SIMULATOR</text>' +
         '</svg>'
     }
   };
@@ -534,8 +379,7 @@
         { type: 'image', src: 'portfolio-assets/img/juno-fusion-cad.webp', caption: 'Fusion 360 CAD assembly: C2H5OH / LOX 300 lbf chamber & 350 PSI retainer ring', tone: 'light' },
         { type: 'image', src: 'portfolio-assets/img/juno-thrust-plate-drawing.webp', caption: 'Thrust Plate Drawing v9 — Drafted by Caleb Stone (Autodesk Inventor)', tone: 'light' },
         { type: 'image', src: 'portfolio-assets/img/juno-hf1-wide.webp', caption: 'Juno Hotfire 1 — Full mobile horizontal test stand at Cecil pad', tone: 'dark' },
-        { type: 'image', src: 'portfolio-assets/img/juno-cryo-chilldown.webp', caption: 'Stainless steel nozzle cryogenic LOX chilldown vent verification', tone: 'dark' },
-        { type: 'video', src: 'portfolio-assets/video/gopro-chamber-topdown.mp4', caption: 'GoPro chamber top-down burn toward blast deflector' }
+        { type: 'image', src: 'portfolio-assets/img/juno-cryo-chilldown.webp', caption: 'Stainless steel nozzle cryogenic LOX chilldown vent verification', tone: 'dark' }
       ],
       metrics: [
         { label: 'Rated Thrust', value: '300 lbf' },
@@ -629,11 +473,11 @@
       id: 'erpl-dracovision',
       section: 'erpl',
       categories: ['avionics', 'propulsion'],
-      badge: 'MULTI-CAM TELEMETRY',
+      badge: '12-CAM RTSP MATRIX',
       timeframe: '2023 - 2026',
       org: 'ERPL Visual Control Systems',
-      title: 'DracoVision & PiCameraProject: 12-Cam RTSP Matrix & Pi 5 Streaming',
-      summary: 'Built a 3,373-line Flask/RTSP/FFmpeg multi-camera matrix bridging 12 pad feeds to HLS & fMP4/MSE alongside ruggedized Raspberry Pi 5 dual-stream IMX477 HQ & IR systems.',
+      title: 'DracoVision: 12-Camera RTSP Telemetry & Recording Matrix',
+      summary: 'Built a 3,373-line Flask/RTSP/FFmpeg multi-camera telemetry matrix bridging 12 pad IP feeds into 1s HLS & zero-copy fMP4/MSE with PyQt crash-resilient MP4 recording.',
       media: {
         type: 'image',
         src: 'portfolio-assets/img/dracovision-in-use.webp',
@@ -641,39 +485,83 @@
         fit: 'cover'
       },
       gallery: [
-        { type: 'image', src: 'portfolio-assets/img/dracovision-in-use.webp', caption: 'DracoVision multi-camera matrix operating live outdoors during ERPL test-stand operations', tone: 'dark' },
-        { type: 'video', src: 'portfolio-assets/video/picam-ir-anomaly.mp4', caption: 'Raspberry Pi NoIR IR camera capture showing pre-ignition venting, fireball ignition anomaly, and cooldown', tone: 'dark' },
-        { type: 'image', src: 'portfolio-assets/img/picamera-control-ui.webp', caption: 'PiCameraProject live Operational Control workbench dashboard', tone: 'dark' },
+        { type: 'image', src: 'portfolio-assets/img/dracovision-in-use.webp', caption: 'DracoVision 12-camera matrix operating live outdoors during ERPL test-stand operations', tone: 'dark' },
         { type: 'image', src: 'portfolio-assets/img/caleb-nema-box-wiring.webp', caption: 'Weatherproof NEMA field enclosure wiring for test-stand camera power and PoE networking', tone: 'dark' }
       ],
       metrics: [
-        { label: 'Matrix Scale', value: '12 IP Cameras' },
-        { label: 'Backend LOC', value: '3,373L + 1,711L' },
-        { label: 'Edge Hardware', value: 'RPi 5 + IMX477' },
-        { label: 'Transports', value: 'HLS + fMP4/MSE' },
-        { label: 'Pi Stack', value: 'MediaMTX RTSP' },
-        { label: 'Reliability', value: 'Systemd Watchdog' }
+        { label: 'Matrix Scale', value: '12 Pad IP Cameras' },
+        { label: 'Backend LOC', value: '3,373L Python Flask' },
+        { label: 'Recorder LOC', value: '1,711L (CLI + PyQt)' },
+        { label: 'Transports', value: '1s HLS + fMP4/MSE' },
+        { label: 'PTZ Watchdog', value: 'Serialized Deadman' },
+        { label: 'Crash Recovery', value: 'FFmpeg moov Repair' }
       ],
-      overview: 'Engineered resilient optical range infrastructure across DracoVision (12-camera Flask/RTSP/FFmpeg telemetry matrix) and PiCameraProject (headless Raspberry Pi 5 dual-stream IMX477 HQ & NoIR IR edge appliance) inside weatherproof PoE NEMA enclosures for Cecil Spaceport static fires and launches.',
+      overview: 'Engineered DracoVision, ERPL\'s 12-camera Flask/RTSP/FFmpeg command-center telemetry matrix built for rugged outdoor static fires and launch pad deployments at Cecil Spaceport. Combines low-latency multi-stream remuxing with serialized ONVIF/SUNAPI PTZ deadman safety and crash-resilient local MP4 segment recording.',
       specs: [
-        { label: 'DracoVision Backend', value: 'app.py (3,373 lines, Python Flask, Threading, FFmpeg + h264_videotoolbox / libx264 / copy)' },
-        { label: 'Recorder Suite', value: 'record_cameras.py (776 lines, crash-resilient MP4 segmenter) & PyQt record_ui.py (935 lines)' },
+        { label: 'DracoVision Backend', value: 'app.py (3,373 lines, Python Flask, Threading, FFmpeg + h264_videotoolbox / libx264 / -c:v copy)' },
+        { label: 'Recorder Suite', value: 'record_cameras.py (776 lines, crash-resilient MP4 segmenter/repair) & PyQt record_ui.py (935 lines)' },
         { label: 'Streaming Transports', value: 'Low-Latency 1s HLS (5-segment rolling) + Zero-Copy fMP4/MSE (Fmp4Broadcaster, frag_every_frame)' },
-        { label: 'PiCameraProject Stack', value: 'Operational_app.py (254L), stream.py (150L), mediamtx.yml (RTSP :8554 + ll-HLS :8888)' },
-        { label: 'Edge Hardware', value: 'Raspberry Pi 5 + Arducam IMX477 HQ & NoIR IR Sensors, External SSD Recordings, PoE NEMA Box' },
-        { label: 'Control & Telemetry', value: 'Serialized CameraPTZController Deadman Watchdog, ONVIF/SUNAPI PTZ, Live Bitrate/Ping/Adaptive Quality API' }
+        { label: 'PTZ & Operator Safety', value: 'Serialized CameraPTZController Deadman Watchdog, ONVIF/SUNAPI PTZ, Admin vs Read-Only Field URLs' },
+        { label: 'Health & Bitrate Telemetry', value: 'Real-Time RTSP Probe (probe_rtsp_url), Per-Camera Mbps, TCP Latency & FFmpeg Epoch Watchdog' },
+        { label: 'Adaptive Bandwidth Mode', value: '/api/admin/adaptive_quality Fallback (640px, 12-15 fps, 450-500 kbps h264_videotoolbox)' }
       ],
       bullets: [
-        'Built <strong>DracoVision\'s</strong> 3,373-line Flask backend probing RTSP endpoints (<code>probe_rtsp_url</code>) and transcoding/remuxing 12 live pad cameras into <strong>1s HLS</strong> and <strong>zero-copy fMP4/MSE</strong> streams while monitoring per-camera Mbps, TCP latency, and FFmpeg epoch restarts.',
-        'Implemented <strong>adaptive quality scaling</strong> (<code>/api/admin/adaptive_quality</code>), a serialized per-camera <strong>PTZ deadman watchdog</strong> (<code>CameraPTZController</code>), and strict operator-admin vs. read-only field URL separation.',
-        'Authored <code>record_cameras.py</code> (776 lines) and PyQt <code>record_ui.py</code> (935 lines) featuring <code>SessionTracker</code> crash recovery and automated FFmpeg MP4 <code>moov</code>-atom repair after sudden power loss.',
-        'Deployed <strong>PiCameraProject</strong> on Raspberry Pi 5 SBCs combining <code>Picamera2</code> hardware H.264/JPEG encoders, simultaneous <strong>MediaMTX RTSP/ll-HLS broadcasting</strong>, and systemd-watched local SSD recording in custom NEMA enclosures.'
+        'Built <strong>DracoVision\'s</strong> 3,373-line Flask backend probing RTSP endpoints (<code>probe_rtsp_url</code>) and transcoding/remuxing <strong>12 live pad cameras</strong> into <strong>1s HLS</strong> and <strong>zero-copy fMP4/MSE</strong> streams while monitoring per-camera Mbps, TCP latency, and FFmpeg epoch restarts.',
+        'Implemented <strong>adaptive quality scaling</strong> (<code>/api/admin/adaptive_quality</code>), a serialized per-camera <strong>PTZ deadman watchdog</strong> (<code>CameraPTZController</code>), and strict operator-admin vs. read-only field URL isolation.',
+        'Authored <code>record_cameras.py</code> (776 lines) and PyQt <code>record_ui.py</code> (935 lines) featuring <code>SessionTracker</code> crash recovery and automated FFmpeg MP4 <code>moov</code>-atom repair after unexpected power loss.'
       ],
       verification: [
-        'Field-proven outdoors at Cecil Spaceport test stands driving 12 live pad feeds (dracovision-in-use photo) and capturing headless Raspberry Pi NoIR IR anomaly footage (picam-ir-anomaly.mp4).',
-        'Adaptive sub-stream fallback (640px, 12–15 fps, 450–500 kbps <code>h264_videotoolbox</code>) prevented USB Ethernet saturation when viewing 6+ simultaneous feeds.'
+        'Field-proven outdoors at Cecil Spaceport driving 12 simultaneous live test-stand camera feeds during cryogenic and hotfire campaigns.',
+        'Adaptive sub-stream fallback (640px, 12–15 fps, 450–500 kbps <code>h264_videotoolbox</code>) prevented USB Ethernet saturation across 6+ concurrent operator views.'
       ],
-      tags: ['Flask / Python', 'RTSP / FFmpeg', 'HLS / fMP4 MSE', 'Raspberry Pi 5', 'MediaMTX', 'Systemd', 'NEMA PoE'],
+      tags: ['DracoVision', 'Flask / Python', 'RTSP / FFmpeg', 'HLS / fMP4 MSE', 'ONVIF PTZ', 'NEMA PoE'],
+      links: []
+    },
+    {
+      id: 'erpl-picamera',
+      section: 'erpl',
+      categories: ['avionics', 'propulsion'],
+      badge: 'EDGE STREAMING',
+      timeframe: '2024 - 2026',
+      org: 'ERPL Visual Control Systems',
+      title: 'PiCameraProject: Raspberry Pi 5 Dual-Stream HQ & IR Edge Camera',
+      summary: 'Engineered headless Raspberry Pi 5 + Arducam IMX477 HQ & NoIR IR pad camera appliances streaming via MediaMTX RTSP/ll-HLS with systemd SSD recording inside weatherproof NEMA boxes.',
+      media: {
+        type: 'image',
+        src: 'portfolio-assets/img/picamera-control-ui.webp',
+        alt: 'PiCameraProject live Operational Control workbench dashboard monitoring Raspberry Pi 5 edge streams',
+        fit: 'cover'
+      },
+      gallery: [
+        { type: 'image', src: 'portfolio-assets/img/picamera-control-ui.webp', caption: 'PiCameraProject live Operational Control workbench dashboard', tone: 'dark' },
+        { type: 'image', src: 'portfolio-assets/img/caleb-nema-box-wiring.webp', caption: 'Weatherproof PoE NEMA field enclosure housing Raspberry Pi 5 edge streaming hardware', tone: 'dark' }
+      ],
+      metrics: [
+        { label: 'Edge SBC', value: 'Raspberry Pi 5' },
+        { label: 'Optics Modules', value: 'IMX477 HQ & NoIR IR' },
+        { label: 'Media Router', value: 'MediaMTX RTSP/HLS' },
+        { label: 'Python Core', value: '404L + Picamera2' },
+        { label: 'Local Storage', value: 'External SSD Mount' },
+        { label: 'Service Resiliency', value: 'systemd Watchdog' }
+      ],
+      overview: 'Architected PiCameraProject, a self-healing Raspberry Pi 5 headless edge camera node deployed close-in on Cecil Spaceport test stands inside weatherproof PoE NEMA enclosures. Pairs Arducam IMX477 HQ visible and NoIR infrared optics with hardware-accelerated Picamera2 encoding, simultaneous MediaMTX RTSP/ll-HLS streaming, and fail-safe SSD recording.',
+      specs: [
+        { label: 'Application Core', value: 'Operational_app.py (254 lines, Flask operator control dashboard) & stream.py (150 lines Picamera2 capture)' },
+        { label: 'Streaming Pipeline', value: 'MediaMTX Config (22 lines, RTSP :8554 + Low-Latency HLS :8888) fed by hardware H.264/JPEG encoders' },
+        { label: 'Imaging Sensors', value: 'Arducam IMX477 HQ Visible + NoIR Infrared (thermal & cryogenic plume/vent visibility)' },
+        { label: 'Storage & Provisioning', value: 'Dedicated External SSD (/mnt/external/recordings) + Automated setup.sh Bootstrapped Deployment' },
+        { label: 'Process Supervision', value: 'Linux systemd Auto-Restart Watchdog + Weatherproof PoE NEMA Field Enclosure' }
+      ],
+      bullets: [
+        'Built <strong>Operational_app.py</strong> (254 lines) and <strong>stream.py</strong> (150 lines) orchestrating hardware-encoded <code>Picamera2</code> H.264/JPEG streams alongside local operator preview and recording controls.',
+        'Integrated <strong>MediaMTX</strong> (<code>mediamtx.yml</code>) exposing simultaneous RTSP (<code>:8554</code>) and low-latency HLS (<code>:8888</code>) endpoints directly consumable by DracoVision and remote pad viewing stations.',
+        'Automated headless field deployment via <code>setup.sh</code> and <strong>systemd watchdogs</strong> writing continuous video segments to weatherproof NEMA-enclosed external SSDs.'
+      ],
+      verification: [
+        'Deployed live close-in at Cecil Spaceport capturing visible HQ and NoIR infrared cryogenic venting and hotfire plumes inside sealed PoE NEMA housings.',
+        'Survived pad power cycling and network dropouts via automated systemd service recovery with local SSD archival intact.'
+      ],
+      tags: ['PiCameraProject', 'Raspberry Pi 5', 'IMX477 NoIR IR', 'Picamera2', 'MediaMTX', 'Systemd', 'NEMA PoE'],
       links: []
     },
     {
@@ -683,8 +571,8 @@
       badge: 'LIVE WEB + DAQ',
       timeframe: '2023 - 2026',
       org: 'ERPL Data Acquisition & Propulsion Software',
-      title: 'HDAA V2.3 Desktop Analyzer & Live EAA Engineering Web Suite',
-      summary: 'Full-stack hotfire DAQ suite computing Pc, Thrust, Isp, C*, O/F, and ve with <30s PDF debriefs — plus live browser-based EAA Hotfire & CdA engineering calculators.',
+      title: 'HDAA V2.3 Desktop Analyzer & Live EAA Hotfire Analysis Suite',
+      summary: 'Full-stack hotfire DAQ suite computing Pc, Thrust, Isp, C*, O/F, and ve with <30s PDF debriefs — plus the zero-install live browser EAA Hotfire Analyzer.',
       media: {
         type: 'image',
         src: 'portfolio-assets/img/hdaa-thrust-corrected.webp',
@@ -694,33 +582,32 @@
       gallery: [
         { type: 'image', src: 'portfolio-assets/img/hdaa-thrust-corrected.webp', caption: 'HDAA corrected load-cell thrust telemetry curve (Max 1,721 lbf campaign plot)', tone: 'light' },
         { type: 'image', src: 'portfolio-assets/img/hdaa-pressure-corrected.webp', caption: 'HDAA multi-channel chamber & feed system pressure trace', tone: 'light' },
-        { type: 'image', src: 'portfolio-assets/img/hdaa-logo.webp', caption: 'HDAA V2.3 cross-platform desktop application badge', tone: 'light' },
-        { type: 'video', src: 'portfolio-assets/video/hdaa-loadcell-hotfire.mp4', caption: 'Synchronized hotfire video and load-cell data acquisition run' }
+        { type: 'image', src: 'portfolio-assets/img/hdaa-logo.webp', caption: 'HDAA V2.3 cross-platform desktop application badge', tone: 'light' }
       ],
       metrics: [
         { label: 'Post-Fire Debrief', value: '< 30 sec' },
         { label: 'Parameters', value: 'Pc, F, Isp, C*, O/F' },
         { label: 'Desktop LOC', value: '1,850+ Python LOC' },
-        { label: 'Web Suite LOC', value: '2,758 JS LOC' },
+        { label: 'Web Suite LOC', value: '2,091 JS LOC' },
         { label: 'Live App', value: '/eaa/ Web Suite' },
         { label: 'Bundles', value: 'macOS & Browser' }
       ],
-      overview: 'Developed the HDAA V2.3 (Hotfire Data Analysis App) Python/Tkinter desktop analyzer and ported the propulsion physics engine into the zero-install EAA (ERPL Analysis App) web application embedded directly in this site, cutting hours of manual spreadsheet post-processing to under 30 seconds.',
+      overview: 'Developed the HDAA V2.3 (Hotfire Data Analysis App) Python/Tkinter desktop analyzer and ported the hotfire propulsion physics engine into the zero-install EAA (ERPL Analysis App) web suite embedded directly in this site, cutting hours of manual spreadsheet post-processing to under 30 seconds.',
       specs: [
         { label: 'Desktop Stack', value: 'HDAA-V2.3 — Python, Tkinter, NumPy/SciPy, Matplotlib (12 handler modules, 1,850+ LOC total)' },
-        { label: 'Web Port', value: 'Zero-Install Browser SPA (hotfire-analyzer.js 1,623L, cda-calculator.js 667L, utils.js 325L, app.js 143L = 2,758 LOC)' },
+        { label: 'Web Hotfire Port', value: 'Zero-Install Browser SPA (hotfire-analyzer.js 1,623L, utils.js 325L, app.js 143L = 2,091 LOC)' },
         { label: 'Computed Physics', value: 'Chamber Pressure (Pc), Multi-LC Thrust (F), Isp, Exhaust Velocity (ve = Isp * 9.80665), c* = Pc * At / mdot, O/F Ratio' },
         { label: 'DSP & Splicing', value: 'Moving-Average Convolution Smoothing, Downsampling Slider, Interactive 2-Point Time-Range Integration & Splicing' },
-        { label: 'Web Libraries', value: 'Chart.js, PapaParse (client-side CSV), Interactive Venturi mdot Calculator & Multi-Axis Custom Plotter' },
+        { label: 'Web Libraries', value: 'Chart.js, PapaParse (client-side CSV), Multi-Axis Custom Hotfire Plotter & PNG Export' },
         { label: 'Repos & Live URL', value: 'github.com/calebstone15/HDAA-V2.3, github.com/calebstone15/EAA, eaa/index.html' }
       ],
       bullets: [
         'Modularized <strong>HDAA V2.3</strong> across dedicated physics handlers (<code>plot_thrust.py</code> 125L, <code>plot_chamber_pressure.py</code> 124L, <code>plot_isp.py</code> 143L, <code>plot_c_star.py</code> 151L, <code>plot_ve_from_isp.py</code> 147L, <code>plot_of_ratio.py</code> 128L, <code>custom_plot.py</code> 321L, plus fuel/ox tank weight modules).',
         'Implemented unit-consistent propulsion solver converting lbm/s propellant flows to slug/s (÷ 32.174), psi to lbf/ft^2 (x 144), and ft/s to m/s (x 0.3048), with interactive click-to-average steady-state burn trimming.',
-        'Built <strong>EAA</strong> (2,758 lines of vanilla ES6 + Chart.js + PapaParse) replicating client-side CSV parsing, trapezoidal impulse integration (<code>Utils.trapz</code>), custom constant reference lines, and instant PNG plot export in-browser with zero backend dependencies.'
+        'Built <strong>EAA</strong> (vanilla ES6 + Chart.js + PapaParse) replicating client-side CSV parsing, trapezoidal impulse integration (<code>Utils.trapz</code>), custom constant reference lines, and instant PNG plot export in-browser with zero backend dependencies.'
       ],
       verification: [
-        'Validated against production ERPL hotfire CSV logs (1,721 lbf campaign thrust curve, chamber pressure trace, and synchronized 3-channel load-cell hotfire video).',
+        'Validated against production ERPL hotfire CSV logs (1,721 lbf campaign thrust curve and synchronized multi-channel chamber/feed pressure traces).',
         'Compressed post-hotfire multi-plot engineering debrief generation and automated PDF export from hours of spreadsheet work to <strong>under 30 seconds</strong>.'
       ],
       tags: ['Python / Tkinter', 'NumPy / SciPy', 'Propulsion Physics', 'Chart.js', 'Live Web App', 'Automated PDF'],
@@ -787,63 +674,14 @@
       ]
     },
     {
-      id: 'erpl-cda-schlieren',
-      section: 'erpl',
-      categories: ['propulsion', 'systems'],
-      badge: 'FLOW & OPTICS',
-      timeframe: '2023 - 2025',
-      org: 'ERPL / ERAU Propulsion Diagnostics',
-      title: 'Injector Discharge Area (CdA) Solver & Supersonic Schlieren / BOS',
-      summary: 'Built an interactive injector/orifice CdA flow calculator (CdA = mdot / sqrt(2*rho*dP)) from waterflow logs and aligned Z-type Schlieren & Python BOS density-gradient imaging.',
-      media: {
-        type: 'image',
-        src: 'portfolio-assets/img/lrc25-bos-schlieren.webp',
-        alt: 'Background-Oriented Schlieren density gradient displacement plot from LRC 25 study',
-        fit: 'light'
-      },
-      gallery: [
-        { type: 'image', src: 'portfolio-assets/img/lrc25-bos-schlieren.webp', caption: 'Digital Background-Oriented Schlieren (BOS) refractive displacement analysis', tone: 'light' },
-        { type: 'image', src: 'portfolio-assets/img/odyssey-highspeed-mach.webp', caption: 'High-speed monochrome capture of Odyssey Mach shock diamonds', tone: 'dark' }
-      ],
-      metrics: [
-        { label: 'Governing Eq', value: 'CdA = mdot/sqrt(2p dP)' },
-        { label: 'Optical Bench', value: 'Z-Type Schlieren' },
-        { label: 'BOS Pattern LOC', value: '418L Python' },
-        { label: 'Live Tool', value: 'eaa/pages/cda.html' }
-      ],
-      overview: 'Developed both a quantitative fluid-system injector/orifice characterization tool (CdA Calculator in Python/Tkinter + live EAA browser port) and non-intrusive supersonic exhaust optical diagnostics (Z-Type Schlieren mirror alignment + Python Digital Background-Oriented Schlieren displacement pipeline).',
-      specs: [
-        { label: 'Governing Equation', value: 'CdA = mdot / sqrt(2 * rho * delta_P) (LBS_TO_KG = 0.453592, PSI_TO_PA = 6894.76)' },
-        { label: 'Software Ports', value: 'CdACalc.ipynb (319-line Tkinter GUI) + Live Web eaa/pages/cda.html (cda-calculator.js, 667 LOC)' },
-        { label: 'Optical Systems', value: 'Dual-Parabolic Z-Type Knife-Edge Schlieren Bench & Background-Oriented Schlieren (BOS)' },
-        { label: 'BOS Generator', value: 'OperationalCode.py (418L Python/Tkinter/PIL/SciPy, 5 synthetic 300 DPI background modes at 1920x1080)' },
-        { label: 'Sweep Matrix', value: '45-Image Factorial Sweep across Dot Sizes (1–5+ px) & Density (linear/random/square/static grids)' },
-        { label: 'Test Media', value: 'Waterflow / Cryo Coldflow CSV Logs & High-Speed Mach Shock-Diamond Plumes' }
-      ],
-      bullets: [
-        'Authored <strong>CdACalc</strong> (319 lines) and ported it to <code>eaa/js/cda-calculator.js</code> (667 lines) to ingest test-stand CSVs, compute steady-state mass flow rate <code>mdot</code> from tank load-cell linear regression/windowing, and solve effective discharge area <code>CdA</code> plus downstream target set pressures.',
-        'Aligned a parabolic-mirror <strong>Z-Type optical Schlieren</strong> knife-edge setup and resolved supersonic shockwave Mach diamond structures on high-speed monochrome propellant plumes.',
-        'Built <code>OperationalCode.py</code> (418 lines) generating high-DPI (300 DPI) synthetic BOS backgrounds across linear, linear-square, random, random-square, multi-size, and static modes for mirrorless density-gradient tracking.'
-      ],
-      verification: [
-        'Executed a systematic <strong>45-image BOS background sensitivity sweep</strong> across test flames and rigs validating refractive displacement tracking.',
-        'Validated the CdA waterflow workflow on Juno feed-system checkouts and deployed the calculator live inside <code>eaa/pages/cda.html</code>.'
-      ],
-      tags: ['CdA Waterflow', 'Z-Type Schlieren', 'Digital BOS', 'Mach Diamonds', 'Python / Matplotlib', 'Fluids'],
-      links: [
-        { label: 'Open Live CdA Tool', url: 'eaa/pages/cda.html', kind: 'cyan' },
-        { label: 'Watch Juno Waterflow', url: 'https://www.youtube.com/watch?v=4IUNaIuttcE', kind: 'secondary' }
-      ]
-    },
-    {
       id: 'erpl-secretary',
       section: 'erpl',
       categories: ['systems', 'propulsion'],
-      badge: 'OPS LEADERSHIP',
-      timeframe: '2024 - 2025',
-      org: 'ERPL Executive Board (100+ Active Members)',
-      title: 'Secretary Officer & Test Operations Standardization (Fusion)',
-      summary: 'Standardized hotfire & visual SOPs using Fusion by Stoke Space, coordinated master campaign schedules across 100+ engineers, and secured SGA operating budgets.',
+      badge: 'EXEC BOARD • SEC & PR',
+      timeframe: '2023 - PRESENT',
+      org: 'ERPL Executive Board & Visual Lead (100+ Members)',
+      title: 'Secretary & Public Relations (PR) Officer — Ops & Fusion Standardization',
+      summary: 'Served as ERPL Executive Board Secretary (2024–2025) and Public Relations (PR) Officer & Visual Control Team Lead (2023–Present), standardizing SOPs in Stoke Space Fusion and launch outreach across 100+ engineers.',
       media: {
         type: 'image',
         src: 'portfolio-assets/img/erpl-cryo-ppe-crew.webp',
@@ -856,33 +694,36 @@
         { type: 'image', src: 'portfolio-assets/img/erpl-logo-white.webp', caption: 'Experimental Rocket Propulsion Lab Official Mark', tone: 'dark' }
       ],
       metrics: [
+        { label: 'Exec Officer Roles', value: 'Secretary & PR Officer' },
+        { label: 'Team Leadership', value: 'Visual Lead (2023-Now)' },
         { label: 'Org Size', value: '100+ Engineers' },
-        { label: 'SOP Tool', value: 'Stoke Fusion' },
-        { label: 'Compliance', value: 'ERAU SGA Budget' },
+        { label: 'SOP Tool', value: 'Stoke Space Fusion' },
+        { label: 'Governance', value: 'ERAU SGA Budget' },
         { label: 'Test Range', value: 'Cecil Spaceport' }
       ],
-      overview: 'Elected ERPL Executive Board Secretary (2024–2025 term, cited as incumbent in April 2025 officer elections) for Embry-Riddle\'s 100+-member student liquid rocket organization. Standardized hotfire and visual operations procedures in Fusion by Stoke Space and coordinated cross-team schedules and SGA compliance at Cecil Spaceport.',
+      overview: 'Served across two elected Executive Board appointments for Embry-Riddle\'s 100+-member student liquid rocket organization: Public Relations (PR) Officer & Visual Control Team Lead (2023–Present) directing technical outreach, sponsor media, and NASASpaceflight broadcast coordination, and Secretary Officer (2024–2025) standardizing hotfire SOPs in Fusion by Stoke Space and securing SGA operating budgets.',
       specs: [
         { label: 'Organization', value: 'Experimental Rocket Propulsion Lab (ERPL), 100+ Active Student Engineers' },
-        { label: 'Officer Role', value: 'Elected Executive Board Secretary (2024–2025 Term)' },
-        { label: 'Operations Platform', value: 'Fusion by Stoke Space (Test & Operations Workflow Standardization)' },
-        { label: 'Range Coordination', value: 'Cecil Spaceport Staging, Cryo PPE & Range Safety Compliance' },
-        { label: 'Funding & Governance', value: 'ERAU Student Government Association (SGA) Budget & Compliance' },
-        { label: 'Documentation', value: 'Hotfire Checklists, Cryo Safety SOPs, Visual Ops Manuals, Hotwash Tracking' }
+        { label: 'Secretary Appointment', value: 'Elected Executive Board Secretary (2024–2025 Term): Master Scheduling, Archiving & SGA Governance' },
+        { label: 'PR & Team Leadership', value: 'Public Relations (PR) Officer & Visual Control Team Lead (2023–Present): Broadcast, Media & Outreach' },
+        { label: 'Operations Platform', value: 'Fusion by Stoke Space (Test, Hotfire & Visual Operations SOP Standardization)' },
+        { label: 'Range & Safety Control', value: 'Cecil Spaceport Staging, Cryo PPE & Dec 2024 Hotwash Abort-Criteria Compliance' },
+        { label: 'Outreach Channels', value: '@erplofficial YouTube, @erauerpl X, Sponsor Relations & NASASpaceflight Partner Broadcasts' }
       ],
       bullets: [
-        'Authored and version-controlled standardized <strong>hotfire, cryogenic safety, and visual-control SOPs</strong> using <strong>Fusion by Stoke Space</strong> engineering workflow tools.',
-        'Coordinated master test-readiness schedules, officer accountability records, and hardware staging logistics across <strong>100+ active engineers</strong> spanning propellants, structures, avionics, and visual teams.',
-        'Maintained <strong>ERAU SGA organizational compliance</strong> and budget packet oversight supporting active propulsion test campaigns and Cecil Spaceport pad deployments.',
-        'Institutionalized post-test <strong>Hotwash action items</strong> (Dec 2024) formalizing hard abort criteria lists and cross-training redundant critical-path console operators.'
+        'Directed ERPL public communications, campaign branding, sponsor coordination, and launch/hotfire documentation as <strong>Public Relations (PR) Officer &amp; Visual Control Team Lead (2023&ndash;Present)</strong>.',
+        'Managed master campaign schedules, documentation archiving, and cross-team readiness across <strong>100+ active engineers</strong> during my <strong>Secretary Officer (2024&ndash;2025)</strong> executive term.',
+        'Authored and version-controlled standardized <strong>hotfire, cryogenic safety, and visual-control SOPs</strong> using <strong>Fusion by Stoke Space</strong> workflow tools and post-test Hotwash action items.',
+        'Maintained <strong>ERAU Student Government Association (SGA)</strong> compliance and budget packets sustaining multi-team propulsion testing at Cecil Spaceport.'
       ],
       verification: [
-        'Sustained zero-lost-time range safety record across pressurized cold-flow, water-flow, and static hotfire operations at Cecil Spaceport.',
-        'Passed ERAU SGA governance audits and maintained multi-team propulsion operating budget allocations across consecutive academic cycles.'
+        'Sustained a zero-lost-time range safety record across pressurized cold-flow, water-flow, and static hotfire operations at Cecil Spaceport.',
+        'Passed consecutive ERAU SGA governance audits while expanding ERPL public launch reach via @erplofficial and @erauerpl technical productions.'
       ],
-      tags: ['Fusion by Stoke Space', 'Test SOPs', 'Configuration Control', 'Range Safety', 'Program Logistics'],
+      tags: ['Secretary Officer', 'PR Officer', 'Public Relations', 'Visual Control Lead', 'Fusion by Stoke Space', 'SGA Compliance'],
       links: [
-        { label: 'erpl.space', url: 'https://erpl.space/', kind: 'secondary' }
+        { label: 'erpl.space', url: 'https://erpl.space/', kind: 'secondary' },
+        { label: 'ERPL YouTube', url: 'https://www.youtube.com/@erplofficial', kind: 'secondary' }
       ]
     },
 
@@ -1093,46 +934,50 @@
       id: 'res-cog-dyn',
       section: 'research',
       categories: ['autonomy', 'systems'],
-      badge: 'IN-PROGRESS DRAFT',
-      timeframe: '2026 DRAFT',
-      org: 'RAISE Lab Working Study (Jadhav, La Placa, Ochoa, Nagaraju, Raja)',
-      title: 'Evaluating LLM Cognitive Dynamics Under Prompting Constraints',
-      summary: 'Early 2-page IEEE working draft studying the "Triadic Effect" across 27 stacked format, persona, and urgency prompt conditions on a 542-problem benchmark (Pass@1).',
+      badge: 'ISSS 2026 • PUBLISHED',
+      timeframe: '2026 PUBLISHED',
+      org: 'Jadhav, La Placa, Stone, Raja, Ochoa, Nagaraju — ISSS 2026',
+      title: 'Compound Prompt Constraints in LLM Code Generation (ISSS 2026)',
+      summary: '9-page full-factorial ISSS 2026 study running 22,140 HumanEval+ evaluations across 5 models & 27 prompt conditions — proving super-additive Pass@1 loss up to -12.2 pp.',
       media: {
         type: 'image',
         src: 'portfolio-assets/img/cog-dynamics-framework.webp',
-        alt: 'Experimental design diagram for LLM Cognitive Dynamics working draft',
+        alt: 'Experimental design diagram for ISSS 2026 compound prompt constraints LLM code-generation study',
         fit: 'light'
       },
       gallery: [
-        { type: 'image', src: 'portfolio-assets/img/cog-dynamics-framework.webp', caption: 'Cognitive Dynamics experimental harness & factorial constraint matrix', tone: 'light' },
-        { type: 'image', src: 'portfolio-assets/img/raise-lab-isss2026-team.webp', caption: 'RAISE Lab collaborative research team', tone: 'dark' }
+        { type: 'image', src: 'portfolio-assets/img/cog-dynamics-framework.webp', caption: 'Full-factorial 3x3x3 compound prompt constraint experimental harness (Format x Persona x Urgency)', tone: 'light' },
+        { type: 'image', src: 'portfolio-assets/img/raise-lab-isss2026-team.webp', caption: 'RAISE Lab collaborative research team at ISSS 2026', tone: 'dark' }
       ],
       metrics: [
-        { label: 'Status', value: 'Early Draft (2 pp)' },
-        { label: 'Design', value: '27 Prompt Conditions' },
-        { label: 'Benchmark', value: '542 Problems' },
-        { label: 'Metric', value: 'Pass@1 Reliability' }
+        { label: 'Venue & Paper', value: 'ISSS 2026 (9 pp)' },
+        { label: 'Evaluation Scale', value: '22,140 Code Evals' },
+        { label: 'Models Tested', value: '5 OpenAI Models' },
+        { label: 'Factorial Matrix', value: '3 x 3 x 3 = 27 Cond' },
+        { label: 'Peak Degradation', value: '-12.2 pp (4o-mini)' },
+        { label: 'Reasoning Lift', value: '+28.8 pp (o3-mini)' }
       ],
-      overview: 'Early-stage 2-page working RAISE Lab study investigating how simultaneous, stacked operational prompt constraints ("Triadic Effect": rigid output formatting, authority persona framing, and artificial urgency) interact to degrade LLM code-generation reliability (Pass@1) across a 542-problem benchmark.',
+      overview: 'Published 9-page ISSS 2026 factorial investigation (Jadhav, La Placa, Stone, Raja, Ochoa, Nagaraju — ERAU & Purdue Univ. Northwest) running 22,140 greedy-decoded evaluations across 164 HumanEval+ coding tasks, 5 OpenAI models, and 27 stacked Format x Persona x Urgency prompt conditions, exposing architecture-dependent super-additive reliability collapse via McNemar hypothesis testing.',
       specs: [
-        { label: 'Artifact Status', value: 'Early Working Draft (2 pp IEEE template, ISSS_2026_Cognitive_Dynamics_Draft.pdf; p1 currently lists Jadhav, La Placa, Ochoa, Nagaraju, Raja)' },
-        { label: 'Experimental Design', value: 'Full 3 x 3 x 3 = 27-Condition Factorial Matrix (Format x Persona x Urgency)' },
-        { label: 'Benchmark Suite', value: '542-Problem Coding Benchmark across Multiple OpenAI Models' },
-        { label: 'Primary Metric', value: 'Discrete Execution Correctness (Pass@1) & 3 x 3 Interaction Heatmaps' },
-        { label: 'Codebase', value: 'github.com/calebstone15/SystemsResearch' }
+        { label: 'Paper & Venues', value: 'ISSS 2026 Published Paper (9 pp, ISSS_2026_Cognitive_Dynamics_Paper.pdf); ERAU & Purdue Northwest' },
+        { label: 'Factorial Design', value: '3 x 3 x 3 = 27 Prompt Conditions: Format (None/JSON/XML) x Persona (None/Generic/15-Yr Python Dev) x Urgency (None/Moderate/Outage)' },
+        { label: 'Evaluation Scope', value: '164 HumanEval+ Problems x 27 Conditions x 5 Models = 22,140 Greedy-Decoded Evaluations' },
+        { label: 'Models Benchmarked', value: 'GPT-4o-mini, GPT-4o, GPT-4.1-mini, GPT-4.1, and Reasoning Model o3-mini' },
+        { label: 'Degradation Findings', value: 'GPT-4o-mini Mean Interaction -7.6 pp (8/8 Triple Combos Super-Additive, Peak -12.2 pp); GPT-4o Mean -4.2 pp (5/8)' },
+        { label: 'Statistical Testing', value: 'Exact McNemar Paired Tests (OR = 3.7, p = 0.004 on 4o-mini JSON; OR = 6.25, p < 0.001 on 4o) & 95% CIs' }
       ],
       bullets: [
-        'Designed an incremental factorial evaluation harness crossing <strong>27 stacked prompting combinations</strong> to isolate nonlinear, super-additive accuracy loss ("Triadic Effect") relative to single-constraint baselines.',
-        'Evaluated discrete <strong>Pass@1</strong> code-generation correctness across <strong>542 coding tasks</strong> and rendered 3 x 3 interaction heatmaps exposing prompt-stacking failure regimes for safety-critical LLM wrappers.',
-        'Transparently linked alongside the in-progress 2-page IEEE draft and SystemsResearch harness pending complete empirical table population.'
+        'Executed a complete <strong>22,140-evaluation factorial campaign</strong> crossing <strong>27 stacked prompt conditions</strong> (Format &times; Persona &times; Urgency) across <code>164 HumanEval+</code> benchmarks and <code>5</code> OpenAI model architectures.',
+        'Demonstrated severe architecture-dependent super-additive failure in the GPT-4o family: <code>GPT-4o-mini</code> (<code>73.8%</code> baseline) suffered a peak <strong>-12.2 pp</strong> collapse under JSON + expert persona + moderate urgency (<code>85.4%</code> additive vs. <code>73.2%</code> actual), with JSON consistently underperforming XML.',
+        'Contrasted generational resilience: <code>GPT-4.1</code> (<code>89.6%</code> baseline, <code>+1.3 pp</code>) resisted interaction collapse, whereas reasoning model <code>o3-mini</code> climbed from <code>59.8%</code> unconstrained baseline to <strong>88.6%</strong> (JSON) / <strong>88.1%</strong> (XML) and up to <strong>91.5%</strong> peak.'
       ],
       verification: [
-        'Experimental harness spans all <strong>27 factorial conditions x 542 benchmark problems</strong>; cross-model statistical tables are marked in progress alongside the 2-page working PDF draft.'
+        'Confirmed statistical significance across all <strong>22,140 HumanEval+ evaluations</strong> via McNemar paired tests (<code>OR = 3.7, p = 0.004</code> for <code>4o-mini</code>; <code>OR = 6.25, p &lt; 0.001</code> for <code>4o</code>).',
+        'Published finished 9-page ISSS 2026 conference proceedings paper and reproducibility evaluation suite inside <code>github.com/calebstone15/SystemsResearch</code>.'
       ],
-      tags: ['Working Draft', 'Empirical AI Safety', 'Factorial DOE', 'LLM Evaluation', 'Python Harness'],
+      tags: ['ISSS 2026', 'Empirical AI Safety', 'Factorial DOE', 'HumanEval+', 'McNemar Stats', 'Python Harness'],
       links: [
-        { label: 'In-Progress Draft (PDF)', url: 'portfolio-assets/docs/ISSS_2026_Cognitive_Dynamics_Draft.pdf', kind: 'primary' },
+        { label: 'ISSS 2026 Paper (PDF)', url: 'portfolio-assets/docs/ISSS_2026_Cognitive_Dynamics_Paper.pdf', kind: 'primary' },
         { label: 'GitHub SystemsResearch', url: 'https://github.com/calebstone15/SystemsResearch', kind: 'secondary' }
       ]
     },
@@ -1426,361 +1271,14 @@
       links: []
     },
     {
-      id: 'cls-sys304',
-      section: 'classwork',
-      categories: ['systems'],
-      badge: 'SYS 304 • FALCON 9',
-      timeframe: 'FALL 2025',
-      org: 'Systems Architecture & Modeling',
-      title: 'Invisia Space-Based Dark Matter Observatory Architecture (AHP)',
-      summary: 'SysML/ICD observatory architecture and quantitative Analytic Hierarchy Process (AHP) trade study selecting Falcon 9 (1.80), SpaceX (0.98), KSC, high-res IR optics, and 20-yr RTG.',
-      media: {
-        type: 'image',
-        src: 'portfolio-assets/img/sys304-ahp-matrix.webp',
-        alt: 'SYS 304 quantitative Analytic Hierarchy Process trade study matrices selecting Falcon 9 and SpaceX',
-        fit: 'light'
-      },
-      gallery: [
-        { type: 'image', src: 'portfolio-assets/img/sys304-ahp-matrix.webp', caption: 'AHP trade study matrices evaluating launch vehicle, provider, site, payload, and power', tone: 'light' }
-      ],
-      metrics: [
-        { label: 'Selected LV', value: 'Falcon 9 (1.80)' },
-        { label: 'Provider Score', value: 'SpaceX (0.98)' },
-        { label: 'Spaceport', value: 'KSC (1.28)' },
-        { label: 'Science Payload', value: 'IR Optics (2.72)' },
-        { label: 'Power System', value: '20-yr RTG (1.44)' }
-      ],
-      overview: 'Systems Architecture & Modeling capstone (C. Stone, E. Bear, I. Ventura, Z. Lea, Fall 2025) architecting Invisia, a space-based dark matter and dark energy observatory via SysML decomposition, Interface Control Documents (ICDs), and mathematically weighted Analytic Hierarchy Process (AHP) pairwise trade studies.',
-      specs: [
-        { label: 'AHP Launch Vehicle', value: 'SpaceX Falcon 9 (Weighted Score 1.80)' },
-        { label: 'AHP Contractor & Site', value: 'SpaceX (Score 0.98) launching from Kennedy Space Center (Score 1.28)' },
-        { label: 'AHP Science Payload', value: 'High-Resolution Infrared (IR) Camera (Score 2.72 across 3 IR sensor architectures)' },
-        { label: 'AHP Power Architecture', value: '20-Year Radioisotope Thermoelectric Generator (RTG, Score 1.44)' },
-        { label: 'SE & Interface Artifacts', value: 'SysML Functional/Physical Decomposition, Pairwise Consistency Matrices, System ICDs (5-page IEEE Final Report)' }
-      ],
-      bullets: [
-        'Constructed multi-criteria <strong>AHP pairwise comparison matrices</strong> evaluating <code>3</code> IR observatory optics architectures (weighting photon sensitivity/resolution above unit cost), launch contractors, vehicles, spaceports, and multi-decade power.',
-        'Derived unified architectural baseline selecting <strong>Falcon 9</strong> (<code>1.80</code>) with <strong>SpaceX</strong> (<code>0.98</code>) from <strong>KSC</strong> (<code>1.28</code>), high-resolution IR optics (<code>2.72</code>), and a <strong>20-year RTG</strong> (<code>1.44</code>).',
-        'Authored SysML structural/behavioral models and subsystem <strong>Interface Control Documents (ICDs)</strong> bounding mechanical, thermal, electrical, and telemetry interfaces across observatory elements.'
-      ],
-      verification: [
-        'Verified mathematically consistent AHP decision weights across all <code>5</code> architectural trade categories in the 5-page IEEE Systems Architecture final report.'
-      ],
-      tags: ['SysML', 'AHP Trade Study', 'Falcon 9 / SpaceX', 'ICDs', 'Spacecraft Architecture'],
-      links: []
-    },
-    {
-      id: 'cls-sp400',
-      section: 'classwork',
-      categories: ['systems', 'avionics'],
-      badge: 'SP 400',
-      timeframe: 'DEC 2025',
-      org: 'Introduction to Space Navigation',
-      title: 'Parker Solar Probe Multi-Gravity-Assist Navigation Analysis',
-      summary: 'Analyzed multi-Venus-flyby trajectory mechanics and INS, star tracker, and Digital Sun Sensor attitude/navigation error budgets near solar perihelion.',
-      media: {
-        type: 'image',
-        src: 'portfolio-assets/img/sp400-parker-solar-plot.webp',
-        alt: 'SP 400 Parker Solar Probe orbital distance from Sun evolution plot',
-        fit: 'cover'
-      },
-      gallery: [
-        { type: 'image', src: 'portfolio-assets/img/sp400-parker-solar-plot.webp', caption: 'Parker Solar Probe perihelion distance progression across Venus gravity assists', tone: 'dark' }
-      ],
-      metrics: [
-        { label: 'Mission', value: 'Parker Solar Probe' },
-        { label: 'Trajectory', value: '7 Venus Flybys' },
-        { label: 'Peak Velocity', value: '> 430,000 mph' },
-        { label: 'GN&C Sensors', value: 'INS / Star / DSS' },
-        { label: 'Payload Suite', value: '4 Solar Instruments' }
-      ],
-      overview: 'Introduction to Space Navigation mission study (M. Schilder, N. Ratner, M. Esquenazi, C. Stone, G. Lynn, Dec 2025) analyzing NASA Parker Solar Probe multi-Venus gravity-assist trajectory mechanics, GN&C sensor error budgets (INS, Star Trackers, Digital Sun Sensors), and solar-conjunction RF blackout operations.',
-      specs: [
-        { label: 'Mission & Launch Vehicle', value: 'NASA Parker Solar Probe aboard Delta IV-Heavy + Upper Stage (Aug 12, 2018, Cape Canaveral)' },
-        { label: 'Trajectory Mechanics', value: '7 Venus Gravity-Assist Flybys (6th flyby Aug 2023 w/ 4.5 s TCM burn; 7th flyby Nov 2024)' },
-        { label: 'Kinematic Velocity Record', value: '> 430,000 mph (~125 miles/s) Peak Solar Perihelion Velocity' },
-        { label: 'Science Payload Suite (4)', value: 'FIELDS (E/M fields), ISOIS (energetic particles), WISPR (white-light coronagraph), SWEAP (solar wind plasma)' },
-        { label: 'GN&C Sensor Suite', value: 'Inertial Navigation System (INS), Star Trackers, Digital Sun Sensors (DSS) & Autonomous Thermal Safing' },
-        { label: 'Telecom Constraints', value: 'Superior Solar Conjunction RF Blackouts (intense solar EM noise) + Solid-State Telemetry Buffering' }
-      ],
-      bullets: [
-        'Quantified how <code>7</code> sequential <strong>Venus gravity-assist flybys</strong> shed heliocentric angular momentum to drop perihelion into the solar corona without prohibitive Earth-departure &Delta;V, trimmed by thruster Trajectory Correction Maneuvers (e.g., <code>4.5 s</code> Aug 2023 TCM).',
-        'Analyzed extreme thermal and radiation <strong>GN&amp;C sensor error budgets</strong> balancing gyro drift (<code>INS</code>), optical Star Tracker blinding, and fault-tolerant <strong>Digital Sun Sensor (DSS)</strong> autonomous safing.',
-        'Evaluated <strong>solar conjunction blackout intervals</strong> where solar RF noise interrupts Earth uplinks, requiring autonomous fault management and science memory buffering.'
-      ],
-      verification: [
-        'Documented complete 7-flyby perihelion evolution, <code>4</code>-instrument telemetry budgets, and GN&amp;C autonomy tolerances across the 43-paragraph technical report and 7-slide defense deck.'
-      ],
-      tags: ['Space Navigation', 'Gravity Assists', 'Star Trackers', 'Digital Sun Sensors', 'GN&C'],
-      links: []
-    },
-    {
-      id: 'cls-sys415',
-      section: 'classwork',
-      categories: ['systems'],
-      badge: 'SYS 415',
-      timeframe: 'APR 2026',
-      org: 'Systems Integration, Verification & Testing',
-      title: 'Systems IV&V, FMECA & Boundary Test Specification',
-      summary: 'Formulated end-to-end integration, verification & validation (IV&V) test harnesses, Failure Modes Effects & Criticality Analysis (FMECA), FTA, and boundary test protocols.',
-      media: {
-        type: 'schematic',
-        schematicKey: 'ivv'
-      },
-      gallery: [
-        { type: 'schematic', schematicKey: 'ivv', caption: 'IV&V verification matrix, FMECA criticality ranking, and fault tree specification' }
-      ],
-      metrics: [
-        { label: 'Lifecycle', value: 'IV&V V-Model' },
-        { label: 'Safety Tools', value: 'FMECA + FTA' },
-        { label: 'Case Study', value: 'PEBA / CF Super Shoe' },
-        { label: 'Energy Return', value: '87% / ~200-mi Wear' },
-        { label: 'Metrics', value: '9 -ilities + RAM' }
-      ],
-      overview: 'Systems Integration, Verification & Validation capstone (Caleb Stone & Evan Bear, Apr 2026) combining boundary-test IV&V specification with a full RAM Triangle (Reliability, Availability, Maintainability), FMECA, Fault Tree Analysis (FTA), and 9-dimension -ilities lifecycle audit on carbon-fiber-plate PEBA-foam marathon running systems.',
-      specs: [
-        { label: 'Verification Methods', value: 'IV&V Traceability Matrix, Structural Boundary Test Specs, RAM Triangle Audit' },
-        { label: 'Primary Audited System', value: 'Carbon-Fiber-Plate + PEBA-Foam Marathon Running Systems (Super Shoes Case Study)' },
-        { label: 'Quantitative Field Metrics', value: '87% Returned Compressive Energy, ~200-Mile PEBA Wear Limit, $250+ Cost Entry Barrier' },
-        { label: 'Safety & Reliability Tools', value: 'Failure Modes, Effects & Criticality Analysis (FMECA) & Super Shoe Fault Tree Analysis (FTA)' },
-        { label: '9 Lifecycle -ilities Matrix', value: 'Duration, Reliability, Availability, Maintainability, Operability, Safety, Supportability, Training, Production' },
-        { label: 'Primary Failure Paths', value: 'PEBA Cell Breakdown (>200 mi), Carbon-Plate Delamination/Fatigue, Narrow-Stack Lateral Ankle Roll' }
-      ],
-      bullets: [
-        'Constructed structured <strong>FMECA criticality rankings</strong> and <strong>Fault Tree Analysis (FTA)</strong> isolating failure mechanisms including PEBA midsole cell breakdown after <code>~200</code> miles, carbon-plate stress fatigue, and narrow-stack lateral instability.',
-        'Evaluated every lifecycle <strong>&ldquo;-ility&rdquo;</strong> mandated in SYS 415 specification plus structural boundary test protocols—mapping non-maintainability, <code>$250+</code> availability barriers, and <code>3&ndash;4 month</code> adaptation ramps.',
-        'Proposed engineered redesign trades balancing modular/wear-resistant midsole longevity against peak <code>87%</code> compressive energy-return mechanics.'
-      ],
-      verification: [
-        'Synthesized <code>5</code> peer-reviewed biomechanical and wear studies (<em>Hoogkamer 2018, Joubert 2023 200-mi study, Ferris 2026</em>) into full FMECA/FTA report and 6-slide faculty defense.'
-      ],
-      tags: ['IV&V', 'FMECA', 'Fault Tree Analysis', 'Boundary Testing', 'RAM Triangle'],
-      links: []
-    },
-    {
-      id: 'cls-ba452',
-      section: 'classwork',
-      categories: ['systems'],
-      badge: 'BA 452 • SIX SIGMA',
-      timeframe: 'SPRING 2026',
-      org: 'Lean Six Sigma in Aerospace',
-      title: 'Aerospace Lean Six Sigma DMADV / Black Belt Process Optimization',
-      summary: 'Applied DMADV/DMAIC statistical process control (Cp, Cpk) and factory floor flow balancing delivering +15% margin on a 600 units/day production baseline.',
-      media: {
-        type: 'image',
-        src: 'portfolio-assets/img/ba452-factory-flow.webp',
-        alt: 'BA 452 aerospace Lean Six Sigma factory floor process flow optimization diagram',
-        fit: 'light'
-      },
-      gallery: [
-        { type: 'image', src: 'portfolio-assets/img/ba452-factory-flow.webp', caption: 'Optimized manufacturing cell flow diagram (Black Belt DMADV capstone)', tone: 'light' }
-      ],
-      metrics: [
-        { label: 'Framework', value: 'DMADV / Black Belt' },
-        { label: 'Throughput', value: '600 units / day' },
-        { label: 'Unit BOM Cost', value: '$0.45 / airframe' },
-        { label: 'Margin Gain', value: '+15% Profit Lift' },
-        { label: 'Scrap Recovery', value: '+$0.15 / plane' },
-        { label: 'SPC Control', value: 'Cp / Cpk & 5S' }
-      ],
-      overview: 'Lean Six Sigma in Aerospace Black Belt capstone (Caleb Stone, Kaelyn Tindall, Peyton Stikeleather, Spring 2026) applying DMAIC/DMADV, unit-economics modeling, Statistical Process Control (Cp, Cpk), and 5S floor redesign to an aerospace-model manufacturing line producing 600 units/day.',
-      specs: [
-        { label: 'Production Baseline', value: '600 units/day Cell ($0.05 Wheel, $0.10 Prop, $0.05 Rubber Band, $0.25 Airframe = $0.45 BOM/unit)' },
-        { label: 'Baseline Economics', value: '55.26% Profit Margin, $31.50/hr Labor Rate Baseline, High Wood-Scrap Loss at Separation Cell' },
-        { label: 'Methodology', value: 'Lean Six Sigma DMAIC / DMADV Black Belt Toolkit, SPC (Cp, Cpk), 5S Visual Floor Controls' },
-        { label: 'Improvement Levers', value: 'Wood-Scrap Recycling Deposit (+$0.15/plane recovery), -$13.50/hr Rate Optimization, Auto Cleaning' },
-        { label: 'Target Financial Gain', value: '+15% Net Profit Margin Lift with Zero Reduction in 600 units/day Throughput or Takt' },
-        { label: 'Control Plan Cadence', value: '2-Month Wage/Recycling Rollout, Daily Tracking, Weekly Management & Floor Monitor Audits' }
-      ],
-      bullets: [
-        'Mapped the current-state factory floor flow (<code>15</code>-slide Black Belt deck) pinpointing excess wood-scrap loss and unbalanced labor overhead at the Wood Separation station.',
-        'Audited unit bill-of-materials cost drivers (<code>$0.45/unit</code> across Wheel, Propeller, Rubber Band, Airframe) and labor structure (<code>$31.50/hr</code>) against <code>600 units/day</code> takt-time constraints.',
-        'Designed the <strong>DMADV/5S planned floor state</strong> adding automated scrap recycling recovery (<code>+$0.15/plane</code>), standardized station labeling, and <code>-$13.50/hr</code> rebalancing to deliver <strong>+15% profit margin</strong> with intact <code>Cp/Cpk</code> quality.'
-      ],
-      verification: [
-        'Delivered both technical <strong>15-slide Black Belt DMAIC</strong> deck and executive Sponsor Presentation quantifying the <code>+15%</code> margin gain and weekly Control Plan governance.'
-      ],
-      tags: ['Lean Six Sigma', 'DMADV / DMAIC', 'SPC (Cp / Cpk)', 'Factory Flow', 'Manufacturing Ops'],
-      links: []
-    },
-    {
-      id: 'cls-ba424',
-      section: 'classwork',
-      categories: ['systems'],
-      badge: 'BA 424',
-      timeframe: 'FALL 2025',
-      org: 'Project Management in Aviation Operations',
-      title: 'Boeing 777-200 Fleet Refresh — CPM, WBS & EVM Schedule',
-      summary: 'Built full Microsoft Project Work Breakdown Structure (WBS), Critical Path Method (CPM) network, Earned Value Management (EVM) tracking, and procurement/risk baseline.',
-      media: {
-        type: 'schematic',
-        schematicKey: 'evm'
-      },
-      gallery: [
-        { type: 'schematic', schematicKey: 'evm', caption: 'MS Project Critical Path Method & Earned Value Management baseline' }
-      ],
-      metrics: [
-        { label: 'Fleet Scope', value: '17 Boeing 777-200' },
-        { label: 'Materials Cost', value: '$108.57M Total' },
-        { label: 'WBS Scale', value: '315-Row CPM Network' },
-        { label: 'PMI Plans', value: '11 Workbook Tabs' },
-        { label: 'Shipset Parts', value: '204 Galley / 136 Lav' },
-        { label: 'Horizon', value: 'Sep 2025 - Oct 2027' }
-      ],
-      overview: 'Project Management in Aviation Operations program baseline (Fall 2025, MS Project + 11-tab workbook) planning a 17-aircraft Boeing 777-200 Fleet Refresh (United Services) across all 11 PMI knowledge-area plans, a 315-row WBS/Critical Path Method schedule, $108.57M materials procurement, and Earned Value Management.',
-      specs: [
-        { label: 'Fleet & Horizon', value: '17 Boeing 777-200 Aircraft (United Services), Program Horizon Sep 2025 - Oct 2027' },
-        { label: 'Materials Budget ($108.57M)', value: '17 IFE ($25.50M), 17 Seat Sets ($24.94M), 204 Galleys ($24.48M), 136 Lavs ($16.32M), Bins ($11.74M), Paint/Carpet/FA ($5.59M)' },
-        { label: 'Schedule Scale', value: '315-Row WBS (Level 1-4 up to WBS 3.2.16.15 Quality Sign-Off) in MS Project (.mpp) & Excel CPM' },
-        { label: '11 PMI Workbook Tabs', value: 'LOPA, Charter, Scope, Schedule, Cost, Quality, HR, Risk, Communications, Procurement, Change Request' },
-        { label: 'Risk & OEM Vendors', value: '5x5 Likelihood/Consequence Risk Matrix; Tier-1 Vendors (Weber, Boeing, Panasonic Avionics)' },
-        { label: 'Control Metrics', value: 'Earned Value Management (CPI / SPI), Prototype vs Post-Prototype Cycle Steps, Formal Change Control' }
-      ],
-      bullets: [
-        'Constructed a comprehensive <strong>11-tab aviation MRO program baseline</strong> covering LOPA cabin layouts, <code>Rev 3</code> Charter, prototype vs. post-prototype cycle times, Quality lifespan specs, HR assignments, and Change Requests.',
-        'Sequenced a <strong>315-task WBS &amp; CPM dependency network</strong> through aircraft-by-aircraft tear-down, galley/lavatory/IFE/seat/carpet installation (<code>3.2.16.11&ndash;3.2.16.15</code>), <code>10</code>-day paint slots, and final quality sign-off (<code>Oct 18, 2027</code>).',
-        'Integrated <strong>$108.57M vendor procurement</strong> (<code>Weber</code> seats, <code>Boeing</code> bins/carpet, <code>Panasonic Avionics</code> IFE/Wi-Fi antennas) with <code>EVM</code> (<code>CPI/SPI</code>) tracking and <code>5&times;5</code> supplier-delay risk buffers.'
-      ],
-      verification: [
-        'Reconciled line-item quantities across all <code>17</code> shipsets (<code>12</code> galleys &amp; <code>8</code> lavatories per airframe = <code>204</code> &amp; <code>136</code> units) totaling <strong>$108,572,200</strong> with zero orphaned WBS predecessor links.'
-      ],
-      tags: ['MS Project', 'Critical Path (CPM)', 'Earned Value (EVM)', 'WBS', 'Risk Management'],
-      links: []
-    },
-    {
-      id: 'cls-sp300-200',
-      section: 'classwork',
-      categories: ['systems', 'propulsion'],
-      badge: 'SP 300 & SP 200',
-      timeframe: '2024 - 2025',
-      org: 'Satellite Systems & Planetary Exploration',
-      title: 'Spacecraft Subsystem Sizing & Europa Exploration Mission',
-      summary: 'Sized spacecraft EPS, ADCS, TT&C link budgets, thermal control, and delta-v propulsion (SP 300), paired with Europa subsurface ocean & magnetosphere payload design (SP 200).',
-      media: {
-        type: 'schematic',
-        schematicKey: 'spacecraft'
-      },
-      gallery: [
-        { type: 'schematic', schematicKey: 'spacecraft', caption: 'Spacecraft bus subsystem budgets & Jovian/Europa radiation mission design' }
-      ],
-      metrics: [
-        { label: 'Subsystems', value: '7 Spacecraft Buses' },
-        { label: 'Europa Bus Mass', value: '3,500 kg RTG' },
-        { label: 'InSight Audit', value: '4,588 W-hr ZTJ Solar' },
-        { label: 'Europa RF Link', value: 'X-Band + C-Band' },
-        { label: 'Science Tasks', value: '7 Ocean / Mag Goals' }
-      ],
-      overview: 'Combined SP 300 (Satellite & Spacecraft Systems, Spring 2025) and SP 200 (Planetary Exploration, Fall 2024) covering full spacecraft bus subsystem sizing (EPS, ADCS, C&DH, TT&C, Thermal, Propulsion, Structures), an InSight Mars Lander engineering audit, and an RTG-powered Europa Subsurface Ocean Orbiter (3,500 kg) mission study.',
-      specs: [
-        { label: '7 Audited Subsystems', value: 'Propulsion, TT&C (X/C/UHF), C&DH (dual RAD750 115.5 MHz), EPS (ZTJ vs RTG), GN&C/ADCS, Thermal, Structures' },
-        { label: 'SP 300 InSight Audit', value: 'Dual 2.15 m SolAero ZTJ Arrays (4,588 W-hr), SEIS (8.5 W / 38 Mbit), HP3 (2 W / 350 Mbit), RISE (78 W X-band) -> 1,300+ Marsquakes' },
-        { label: 'SP 200 Europa Bus Spec', value: '3,500 kg Orbiter Mass, Nuclear RTG Power (5.2 AU low solar flux), Primary X-band + Backup C-band' },
-        { label: '7 Europa Science Objectives', value: 'Surface Composition, Subsurface Water Detection, Exosphere Ratios, Induced Magnetic Field, Radiation, Gravity, Imaging' },
-        { label: 'Trajectory & Environment', value: 'Planetary Gravity-Assist Transit, Reverse-Gravity Orbit Insertion, Jovian Trapped-Radiation Shielding' }
-      ],
-      bullets: [
-        'Analyzed bus-level mass, power, data-volume, and RF link drivers across <strong>685 pages</strong> of SP 300 spacecraft engineering curriculum (<code>EPS</code> Depth-of-Discharge, <code>ADCS</code> disturbance torques, rad-hard <code>RAD750</code> C&amp;DH, cold-gas vs. chemical/nuclear delta-V).',
-        'Audited <strong>NASA InSight Lander</strong> hardware telemetry (<code>4,588 W-hr</code> solar energy budget, <code>8.5 W / 2 W / 78 W</code> payload power, dust attenuation &amp; <code>HP3</code> Mole regolith-traction root cause).',
-        'Designed the <strong>3,500 kg RTG Europa Orbiter</strong> integrating a 7-task science payload suite, dual-band <code>X/C</code> DSN links, gravity-assist trajectory trades, and Jovian radiation vaulting.'
-      ],
-      verification: [
-        'Completed quantitative subsystem design checks across all <code>7</code> spacecraft buses and delivered the multi-trade <code>3,500 kg</code> Europa subsurface exploration mission report.'
-      ],
-      tags: ['Spacecraft Sizing', 'Link Budgets', 'EPS / ADCS', 'Thermal Control', 'Europa Mission'],
-      links: []
-    },
-    {
-      id: 'cls-sp110',
-      section: 'classwork',
-      categories: ['propulsion', 'systems'],
-      badge: 'SP 110 • RCA',
-      timeframe: 'FALL 2024',
-      org: 'Forensic Spaceflight Failure Analysis',
-      title: 'Vulcan Cert-2 GEM 63XL SRB Nozzle Failure Investigation',
-      summary: 'Conducted optical burn-through timeline forensics and Fault Tree Analysis (FTA) evaluating carbon-phenolic insulation delamination and hot-gas seal breach hypotheses.',
-      media: {
-        type: 'schematic',
-        schematicKey: 'vulcanFta'
-      },
-      gallery: [
-        { type: 'schematic', schematicKey: 'vulcanFta', caption: 'Fault Tree Analysis of GEM 63XL SRB nozzle thermal-erosion anomaly' }
-      ],
-      metrics: [
-        { label: 'Vehicle / Date', value: 'Vulcan Cert-2 (Oct 24)' },
-        { label: 'Solid Hardware', value: 'GEM 63XL SRB Nozzle' },
-        { label: 'Forensics', value: 'Optical + Acoustic' },
-        { label: 'Root Tree', value: 'Fault Tree (FTA)' },
-        { label: 'Core Contrasted', value: 'Dual BE-4 Nominal' }
-      ],
-      overview: 'Introduction to Spaceflight forensic failure analysis (Caleb Stone & Jordan Morris, Fall 2024, SP 110) reconstructing the October 4, 2024 ULA Vulcan Cert-2 GEM 63XL Solid Rocket Booster nozzle anomaly via launch broadcast timeline correlation and Fault Tree Analysis, paired with Opportunity Mars Rover mission research analysis.',
-      specs: [
-        { label: 'Anomaly Incident', value: 'ULA Vulcan Cert-2 (Oct 4, 2024) — Northrop Grumman GEM 63XL SRB Nozzle Burn-Through' },
-        { label: 'Investigative Method', value: 'Frame-by-Frame Launch Video Plume/Ejecta Correlation + Acoustic Timeline + Fault Tree Analysis' },
-        { label: 'Failure Pathways Ranked', value: 'Carbon-Phenolic Nozzle Insulation Delamination, Hot-Gas O-Ring/Seal Breach, Asymmetric Thrust Excursion' },
-        { label: 'Nominal Systems Contrast', value: 'Verified Vulcan GNC Gimbal Compensation & Dual Blue Origin BE-4 Core-Stage Nominal Performance' },
-        { label: 'Companion SP 110 Paper', value: 'Opportunity Mars Rover Technical Synopsis (C. Stone, A. Schildwachter, P. Magno)' }
-      ],
-      bullets: [
-        'Correlated optical plume asymmetries, sparks/debris ejecta, and acoustic transitions from public Cert-2 footage into a precise <strong>thermal-erosion timeline</strong>.',
-        'Constructed structured <strong>Fault Tree Analysis (FTA)</strong> pathways separating Northrop Grumman GEM 63XL carbon-phenolic exit-cone delamination and seal-breach hypotheses from core-stage propulsion.',
-        'Assessed downstream <strong>NSSL certification</strong> programmatic schedule impacts alongside Vulcan GNC thrust-vector gimbal disturbance rejection.'
-      ],
-      verification: [
-        'Delivered 6-slide technical Root Cause Analysis presentation (<code>Vulcan SRB Failure</code>) and co-authored the <em>Opportunity Mars Rover</em> engineering synopsis.'
-      ],
-      tags: ['Root Cause Analysis', 'Fault Tree Analysis', 'Solid Rocket Motors', 'Thermal Erosion', 'Optical Forensics'],
-      links: []
-    },
-    {
-      id: 'cls-sys301-320',
-      section: 'classwork',
-      categories: ['systems', 'avionics'],
-      badge: 'SYS 301 & SYS 320',
-      timeframe: 'FALL 2024',
-      org: 'Systems Engineering & Agile Robotics',
-      title: 'Autonomous Competition Robot (Hurwitz Trade Study & Scrum)',
-      summary: 'Executed INCOSE requirements decomposition and Laplace/Hurwitz (alpha=0.8) quantitative trade studies (SYS 301) paired with Agile Scrum sprint robotics integration (SYS 320).',
-      media: {
-        type: 'schematic',
-        schematicKey: 'hurwitz'
-      },
-      gallery: [
-        { type: 'schematic', schematicKey: 'hurwitz', caption: 'Laplace & Hurwitz (alpha=0.8) quantitative concept selection trade study' }
-      ],
-      metrics: [
-        { label: 'Decision Rule', value: 'Hurwitz alpha = 0.8' },
-        { label: 'Process', value: 'INCOSE + Jira Scrum' },
-        { label: 'Platform', value: 'DetonaTron Robot' },
-        { label: 'Weights', value: 'S1 0.4 / S2 0.3 / S3 0.2' },
-        { label: 'Selected Option', value: 'Concept B Winner' }
-      ],
-      overview: 'Systems Engineering (SYS 301) & Agile Robotics (SYS 320, Fall 2024) designing and building DetonaTron, an autonomous competition robot (Builder role alongside Programmer, Designer, and Supplier sub-leads). Paired formal INCOSE requirements, IDEF0, and Hurwitz (alpha = 0.8) trade studies with Jira-tracked Agile Scrum build sprints and ERPL safety debriefing.',
-      specs: [
-        { label: 'Decision Criteria Matrix', value: 'S1=0.4 (side balls), S2=0.3 (box balls), S3=0.2 (bottle), S4=0.1 (opponent box); Options A, B, C -> Option B Selected' },
-        { label: 'Quantitative Rules', value: 'Weighted Scoring Matrix + Laplace Expected Utility + Hurwitz Optimism-Pessimism (alpha = 0.8)' },
-        { label: 'Agile Framework', value: 'Multi-Sprint Scrum in Atlassian Jira, Role Epics (Program/Build/Design/Supply), Sprint Backlogs & Burndowns' },
-        { label: 'SysEng & Safety Artifacts', value: 'IDEF0 Decomposition, Functional/Non-Functional Reqs, Change Control Gate, Team Safety & ERPL Debrief Reports' }
-      ],
-      bullets: [
-        'Authored formal functional and non-functional requirement specifications with closed-loop designer&ndash;supplier&ndash;builder&ndash;programmer change-control feasibility gates.',
-        'Executed quantitative concept-elimination decision analysis weighting 4 arena scoring criteria (<code>S1=0.4, S2=0.3, S3=0.2, S4=0.1</code>) alongside <strong>Laplace and Hurwitz (&alpha; = 0.8)</strong> utility rules to eliminate Options A and C in favor of <strong>Option B</strong>.',
-        'Integrated physical robotics hardware across multi-sprint <strong>Jira Scrum</strong> cycles supplemented by a formal <strong>ERPL Juno safety debrief audit</strong>.'
-      ],
-      verification: [
-        'Mathematically validated Option B selection in 7-page <code>SYS 301</code> Final Report and completed iterative Sprint 1 &amp; Sprint 2 physical robot arena integration in <code>SYS 320</code>.'
-      ],
-      tags: ['Hurwitz / Laplace', 'INCOSE Handbook', 'Agile Scrum', 'Autonomous Robotics', 'Trade Studies'],
-      links: []
-    },
-    {
       id: 'cls-egr101',
       section: 'classwork',
-      categories: ['propulsion', 'systems'],
-      badge: 'EGR 101 • 3RD PLACE',
+      categories: ['systems'],
+      badge: 'EGR 101 • 1ST PLACE',
       timeframe: 'SPRING 2023',
       org: 'Intro to Engineering Design Lab',
-      title: 'C-130 Scale Glider (3rd Place), AN-12 Satellite Transport & Ball Launcher',
-      summary: 'Led 4-person team to 3rd Place university-wide in Lockheed Martin C-130 glider aerodynamics; designed Antonov AN-12 satellite transport (3 sats, 1350 nm) and 3D-printed Ball Launcher.',
+      title: '1st-Place Autonomous / Gravity-Feed Ball Launcher Hardware CAD',
+      summary: 'Led 4-engineer team to 1st Place with a CAD-modeled, 3D-printed mechanical dog tennis ball launcher (22"x23"x22" envelope, 6-10 ft repeatable launch range, <$70 BOM).',
       media: {
         type: 'image',
         src: 'portfolio-assets/img/egr101-ball-launcher-cad.webp',
@@ -1788,151 +1286,33 @@
         fit: 'cover'
       },
       gallery: [
-        { type: 'image', src: 'portfolio-assets/img/egr101-ball-launcher-cad.webp', caption: 'Ball Launcher 3D CAD assembly (Autodesk Inventor)', tone: 'dark' },
-        { type: 'image', src: 'portfolio-assets/img/egr101-an12-cad.webp', caption: 'Antonov AN-12 satellite transport airframe CAD layout (3 satellites, 1,350 nm range)', tone: 'light' }
+        { type: 'image', src: 'portfolio-assets/img/egr101-ball-launcher-cad.webp', caption: 'Mechanical Ball Launcher 3D CAD assembly (Autodesk Inventor, 1st Place Design)', tone: 'dark' }
       ],
       metrics: [
-        { label: 'Competition Award', value: '3rd Place Overall' },
-        { label: 'AN-12 Fuel Delta', value: '9.76% (< 10% Req)' },
-        { label: 'AN-12 Range / Speed', value: '1,350 nm / 570 km/h' },
-        { label: 'Turboprop Engine', value: 'PW 308A (6,900 lbf)' },
-        { label: 'Launcher Throw', value: '6-10 ft (< $70 BOM)' }
+        { label: 'Competition Award', value: '1st Place Overall' },
+        { label: 'Compact Footprint', value: '22" H x 23" L x 22" W' },
+        { label: 'Launch Distance', value: '6 - 10 ft Range' },
+        { label: 'Unit Build Cost', value: '< $70 BOM Cap' },
+        { label: 'CAD & Tooling', value: 'Autodesk Inventor + 3D Print' }
       ],
-      overview: 'Introductory Aerospace Engineering Design Lab (Section 3 Team 4, Spring 2023) spanning three hardware and sizing projects: leading a 4-engineer team to 3rd Place Overall university-wide in the Lockheed Martin C-130 scale glider competition, sizing an Antonov AN-12 satellite transport aircraft, and CAD-modeling/3D-printing a dog tennis ball launcher.',
+      overview: 'Introductory Engineering Design Lab hardware capstone (Section 3 Team 4, Spring 2023) where our 4-engineer team won 1st Place designing, CAD-modeling, and 3D-printing an ergonomic mechanical dog tennis ball launcher under strict volumetric, throw-distance, safety, and <$70 budget constraints.',
       specs: [
-        { label: 'C-130 Scale Glider', value: '3rd Place Overall University-Wide Competition (Team of 4), CG/CL Trim & L/D Optimization' },
-        { label: 'AN-12 Transport Baseline', value: 'Antonov AN-12 w/ Pratt & Whitney Canada PW 308A (6,900 lbf), 3 Satellites + 4 Pax, 1,350 nm, 570 km/h Cruise' },
-        { label: 'AN-12 Fuel Closure', value: 'Calculated Fuel Burn Within 9.76% of Spec (+/-10% Allowable Mission Tolerance), 12° Takeoff Attitude' },
-        { label: 'Ball Launcher Envelope', value: '22" H x 23" L x 22" W (< 4x4x4 ft Cap), 6-10 ft Throw Range, < $70 Prototyping Budget' },
-        { label: 'CAD & Prototyping', value: 'Multi-View Dimensioned Aircraft Sheets + Exported 3D-Printable STL Assemblies' }
+        { label: 'Competition Result', value: '1st Place Hardware Prototype Winner (Team 4, Spring 2023)' },
+        { label: 'Geometric Envelope', value: '22" H x 23" L x 22" W Compact Footprint (Well Inside 4x4x4 ft Cap)' },
+        { label: 'Functional Performance', value: 'Repeatable 6-10 ft Tennis Ball Launch Range via Gravity-Funnel Reload' },
+        { label: 'Hardware BOM Cap', value: '< $70 Total Prototype Build Budget (Additive Manufacturing + Hardware)' },
+        { label: 'Safety & Hazard Control', value: 'Filleted Corners, Pinch-Point Guarding & Foam Impact Buffering' },
+        { label: 'CAD & Documentation', value: 'Autodesk Inventor Parametric Assemblies, STL Fabrication & 14-Slide PDR' }
       ],
       bullets: [
-        'Directed aerodynamic trim, wing/empennage balance (<code>CG/CL</code>), and repeat flight-test tuning for a scale Lockheed Martin C-130 glider, earning <strong>3rd Place Overall across all ERAU sections</strong>.',
-        'Computed air density, cruise induced/parasitic drag, <code>CD</code>, fuel burn, and <code>PW 308A</code> thrust margin verifying the <strong>Antonov AN-12</strong> clears the <code>1,350 nm / 3-satellite</code> mission within <strong>9.76% fuel tolerance</strong> (<code>&lt; 10%</code> limit, 15-slide PDR).',
-        'Authored the gravity-funnel tennis ball launcher concept (14-slide PDR), mitigated pinch-point hazards with filleting and foam padding, and built a working <code>22&Prime;&times;23&Prime;&times;22&Prime;</code> 3D-printed prototype under <code>$70</code>.'
+        'Authored the gravity-funnel mechanical launch architecture (<code>14</code>-slide Preliminary Design Review) optimizing reload ergonomics, structural stiffness, and compact <code>22&Prime;&times;23&Prime;&times;22&Prime;</code> packaging inside the <code>4&times;4&times;4 ft</code> design envelope.',
+        'Engineered full multi-part solid assemblies in <strong>Autodesk Inventor</strong> and mitigated sharp-edge and pinch-point hazards using radiused fillets and protective foam shrouding prior to additive fabrication.',
+        'Built and iteratively calibrated the 3D-printed hardware prototype under the strict <code>$70</code> BOM budget to achieve repeatable <strong>6&ndash;10 ft launch trajectories</strong> and take <strong>1st Place</strong> in competition trials.'
       ],
       verification: [
-        'Won <strong>3rd Place Trophy</strong> in university-wide C-130 glider flight trials; closed AN-12 sizing calculations within <code>9.76% &lt; 10%</code> requirement; verified <code>6&ndash;10 ft</code> launcher throws inside budget.'
+        'Awarded <strong>1st Place</strong> in hardware evaluation trials validating consistent <code>6&ndash;10 ft</code> throws, pinch-point safety compliance, and <code>&lt; $70</code> total build cost.'
       ],
-      tags: ['Autodesk Inventor', '3D Printing', 'Aerodynamics (L/D)', 'CG/CL Stability', 'Competition Award'],
-      links: []
-    },
-    {
-      id: 'cls-egr120',
-      section: 'classwork',
-      categories: ['systems'],
-      badge: 'EGR 120',
-      timeframe: 'SPRING 2023',
-      org: 'Graphical Communications & CAD',
-      title: 'CATIA V5 Parametric Solid Modeling & ASME GD&T Assemblies',
-      summary: 'Constructed parametric aerospace surface/solid models, multi-component assemblies, orthographic engineering drawings, and GD&T tolerance stackups in CATIA V5.',
-      media: {
-        type: 'schematic',
-        schematicKey: 'catia'
-      },
-      gallery: [
-        { type: 'schematic', schematicKey: 'catia', caption: 'CATIA V5 parametric assemblies, orthographic projections & ASME Y14.5 GD&T' }
-      ],
-      metrics: [
-        { label: 'CAD Platform', value: 'Dassault CATIA V5' },
-        { label: 'Standard', value: 'ASME Y14.5 GD&T' },
-        { label: 'Output', value: 'Orthographic BOMs' },
-        { label: 'Study', value: 'Pad vs Shell Trade' }
-      ],
-      overview: 'Graphical Communications & CAD (Spring 2023) building proficiency in Dassault Systemes CATIA V5 parametric solid and surface modeling, constrained kinematic multi-part assemblies, ANSI/ASME Y14.5 GD&T orthographic engineering drawings, and feature-tree efficiency optimization.',
-      specs: [
-        { label: 'CAD Workbenches', value: 'Dassault CATIA V5 Part Design, Assembly Design, Generative Shape & Drafting Workbenches' },
-        { label: 'Drawing Standards', value: 'ASME Y14.5 GD&T, Multi-View Orthographic Projections, Section/Auxiliary Views, Assembly BOMs' },
-        { label: 'Feature Optimization', value: 'Parametric Sketching -> Multi-Pad vs Single-Shell Wall Architecture Trade (3-Page Technical Reflection)' }
-      ],
-      bullets: [
-        'Built multi-component parametric solid and surface parts in <strong>CATIA V5</strong> constrained via coincident, offset, and axis-alignment assembly mates.',
-        'Produced production-grade <strong>orthographic engineering drawings, section views, exploded BOM callouts, and ASME Y14.5 GD&amp;T</strong> geometric tolerance frames.',
-        'Executed a formal <strong>3-page CAD feature-tree reflection</strong> proving how replacing multi-sketch <code>Pad</code> extrusions with a single parametric <code>Shell</code> feature cuts concentric wall-thickness revision steps.'
-      ],
-      verification: [
-        'Passed parametric feature-tree inspections, constrained assembly motion checkouts, and <code>ASME Y14.5</code> drawing reviews across <code>EGR 120</code> coursework and final component reflection.'
-      ],
-      tags: ['CATIA V5', 'GD&T', 'Parametric CAD', 'Orthographic Drafting', 'BOM'],
-      links: []
-    },
-    {
-      id: 'cls-egr115',
-      section: 'classwork',
-      categories: ['propulsion'],
-      badge: 'EGR 115',
-      timeframe: 'FALL 2022',
-      org: 'Computing for Engineers',
-      title: 'Two-Stage Launch Vehicle Materials Cost & Structural Sizing Algorithm',
-      summary: 'Developed procedural engineering software optimizing two-stage launch vehicle structural mass fractions, tank geometry scaling, and material BOM cost trade-offs.',
-      media: {
-        type: 'schematic',
-        schematicKey: 'stageCost'
-      },
-      gallery: [
-        { type: 'schematic', schematicKey: 'stageCost', caption: 'Procedural two-stage structural mass ratio vs materials cost solver' }
-      ],
-      metrics: [
-        { label: 'Vehicle Solver', value: '2-Stage + Frustum' },
-        { label: 'Gauge Range', value: '0.125 - 1.0 in Wall' },
-        { label: 'MATLAB Modules', value: '6 App / MLX Scripts' },
-        { label: 'Geolocation', value: 'Haversine Great-Circle' }
-      ],
-      overview: 'Computing for Engineers (Fall 2022) combining a procedural Two-Stage Launch Vehicle Materials Cost & Structural Sizing Algorithm (cylinder, cone, and conical-frustum interstage volume/mass/alloy solver) with an interactive multi-screen MATLAB App and LiveScript Campsite Finder featuring geodesic Haversine distance sorting.',
-      specs: [
-        { label: 'Launch Vehicle Solver', value: '2-Stage Cylinder + Nose Cone + Conical Frustum Interstage V = (H/3)(S1 + S2 + sqrt(S1*S2))' },
-        { label: 'Structural Sizing Domain', value: 'User Stage Heights/Widths (ft), Wall Gauge 0.125-1.0 in (rho = m/V, W = mg, 2,000 lb/ton), Alloy Cost Table' },
-        { label: 'MATLAB App Modules (6)', value: 'Launcher Entry, Pricing & Distance LiveScripts (.mlx), Haversine Kernel, Search_Page & Generate_Page UI' },
-        { label: 'Database & Filters', value: 'Excel Database Query + GPS Lat/Lon Coordinates, Max Group Size, Amenity & Pricing Filters' }
-      ],
-      bullets: [
-        'Formulated the analytical geometry and structural mass-fraction sizing algorithm computing thin-walled shell volume (cylinders + frustum interstage), metallic dry mass (<code>W = mg</code>), and alloy raw-material cost across <code>0.125&ndash;1.0 in</code> gauges.',
-        'Engineered a multi-screen <strong>MATLAB App</strong> (<code>Search_Page</code> / <code>Generate_Page</code>) querying Excel tabular records via synced UI dropdowns/textboxes and computing <strong>great-circle Haversine distance</strong> from arbitrary GPS coordinates.'
-      ],
-      verification: [
-        'Verified closed-form frustum/shell volume equations, imperial-to-SI unit conversions, and live database search/ranking execution in an <code>8</code>-slide engineering presentation and demo video.'
-      ],
-      tags: ['Launch Vehicle Sizing', 'Structural Mass Ratio', 'Numerical Algorithms', 'Cost Tradeoffs'],
-      links: []
-    },
-    {
-      id: 'cls-cs118',
-      section: 'classwork',
-      categories: ['autonomy'],
-      badge: 'CS 118',
-      timeframe: 'SUMMER 2025',
-      org: 'Computer Science Final Project',
-      title: '3D Asteroid Field Distance & Planetary Impact Simulator',
-      summary: 'Modular Python 3D Cartesian astrodynamics simulator tracking multi-asteroid proximity vectors, collision envelopes, and structured telemetry logging.',
-      media: {
-        type: 'schematic',
-        schematicKey: 'asteroid'
-      },
-      gallery: [
-        { type: 'schematic', schematicKey: 'asteroid', caption: '3D Cartesian spacecraft-to-asteroid Euclidean range & collision hazard solver' }
-      ],
-      metrics: [
-        { label: 'Module Size', value: '142 Lines Python 3' },
-        { label: 'Architecture', value: '8 Modular Functions' },
-        { label: 'Closure Speed', value: '25 km/s Constant' },
-        { label: 'Visualization', value: 'mplot3d 3D Scatter' }
-      ],
-      overview: 'Computer Science Final Project (Summer 2025) implementing a modular 142-line Python 3D Asteroid Field Distance & Planetary Impact Simulator featuring randomized 3D ephemeris synthesis, Euclidean vector range evaluation, structured telemetry logging, constant-velocity impact timing, and Matplotlib 3D visualization.',
-      specs: [
-        { label: '8-Function Architecture', value: 'checkname, generateAsteroids, calculateDistance, writetoFile, findNearestAndFarthest, calculateTimeToImpact, printAlarm, plotAsteroids' },
-        { label: 'Coordinate & Range Domain', value: '3D Cartesian Ephemeris (X, Y, Z) over 1..1,000 km Domain; Range d = sqrt(x^2 + y^2 + z^2)' },
-        { label: 'Kinematics Constant', value: 'Fixed Closure Velocity SPEED = 25 km/s (t_impact = d / SPEED)' },
-        { label: 'Outputs & Plotting', value: 'Tab-Delimited Telemetry File (distance.txt), Nearest/Farthest Warning Console Alarms, mpl_toolkits.mplot3d 3D Plot' }
-      ],
-      bullets: [
-        'Architected <code>8</code> single-purpose functions separating validated coordinate generation (<code>1..1,000</code> domain), 3D Euclidean norm evaluation, min/max threat sorting, and file persistence.',
-        'Automated structured <code>distance.txt</code> coordinate/range export alongside real-time console <strong>Warning alarms</strong> reporting exact <code>(x, y, z)</code> coordinates, range (<code>km</code>), and time-to-impact (<code>s</code> at <code>25 km/s</code>).',
-        'Integrated lazy-loaded <strong>Matplotlib 3D</strong> scatter plotting mapping the synthetic debris field relative to the planetary origin.'
-      ],
-      verification: [
-        'Verified clean end-to-end execution generating <code>distance.txt</code>, nearest/farthest impact-time telemetry alerts, and interactive 3D spatial scatter plot visualization.'
-      ],
-      tags: ['Python 3', '3D Kinematics', 'File I/O', 'Proximity Alerting'],
+      tags: ['Autodesk Inventor', '3D Printing', 'Mechanical Design', 'Rapid Prototyping', '1st Place Award'],
       links: []
     }
   ];
@@ -1944,7 +1324,7 @@
   var state = {
     filter: 'all',
     query: '',
-    theaterTab: 'local',
+    theaterTab: 'youtube',
     theaterIndex: 0,
     activeProject: null,
     lastFocusEl: null
@@ -2067,7 +1447,7 @@
   }
 
   function renderSchematicNode(schematicKey) {
-    var entry = SCHEMATICS[schematicKey] || SCHEMATICS.ivv;
+    var entry = SCHEMATICS[schematicKey] || SCHEMATICS.gis;
     var wrap = createEl('div', 'schematic-banner');
     wrap.innerHTML = entry.svg;
     return wrap;
@@ -2268,7 +1648,7 @@
   }
 
   /* ========================================================================
-     ERPL Video Theater (Local MP4 Loops + Verified @erplofficial YouTube)
+     ERPL Video Theater (Verified @erplofficial YouTube Library)
      ======================================================================== */
 
   function renderTheaterViewport(item) {
@@ -2276,33 +1656,12 @@
       return;
     }
     theaterViewport.innerHTML = '';
-    if (state.theaterTab === 'local') {
-      var video = document.createElement('video');
-      video.controls = true;
-      video.muted = true;
-      video.loop = true;
-      video.playsInline = true;
-      video.autoplay = true;
-      video.preload = 'metadata';
-
-      var source = document.createElement('source');
-      source.src = item.src;
-      source.type = 'video/mp4';
-      video.appendChild(source);
-      theaterViewport.appendChild(video);
-
-      var playPromise = video.play();
-      if (playPromise && typeof playPromise.catch === 'function') {
-        playPromise.catch(function () {});
-      }
-    } else {
-      var iframe = document.createElement('iframe');
-      iframe.src = 'https://www.youtube-nocookie.com/embed/' + item.youtubeId + '?rel=0';
-      iframe.title = item.title;
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-      iframe.allowFullscreen = true;
-      theaterViewport.appendChild(iframe);
-    }
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + item.youtubeId + '?rel=0';
+    iframe.title = item.title;
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    theaterViewport.appendChild(iframe);
 
     theaterCaptionTitle.textContent = item.title;
     theaterCaptionMeta.textContent = item.meta;
@@ -2314,7 +1673,7 @@
     if (!theaterPlaylist) {
       return;
     }
-    var list = state.theaterTab === 'local' ? THEATER_LOCAL_CLIPS : THEATER_YOUTUBE_VIDEOS;
+    var list = THEATER_YOUTUBE_VIDEOS;
     theaterPlaylist.innerHTML = '';
 
     for (var i = 0; i < list.length; i++) {
@@ -2349,29 +1708,10 @@
     if (!theaterViewport || !theaterPlaylist) {
       return;
     }
-    var tabs = document.querySelectorAll('[data-theater-tab]');
-    for (var i = 0; i < tabs.length; i++) {
-      (function (tab) {
-        tab.addEventListener('click', function () {
-          var nextTab = tab.getAttribute('data-theater-tab');
-          if (nextTab === state.theaterTab) {
-            return;
-          }
-          state.theaterTab = nextTab;
-          state.theaterIndex = 0;
-          for (var j = 0; j < tabs.length; j++) {
-            var isSel = tabs[j] === tab;
-            tabs[j].classList.toggle('active', isSel);
-            tabs[j].setAttribute('aria-selected', isSel ? 'true' : 'false');
-          }
-          renderTheaterPlaylist();
-          var list = state.theaterTab === 'local' ? THEATER_LOCAL_CLIPS : THEATER_YOUTUBE_VIDEOS;
-          renderTheaterViewport(list[0]);
-        });
-      })(tabs[i]);
-    }
-
     renderTheaterPlaylist();
+    if (THEATER_YOUTUBE_VIDEOS.length > 0) {
+      renderTheaterViewport(THEATER_YOUTUBE_VIDEOS[0]);
+    }
   }
 
   /* ========================================================================

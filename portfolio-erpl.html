@@ -63,12 +63,11 @@
       <a href="portfolio.html" class="page-breadcrumb">&#8592; Portfolio Overview</a>
       <div class="section-header" style="margin-bottom: 0;">
         <div>
-          <div class="section-kicker">02 // Experimental Rocket Propulsion Lab (100+ Engineers)</div>
           <div class="erpl-section-brand">
             <h1 class="section-title">ERPL Propulsion, Avionics &amp; Test Ops</h1>
             <img src="portfolio-assets/img/erpl-logo-white.webp" alt="Experimental Rocket Propulsion Lab Logo" width="800" height="246">
           </div>
-          <p class="section-desc">Liquid engine CAD &amp; DAQ, liquid flight vehicle livestreamed camera and avionics, 12-camera RTSP matrix, HDAA/EAA engineering tools, and static test stand operations.</p>
+          <p class="section-desc">Liquid engine CAD &amp; DAQ, liquid flight vehicle livestreamed camera and avionics, DracoVision 12-camera RTSP matrix, PiCameraProject edge streaming, HDAA/EAA hotfire analysis, and static test stand operations.</p>
         </div>
         <div class="page-header-actions">
           <a href="eaa/index.html" class="btn-secondary btn-cyan">Open Live EAA Suite &#8599;</a>
@@ -85,7 +84,7 @@
             <span class="live-dot" aria-hidden="true"></span>
             <span>ERPL Hotfire &amp; Test Stand Video Theater</span>
           </h2>
-          <p>Uncropped test-stand loops alongside verified <a href="https://www.youtube.com/@erplofficial" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">@erplofficial</a> YouTube test videos.</p>
+          <p>Verified <a href="https://www.youtube.com/@erplofficial" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">@erplofficial</a> YouTube static-fire, feed checkout, and flight-qualification engineering videos.</p>
         </div>
         <div class="theater-profile-links">
           <a href="https://www.youtube.com/@erplofficial" target="_blank" rel="noopener noreferrer" class="card-btn card-btn--primary">YouTube @erplofficial</a>
@@ -97,23 +96,23 @@
       <div class="theater-grid">
         <div class="theater-stage">
           <div class="theater-viewport" id="theaterViewport">
-            <video id="theaterLocalVideo" controls muted loop playsinline autoplay preload="metadata">
-              <source src="portfolio-assets/video/gopro-chamber-topdown.mp4" type="video/mp4">
-            </video>
+            <iframe src="https://www.youtube-nocookie.com/embed/dVNkJK9rgc0?rel=0"
+                    title="First Successful Juno Hot Fire — Insiders Look"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
           </div>
           <div class="theater-caption-bar">
             <div>
-              <div class="theater-caption-title" id="theaterCaptionTitle">Horizontal Test Stand — GoPro Chamber Top-Down Burn</div>
-              <div class="theater-caption-meta" id="theaterCaptionMeta">LOCAL MP4 LOOP &bull; 1280x720 H.264 &bull; Cryo Chilldown, Hotfire Burn, Mach Plume &amp; Shutdown</div>
+              <div class="theater-caption-title" id="theaterCaptionTitle">First Successful Juno Hot Fire — Insiders Look</div>
+              <div class="theater-caption-meta" id="theaterCaptionMeta">@erplofficial &bull; 300 lbf LOX/Ethanol Liquid Rocket Engine</div>
             </div>
-            <a id="theaterExternalLink" href="https://www.youtube.com/@erplofficial" target="_blank" rel="noopener noreferrer" class="card-btn card-btn--cyan">Open @erplofficial &#8599;</a>
+            <a id="theaterExternalLink" href="https://www.youtube.com/watch?v=dVNkJK9rgc0" target="_blank" rel="noopener noreferrer" class="card-btn card-btn--cyan">Watch on YouTube &#8599;</a>
           </div>
         </div>
 
         <div class="theater-sidebar">
           <div class="theater-tabs" role="tablist" aria-label="Video source switcher">
-            <button type="button" class="theater-tab active" data-theater-tab="local" role="tab" aria-selected="true">Local Test Clips (5)</button>
-            <button type="button" class="theater-tab" data-theater-tab="youtube" role="tab" aria-selected="false">@erplofficial YouTube (12)</button>
+            <button type="button" class="theater-tab active" data-theater-tab="youtube" role="tab" aria-selected="true">@erplofficial YouTube (12)</button>
           </div>
           <div class="theater-playlist" id="theaterPlaylist"></div>
         </div>

@@ -796,8 +796,8 @@ button {
 
 .search-box {
   position: relative;
-  flex: 1 1 300px;
-  max-width: 440px;
+  flex: 1 1 240px;
+  max-width: 560px;
 }
 
 .search-box svg {
