@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2SYJ5X13M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M2SYJ5X13M');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Draco Vision — Live Telemetry Viewer</title>
+  <link rel="icon" type="image/x-icon" href="../Websitelogo.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-0: #07090e;
+      --bg-1: #0c1018;
+      --bg-2: rgba(255, 255, 255, 0.055);
+      --border: rgba(255, 255, 255, 0.1);
+      --text-main: #f5f7fb;
+      --text-muted: rgba(255, 255, 255, 0.62);
+      --accent: #38bdf8;
+      --gold: #d4af37;
+      --green: #22c55e;
+      --amber: #f59e0b;
+      --red: #ef4444;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100vh;
+      height: 100dvh;
+      width: 100vw;
+      background: var(--bg-0);
+      color: var(--text-main);
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .topbar {
+      height: 54px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 0 18px;
+      background: linear-gradient(180deg, rgba(16, 20, 32, 0.96) 0%, rgba(10, 12, 19, 0.96) 100%);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.8px;
+      color: #fff;
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.3);
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-title {
+      font-size: 14.5px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .brand-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .status-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: nowrap;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .status-pill.live {
+      border-color: rgba(34, 197, 94, 0.45);
+      background: rgba(34, 197, 94, 0.12);
+      color: #bbf7d0;
+    }
+
+    .status-pill.standby {
+      border-color: rgba(245, 158, 11, 0.35);
+      background: rgba(245, 158, 11, 0.1);
+      color: #fde68a;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.35);
+      flex-shrink: 0;
+    }
+
+    .status-pill.live .dot {
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+    }
+
+    .status-pill.standby .dot {
+      background: var(--amber);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(56, 189, 248, 0.45);
+    }
+
+    .stage {
+      position: relative;
+      flex: 1;
+      width: 100%;
+      min-height: 0;
+      background: var(--bg-0);
+    }
+
+    #viewerFrame {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: none;
+      background: #07090e;
+    }
+
+    .standby-wrap {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background:
+        radial-gradient(ellipse at 25% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 75% 80%, rgba(212, 175, 55, 0.07) 0%, transparent 50%),
+        var(--bg-0);
+    }
+
+    .standby-card {
+      width: 100%;
+      max-width: 540px;
+      padding: 32px 28px;
+      border-radius: 18px;
+      background: rgba(17, 21, 33, 0.86);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(20px);
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    .standby-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.8px;
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      margin-bottom: 16px;
+    }
+
+    .standby-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .standby-desc {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .standby-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 20px;
+    }
+
+    .standby-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 680px) {
+      .brand-sub { display: none; }
+      #btnDirectView { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">DV</div>
+      <div class="brand-text">
+        <div class="brand-title">Draco Vision Live</div>
+        <div class="brand-sub">STONESPHOTOS.COM // REMOTE VIEW-ONLY FEED</div>
+      </div>
+    </div>
+
+    <div class="status-group">
+      <div class="status-pill" id="statusPill">
+        <span class="dot"></span>
+        <span id="statusText">CHECKING STREAM...</span>
+      </div>
+      <button type="button" class="btn" id="btnRefresh" onclick="refreshNow(true)">Refresh</button>
+      <button type="button" class="btn" id="btnFullscreen" onclick="toggleFullscreen()">Fullscreen</button>
+      <a class="btn" id="btnDirectView" href="#" target="_blank" rel="noopener noreferrer" style="display: none;">
+        Direct View &#8599;
+      </a>
+    </div>
+  </header>
+
+  <main class="stage" id="stageWrap">
+    <iframe
+      id="viewerFrame"
+      title="Draco Vision Live Multi-Cam Viewer"
+      allow="fullscreen; autoplay"
+      allowfullscreen
+    ></iframe>
+
+    <div class="standby-wrap" id="standbyOverlay">
+      <div class="standby-card">
+        <div class="standby-badge">VIEW-ONLY PAD TELEMETRY</div>
+        <h1 class="standby-title" id="standbyTitle">Connecting to DracoVision...</h1>
+        <p class="standby-desc" id="standbyDesc">
+          Checking whether the ground-station broadcast is active. Leave this tab open — the multi-camera feed appears automatically as soon as the stream launches.
+        </p>
+        <div class="standby-meta" id="standbyMeta">Auto-checking every 10s</div>
+        <div class="standby-actions">
+          <button type="button" class="btn" onclick="refreshNow(true)">Check Now</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const GITHUB_CONTENTS_URL = "https://api.github.com/repos/calebstone15/stonesphotos.com/contents/dracovision/stream.json";
+    const RAW_GITHUB_URL = "https://raw.githubusercontent.com/calebstone15/stonesphotos.com/main/dracovision/stream.json";
+    const LOCAL_JSON_URL = "./stream.json";
+
+    let activeTunnelUrl = "";
+    let lastApiCheckAt = 0;
+    let pollTimer = null;
+
+    function parseIsoMs(isoStr) {
+      if (!isoStr) return 0;
+      const ms = Date.parse(isoStr);
+      return Number.isFinite(ms) ? ms : 0;
+    }
+
+    async function fetchJsonWithTimeout(url, timeoutMs = 4500) {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+      try {
+        const res = await fetch(url, { cache: "no-store", signal: ctrl.signal });
+        if (!res.ok) return null;
+        return await res.json();
+      } catch (e) {
+        return null;
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    async function fetchLatestManifest(forceApiCheck = false) {
+      const bust = Date.now();
+      const reqs = [
+        fetchJsonWithTimeout(`${LOCAL_JSON_URL}?_=${bust}`, 4000),
+        fetchJsonWithTimeout(`${RAW_GITHUB_URL}?_=${bust}`, 4000),
+      ];
+
+      const now = Date.now();
+      if (forceApiCheck || (now - lastApiCheckAt) >= 45000) {
+        lastApiCheckAt = now;
+        reqs.push(
+          fetchJsonWithTimeout(`${GITHUB_CONTENTS_URL}?ref=main&_=${bust}`, 4500).then((d) => {
+            if (!d || !d.content) return null;
+            try {
+              return JSON.parse(atob(d.content.replace(/\s+/g, "")));
+            } catch (e) {
+              return null;
+            }
+          })
+        );
+      }
+
+      const results = await Promise.all(reqs);
+      let newest = null;
+      let newestMs = -1;
+      for (const item of results) {
+        if (!item || typeof item !== "object" || typeof item.online !== "boolean") continue;
+        const ts = parseIsoMs(item.updated_at);
+        if (newest === null || ts > newestMs) {
+          newest = item;
+          newestMs = ts;
+        }
+      }
+      return newest;
+    }
+
+    function isValidTunnelUrl(url) {
+      if (typeof url !== "string" || !url.startsWith("https://")) return false;
+      try {
+        const u = new URL(url);
+        return u.hostname.endsWith(".trycloudflare.com");
+      } catch (e) {
+        return false;
+      }
+    }
+
+    async function probeTunnelLive(tunnelUrl) {
+      if (!isValidTunnelUrl(tunnelUrl)) return null;
+      const data = await fetchJsonWithTimeout(`${tunnelUrl}/api/status?_=${Date.now()}`, 5000);
+      if (!data || !Array.isArray(data.cameras)) return null;
+      return data;
+    }
+
+    function setLiveUi(tunnelUrl, statusData) {
+      const pill = document.getElementById("statusPill");
+      const statusText = document.getElementById("statusText");
+      const frame = document.getElementById("viewerFrame");
+      const standby = document.getElementById("standbyOverlay");
+      const directBtn = document.getElementById("btnDirectView");
+
+      const online = statusData.online_count || 0;
+      const streaming = statusData.streaming_count || 0;
+
+      pill.className = "status-pill live";
+      statusText.textContent = `LIVE // ${streaming} STREAMING (${online} ONLINE)`;
+
+      const targetSrc = `${tunnelUrl}/view`;
+      if (activeTunnelUrl !== tunnelUrl || frame.style.display !== "block") {
+        activeTunnelUrl = tunnelUrl;
+        frame.src = targetSrc;
+        frame.style.display = "block";
+      }
+      standby.style.display = "none";
+
+      directBtn.href = targetSrc;
+      directBtn.style.display = "inline-flex";
+    }
+
+    function setStandbyUi(manifest, reasonMsg) {
+      const pill = document.getElementById("statusPill");
+      const statusText = document.getElementById("statusText");
+      const frame = document.getElementById("viewerFrame");
+      const standby = document.getElementById("standbyOverlay");
+      const directBtn = document.getElementById("btnDirectView");
+      const titleEl = document.getElementById("standbyTitle");
+      const descEl = document.getElementById("standbyDesc");
+      const metaEl = document.getElementById("standbyMeta");
+
+      if (frame.style.display !== "none") {
+        frame.style.display = "none";
+        frame.removeAttribute("src");
+      }
+      activeTunnelUrl = "";
+      standby.style.display = "flex";
+      directBtn.style.display = "none";
+
+      pill.className = "status-pill standby";
+      statusText.textContent = "STANDBY // OFFLINE";
+      titleEl.textContent = "DracoVision Stream Offline";
+      descEl.textContent = reasonMsg || "Waiting for the ground station to launch Web Stream mode. This page checks automatically and goes live without needing a reload.";
+
+      if (manifest && manifest.updated_at) {
+        const dt = new Date(manifest.updated_at);
+        const tsStr = Number.isNaN(dt.getTime()) ? manifest.updated_at : dt.toLocaleString();
+        metaEl.textContent = `Last update: ${tsStr} · Auto-checking every 10s`;
+      } else {
+        metaEl.textContent = "Auto-checking every 10s";
+      }
+    }
+
+    async function refreshNow(forceApiCheck = false) {
+      if (pollTimer) {
+        clearTimeout(pollTimer);
+        pollTimer = null;
+      }
+
+      if (activeTunnelUrl && !forceApiCheck) {
+        const liveCheck = await probeTunnelLive(activeTunnelUrl);
+        if (liveCheck) {
+          setLiveUi(activeTunnelUrl, liveCheck);
+          pollTimer = setTimeout(() => refreshNow(false), 10000);
+          return;
+        }
+      }
+
+      const manifest = await fetchLatestManifest(forceApiCheck || !activeTunnelUrl);
+      if (manifest && manifest.online && isValidTunnelUrl(manifest.tunnel_url)) {
+        const liveData = await probeTunnelLive(manifest.tunnel_url);
+        if (liveData) {
+          setLiveUi(manifest.tunnel_url, liveData);
+          pollTimer = setTimeout(() => refreshNow(false), 10000);
+          return;
+        }
+        setStandbyUi(
+          manifest,
+          "Ground-station stream URL is published, waiting for tunnel connection to finish coming online..."
+        );
+      } else {
+        setStandbyUi(manifest);
+      }
+
+      pollTimer = setTimeout(() => refreshNow(false), 10000);
+    }
+
+    function toggleFullscreen() {
+      const el = document.getElementById("stageWrap");
+      if (!document.fullscreenElement) {
+        if (el.requestFullscreen) el.requestFullscreen().catch(() => {});
+      } else {
+        if (document.exitFullscreen) document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    refreshNow(true);
+  </script>
+  <script src="../analytics.js"></script>
+</body>
+</html>
